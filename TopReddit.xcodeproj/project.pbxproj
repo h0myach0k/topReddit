@@ -7,14 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6774DBA9212E868000886DF3 /* DefaultDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBA7212E85C600886DF3 /* DefaultDataResponse.swift */; };
+		6774DBAC212E88D800886DF3 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBAB212E88D800886DF3 /* DataResponse.swift */; };
+		6774DBAE212E8A9500886DF3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBAD212E8A9500886DF3 /* Result.swift */; };
+		6774DBB2212E8B7100886DF3 /* DataResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBB1212E8B7100886DF3 /* DataResponseSerialization.swift */; };
+		6774DBB4212E8DD800886DF3 /* DataTaskResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBB3212E8DD800886DF3 /* DataTaskResponseExtension.swift */; };
+		6774DBB6212E903500886DF3 /* JSONDecoderResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBB5212E903500886DF3 /* JSONDecoderResponseSerializer.swift */; };
+		6774DBBC212EA06400886DF3 /* DataTaskValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBBB212EA06400886DF3 /* DataTaskValidationExtension.swift */; };
+		6774DBBE212EA80B00886DF3 /* DataTaskValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBBD212EA80A00886DF3 /* DataTaskValidation.swift */; };
+		6774DBC0212EA9F300886DF3 /* StatusCodeValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBBF212EA9F300886DF3 /* StatusCodeValidation.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
 		67AA6A9D212DE45B00260244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6A97212DE45B00260244 /* AppDelegate.swift */; };
 		67AA6A9E212DE45B00260244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6A98212DE45B00260244 /* ViewController.swift */; };
+		67AA6AAD212DE83C00260244 /* URLAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AA6AA4212DE83C00260244 /* URLAccess.framework */; };
+		67AA6AB9212DE83C00260244 /* URLAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AA6AA4212DE83C00260244 /* URLAccess.framework */; };
+		67AA6ABA212DE83C00260244 /* URLAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67AA6AA4212DE83C00260244 /* URLAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		67AA6ACB212DE88200260244 /* URLAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 67AA6AC7212DE87600260244 /* URLAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67AA6ACE212DF33800260244 /* URLAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6ACD212DF33800260244 /* URLAccess.swift */; };
+		67AA6AD0212DF35000260244 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6ACF212DF35000260244 /* Task.swift */; };
+		67AA6AD4212DF38F00260244 /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6AD3212DF38F00260244 /* DataTask.swift */; };
+		67AA6AD6212DF3B800260244 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6AD5212DF3B800260244 /* SessionDelegate.swift */; };
+		67AA6AD8212DFB2200260244 /* TaskSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6AD7212DFB2200260244 /* TaskSessionDelegate.swift */; };
+		67AA6ADA212DFEAA00260244 /* URLAccessErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6AD9212DFEAA00260244 /* URLAccessErrors.swift */; };
+		67AA6B0F212F51F100260244 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6B0C212F51F100260244 /* Info.plist */; };
+		67AA6B10212F51F100260244 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6B0D212F51F100260244 /* test.js */; };
+		67AA6B14212F522A00260244 /* URLAccessTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B12212F522A00260244 /* URLAccessTestModels.swift */; };
+		67AA6B15212F522A00260244 /* URLAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B13212F522A00260244 /* URLAccessTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6AA3212DE83C00260244;
+			remoteInfo = URLAccess;
+		};
+		67AA6AB0212DE83C00260244 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6A77212DE41400260244;
+			remoteInfo = TopReddit;
+		};
+		67AA6AB7212DE83C00260244 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6AA3212DE83C00260244;
+			remoteInfo = URLAccess;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		67AA6ABE212DE83C00260244 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				67AA6ABA212DE83C00260244 /* URLAccess.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6774DBA7212E85C600886DF3 /* DefaultDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataResponse.swift; sourceTree = "<group>"; };
+		6774DBAB212E88D800886DF3 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		6774DBAD212E8A9500886DF3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6774DBB1212E8B7100886DF3 /* DataResponseSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseSerialization.swift; sourceTree = "<group>"; };
+		6774DBB3212E8DD800886DF3 /* DataTaskResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskResponseExtension.swift; sourceTree = "<group>"; };
+		6774DBB5212E903500886DF3 /* JSONDecoderResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderResponseSerializer.swift; sourceTree = "<group>"; };
+		6774DBBB212EA06400886DF3 /* DataTaskValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskValidationExtension.swift; sourceTree = "<group>"; };
+		6774DBBD212EA80A00886DF3 /* DataTaskValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskValidation.swift; sourceTree = "<group>"; };
+		6774DBBF212EA9F300886DF3 /* StatusCodeValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeValidation.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -22,6 +92,20 @@
 		67AA6A95212DE45B00260244 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67AA6A97212DE45B00260244 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67AA6A98212DE45B00260244 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67AA6AA4212DE83C00260244 /* URLAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = URLAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AA6AAC212DE83C00260244 /* URLAccessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLAccessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AA6AC5212DE87600260244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67AA6AC7212DE87600260244 /* URLAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLAccess.h; sourceTree = "<group>"; };
+		67AA6ACD212DF33800260244 /* URLAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLAccess.swift; sourceTree = "<group>"; };
+		67AA6ACF212DF35000260244 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		67AA6AD3212DF38F00260244 /* DataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
+		67AA6AD5212DF3B800260244 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		67AA6AD7212DFB2200260244 /* TaskSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSessionDelegate.swift; sourceTree = "<group>"; };
+		67AA6AD9212DFEAA00260244 /* URLAccessErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLAccessErrors.swift; sourceTree = "<group>"; };
+		67AA6B0C212F51F100260244 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67AA6B0D212F51F100260244 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
+		67AA6B12212F522A00260244 /* URLAccessTestModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLAccessTestModels.swift; sourceTree = "<group>"; };
+		67AA6B13212F522A00260244 /* URLAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLAccessTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +113,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67AA6AB9212DE83C00260244 /* URLAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67AA6AA0212DE83C00260244 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67AA6AA9212DE83C00260244 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67AA6AAD212DE83C00260244 /* URLAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6774DBAA212E88AA00886DF3 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				6774DBB3212E8DD800886DF3 /* DataTaskResponseExtension.swift */,
+				6774DBA7212E85C600886DF3 /* DefaultDataResponse.swift */,
+				6774DBAB212E88D800886DF3 /* DataResponse.swift */,
+				6774DBAD212E8A9500886DF3 /* Result.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		6774DBB7212E991200886DF3 /* ResponseSerializers */ = {
+			isa = PBXGroup;
+			children = (
+				6774DBB1212E8B7100886DF3 /* DataResponseSerialization.swift */,
+				6774DBB5212E903500886DF3 /* JSONDecoderResponseSerializer.swift */,
+			);
+			path = ResponseSerializers;
+			sourceTree = "<group>";
+		};
+		6774DBB8212EA01000886DF3 /* ResponseValidations */ = {
+			isa = PBXGroup;
+			children = (
+				6774DBBD212EA80A00886DF3 /* DataTaskValidation.swift */,
+				6774DBBB212EA06400886DF3 /* DataTaskValidationExtension.swift */,
+				6774DBBF212EA9F300886DF3 /* StatusCodeValidation.swift */,
+			);
+			path = ResponseValidations;
+			sourceTree = "<group>";
+		};
 		67AA6A6F212DE41400260244 = {
 			isa = PBXGroup;
 			children = (
 				67AA6A96212DE45B00260244 /* Sources */,
 				67AA6A8D212DE45B00260244 /* Resources */,
+				67AA6AC2212DE87600260244 /* Subprojects */,
 				67AA6A79212DE41400260244 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				67AA6A78212DE41400260244 /* TopReddit.app */,
+				67AA6AA4212DE83C00260244 /* URLAccess.framework */,
+				67AA6AAC212DE83C00260244 /* URLAccessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,7 +221,112 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		67AA6AC2212DE87600260244 /* Subprojects */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6AC3212DE87600260244 /* URLAccess */,
+			);
+			path = Subprojects;
+			sourceTree = "<group>";
+		};
+		67AA6AC3212DE87600260244 /* URLAccess */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6AC6212DE87600260244 /* Sources */,
+				67AA6AC4212DE87600260244 /* Resources */,
+				67AA6AC8212DE87600260244 /* Tests */,
+			);
+			path = URLAccess;
+			sourceTree = "<group>";
+		};
+		67AA6AC4212DE87600260244 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6AC5212DE87600260244 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		67AA6AC6212DE87600260244 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6AC7212DE87600260244 /* URLAccess.h */,
+				67AA6ACD212DF33800260244 /* URLAccess.swift */,
+				67AA6AD5212DF3B800260244 /* SessionDelegate.swift */,
+				67AA6AD9212DFEAA00260244 /* URLAccessErrors.swift */,
+				67AA6B09212F457900260244 /* Tasks */,
+				6774DBB8212EA01000886DF3 /* ResponseValidations */,
+				6774DBB7212E991200886DF3 /* ResponseSerializers */,
+				6774DBAA212E88AA00886DF3 /* Response */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		67AA6AC8212DE87600260244 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6B11212F522A00260244 /* Sources */,
+				67AA6B0A212F51F100260244 /* Resources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		67AA6B09212F457900260244 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6ACF212DF35000260244 /* Task.swift */,
+				67AA6AD3212DF38F00260244 /* DataTask.swift */,
+				67AA6AD7212DFB2200260244 /* TaskSessionDelegate.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		67AA6B0A212F51F100260244 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6B0B212F51F100260244 /* JSON */,
+				67AA6B0E212F51F100260244 /* Plists */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		67AA6B0B212F51F100260244 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6B0D212F51F100260244 /* test.js */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		67AA6B0E212F51F100260244 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6B0C212F51F100260244 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		67AA6B11212F522A00260244 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6B12212F522A00260244 /* URLAccessTestModels.swift */,
+				67AA6B13212F522A00260244 /* URLAccessTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		67AA6AA1212DE83C00260244 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67AA6ACB212DE88200260244 /* URLAccess.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		67AA6A77212DE41400260244 /* TopReddit */ = {
@@ -98,15 +336,54 @@
 				67AA6A74212DE41400260244 /* Sources */,
 				67AA6A75212DE41400260244 /* Frameworks */,
 				67AA6A76212DE41400260244 /* Resources */,
+				67AA6ABE212DE83C00260244 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				67AA6AB8212DE83C00260244 /* PBXTargetDependency */,
 			);
 			name = TopReddit;
 			productName = TopReddit;
 			productReference = 67AA6A78212DE41400260244 /* TopReddit.app */;
 			productType = "com.apple.product-type.application";
+		};
+		67AA6AA3212DE83C00260244 /* URLAccess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67AA6ABB212DE83C00260244 /* Build configuration list for PBXNativeTarget "URLAccess" */;
+			buildPhases = (
+				67AA6A9F212DE83C00260244 /* Sources */,
+				67AA6AA0212DE83C00260244 /* Frameworks */,
+				67AA6AA1212DE83C00260244 /* Headers */,
+				67AA6AA2212DE83C00260244 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = URLAccess;
+			productName = URLAccess;
+			productReference = 67AA6AA4212DE83C00260244 /* URLAccess.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		67AA6AAB212DE83C00260244 /* URLAccessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67AA6ABF212DE83C00260244 /* Build configuration list for PBXNativeTarget "URLAccessTests" */;
+			buildPhases = (
+				67AA6AA8212DE83C00260244 /* Sources */,
+				67AA6AA9212DE83C00260244 /* Frameworks */,
+				67AA6AAA212DE83C00260244 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67AA6AAF212DE83C00260244 /* PBXTargetDependency */,
+				67AA6AB1212DE83C00260244 /* PBXTargetDependency */,
+			);
+			name = URLAccessTests;
+			productName = URLAccessTests;
+			productReference = 67AA6AAC212DE83C00260244 /* URLAccessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -120,6 +397,14 @@
 				TargetAttributes = {
 					67AA6A77212DE41400260244 = {
 						CreatedOnToolsVersion = 9.4.1;
+					};
+					67AA6AA3212DE83C00260244 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					67AA6AAB212DE83C00260244 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 67AA6A77212DE41400260244;
 					};
 				};
 			};
@@ -137,6 +422,8 @@
 			projectRoot = "";
 			targets = (
 				67AA6A77212DE41400260244 /* TopReddit */,
+				67AA6AA3212DE83C00260244 /* URLAccess */,
+				67AA6AAB212DE83C00260244 /* URLAccessTests */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +439,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67AA6AA2212DE83C00260244 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67AA6AAA212DE83C00260244 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67AA6B10212F51F100260244 /* test.js in Resources */,
+				67AA6B0F212F51F100260244 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -164,7 +467,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67AA6A9F212DE83C00260244 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67AA6AD4212DF38F00260244 /* DataTask.swift in Sources */,
+				6774DBBE212EA80B00886DF3 /* DataTaskValidation.swift in Sources */,
+				6774DBBC212EA06400886DF3 /* DataTaskValidationExtension.swift in Sources */,
+				67AA6AD0212DF35000260244 /* Task.swift in Sources */,
+				6774DBC0212EA9F300886DF3 /* StatusCodeValidation.swift in Sources */,
+				6774DBB2212E8B7100886DF3 /* DataResponseSerialization.swift in Sources */,
+				67AA6ACE212DF33800260244 /* URLAccess.swift in Sources */,
+				6774DBAC212E88D800886DF3 /* DataResponse.swift in Sources */,
+				6774DBA9212E868000886DF3 /* DefaultDataResponse.swift in Sources */,
+				67AA6ADA212DFEAA00260244 /* URLAccessErrors.swift in Sources */,
+				6774DBAE212E8A9500886DF3 /* Result.swift in Sources */,
+				67AA6AD8212DFB2200260244 /* TaskSessionDelegate.swift in Sources */,
+				6774DBB4212E8DD800886DF3 /* DataTaskResponseExtension.swift in Sources */,
+				67AA6AD6212DF3B800260244 /* SessionDelegate.swift in Sources */,
+				6774DBB6212E903500886DF3 /* JSONDecoderResponseSerializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67AA6AA8212DE83C00260244 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67AA6B14212F522A00260244 /* URLAccessTestModels.swift in Sources */,
+				67AA6B15212F522A00260244 /* URLAccessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6AA3212DE83C00260244 /* URLAccess */;
+			targetProxy = 67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */;
+		};
+		67AA6AB1212DE83C00260244 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6A77212DE41400260244 /* TopReddit */;
+			targetProxy = 67AA6AB0212DE83C00260244 /* PBXContainerItemProxy */;
+		};
+		67AA6AB8212DE83C00260244 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6AA3212DE83C00260244 /* URLAccess */;
+			targetProxy = 67AA6AB7212DE83C00260244 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */ = {
@@ -305,6 +657,7 @@
 		67AA6A8B212DE41600260244 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -317,13 +670,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.TopReddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		67AA6A8C212DE41600260244 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -336,7 +690,104 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.TopReddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		67AA6ABC212DE83C00260244 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/URLAccess/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.URLAccess;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		67AA6ABD212DE83C00260244 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/URLAccess/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.URLAccess;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		67AA6AC0212DE83C00260244 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				INFOPLIST_FILE = Subprojects/URLAccess/Tests/Resources/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.URLAccessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
+			};
+			name = Debug;
+		};
+		67AA6AC1212DE83C00260244 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				INFOPLIST_FILE = Subprojects/URLAccess/Tests/Resources/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.URLAccessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
 			};
 			name = Release;
 		};
@@ -357,6 +808,24 @@
 			buildConfigurations = (
 				67AA6A8B212DE41600260244 /* Debug */,
 				67AA6A8C212DE41600260244 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67AA6ABB212DE83C00260244 /* Build configuration list for PBXNativeTarget "URLAccess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67AA6ABC212DE83C00260244 /* Debug */,
+				67AA6ABD212DE83C00260244 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67AA6ABF212DE83C00260244 /* Build configuration list for PBXNativeTarget "URLAccessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67AA6AC0212DE83C00260244 /* Debug */,
+				67AA6AC1212DE83C00260244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
