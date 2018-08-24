@@ -3,7 +3,7 @@
 //  DataStore.swift
 //  DataStore
 //
-//  Created by h0myach0k on 8/24/18.
+//  Created by Iurii Khomiak on 8/24/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -22,14 +22,17 @@ public struct StoreProperties
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Interface for data store provider
-protocol DataStore
+public protocol DataStore
 {
+    /// Data store identifier
+    var identifier: String {get}
+    
     /// Stores object for given key
     ///
     /// - Parameters:
     ///   - object: Object to store
     ///   - key: Unique key that is used for object identification
-    func store<T>(object: T, for key: String) where T : Storable
+    func store<T>(object: T, for key: String) throws where T : Storable
     
     /// Stores object for given key with given properties
     ///
@@ -37,7 +40,7 @@ protocol DataStore
     ///   - object: Object to store
     ///   - key: Unique key that is used for object identification
     ///   - properties: Additional storage properties
-    func store<T>(object: T, for key: String, properties: StoreProperties)
+    func store<T>(object: T, for key: String, properties: StoreProperties) throws 
         where T : Storable
     
     /// Returns object from storage it its available

@@ -24,7 +24,6 @@
 		6774DBF421301A3500886DF3 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF321301A3500886DF3 /* LoggerManager.swift */; };
 		6774DBF621301C7700886DF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF521301C7700886DF3 /* Log.swift */; };
 		6774DC092130241F00886DF3 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DBDB2130185700886DF3 /* Core.framework */; };
-		6774DC152130244900886DF3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6774DC122130244900886DF3 /* Info.plist */; };
 		6774DC162130244900886DF3 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC142130244900886DF3 /* LoggerTests.swift */; };
 		6774DC19213024BE00886DF3 /* TestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC18213024BE00886DF3 /* TestLogger.swift */; };
 		6774DC2821302DB600886DF3 /* DataStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DC1F21302DB500886DF3 /* DataStore.framework */; };
@@ -34,6 +33,9 @@
 		6774DC4821302E7800886DF3 /* DataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4421302DF500886DF3 /* DataStoreTests.swift */; };
 		6774DC4C21302EFB00886DF3 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4B21302EFB00886DF3 /* DataStore.swift */; };
 		6774DC4E21302F9D00886DF3 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4D21302F9D00886DF3 /* Storable.swift */; };
+		6774DC50213035C300886DF3 /* FileSystemDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4F213035C300886DF3 /* FileSystemDataStore.swift */; };
+		6774DC522130475800886DF3 /* DataStoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC512130475800886DF3 /* DataStoreErrors.swift */; };
+		6774DC54213051C100886DF3 /* DataStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC53213051C100886DF3 /* DataStoreFactory.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -104,6 +106,13 @@
 			remoteGlobalIDString = 6774DBDA2130185700886DF3;
 			remoteInfo = Core;
 		};
+		6774DC552130541100886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6A77212DE41400260244;
+			remoteInfo = TopReddit;
+		};
 		67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
@@ -172,6 +181,9 @@
 		6774DC4621302DF500886DF3 /* DataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
 		6774DC4B21302EFB00886DF3 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		6774DC4D21302F9D00886DF3 /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		6774DC4F213035C300886DF3 /* FileSystemDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemDataStore.swift; sourceTree = "<group>"; };
+		6774DC512130475800886DF3 /* DataStoreErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreErrors.swift; sourceTree = "<group>"; };
+		6774DC53213051C100886DF3 /* DataStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreFactory.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -420,7 +432,10 @@
 			children = (
 				6774DC4621302DF500886DF3 /* DataStore.h */,
 				6774DC4B21302EFB00886DF3 /* DataStore.swift */,
+				6774DC53213051C100886DF3 /* DataStoreFactory.swift */,
 				6774DC4D21302F9D00886DF3 /* Storable.swift */,
+				6774DC4F213035C300886DF3 /* FileSystemDataStore.swift */,
+				6774DC512130475800886DF3 /* DataStoreErrors.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -641,6 +656,7 @@
 			);
 			dependencies = (
 				6774DC0B2130241F00886DF3 /* PBXTargetDependency */,
+				6774DC562130541100886DF3 /* PBXTargetDependency */,
 			);
 			name = CoreTests;
 			productName = CoreTests;
@@ -767,7 +783,6 @@
 					};
 					6774DC2621302DB500886DF3 = {
 						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 67AA6A77212DE41400260244;
 					};
 					67AA6A77212DE41400260244 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -778,7 +793,6 @@
 					};
 					67AA6AAB212DE83C00260244 = {
 						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 67AA6A77212DE41400260244;
 					};
 				};
 			};
@@ -818,7 +832,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6774DC152130244900886DF3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,8 +901,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6774DC54213051C100886DF3 /* DataStoreFactory.swift in Sources */,
+				6774DC522130475800886DF3 /* DataStoreErrors.swift in Sources */,
 				6774DC4C21302EFB00886DF3 /* DataStore.swift in Sources */,
 				6774DC4E21302F9D00886DF3 /* Storable.swift in Sources */,
+				6774DC50213035C300886DF3 /* FileSystemDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,6 +994,11 @@
 			isa = PBXTargetDependency;
 			target = 6774DBDA2130185700886DF3 /* Core */;
 			targetProxy = 6774DC4921302E9D00886DF3 /* PBXContainerItemProxy */;
+		};
+		6774DC562130541100886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6A77212DE41400260244 /* TopReddit */;
+			targetProxy = 6774DC552130541100886DF3 /* PBXContainerItemProxy */;
 		};
 		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1077,6 +1098,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
 				INFOPLIST_FILE = Subprojects/Core/Tests/Resources/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1094,6 +1116,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
 				INFOPLIST_FILE = Subprojects/Core/Tests/Resources/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1180,7 +1203,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
 			};
 			name = Debug;
 		};
@@ -1200,7 +1222,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
 			};
 			name = Release;
 		};
@@ -1433,7 +1454,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
 			};
 			name = Debug;
 		};
@@ -1453,7 +1473,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
 			};
 			name = Release;
 		};
