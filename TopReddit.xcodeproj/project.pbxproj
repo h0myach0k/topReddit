@@ -36,6 +36,18 @@
 		6774DC50213035C300886DF3 /* FileSystemDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4F213035C300886DF3 /* FileSystemDataStore.swift */; };
 		6774DC522130475800886DF3 /* DataStoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC512130475800886DF3 /* DataStoreErrors.swift */; };
 		6774DC54213051C100886DF3 /* DataStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC53213051C100886DF3 /* DataStoreFactory.swift */; };
+		67978B6E2130631C00230527 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67978B652130631C00230527 /* ImageDownloader.framework */; };
+		67978B7A2130631C00230527 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67978B652130631C00230527 /* ImageDownloader.framework */; };
+		67978B7B2130631C00230527 /* ImageDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67978B652130631C00230527 /* ImageDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		67978B892130637600230527 /* ImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 67978B872130637600230527 /* ImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67978B902130638200230527 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978B8E2130638200230527 /* ImageDownloaderTests.swift */; };
+		67978B982130642E00230527 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978B972130642E00230527 /* ImageDownloader.swift */; };
+		67978B9A2130666400230527 /* ImageDownloaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978B992130666400230527 /* ImageDownloaderFactory.swift */; };
+		67978B9C213067EA00230527 /* ImageDownloaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978B9B213067EA00230527 /* ImageDownloaderItem.swift */; };
+		67978B9E21306E2100230527 /* ImageDownloadTaskSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978B9D21306E2100230527 /* ImageDownloadTaskSerializer.swift */; };
+		67978BA021306EA000230527 /* ImageDownloaderErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978B9F21306EA000230527 /* ImageDownloaderErrors.swift */; };
+		67978BA221306F4200230527 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BA121306F4200230527 /* ImageExtensions.swift */; };
+		67978BA82130815300230527 /* testImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 67978BA72130815300230527 /* testImage.jpeg */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -113,6 +125,48 @@
 			remoteGlobalIDString = 67AA6A77212DE41400260244;
 			remoteInfo = TopReddit;
 		};
+		67978B6F2130631C00230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67978B642130631C00230527;
+			remoteInfo = ImageDownloader;
+		};
+		67978B712130631C00230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6A77212DE41400260244;
+			remoteInfo = TopReddit;
+		};
+		67978B782130631C00230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67978B642130631C00230527;
+			remoteInfo = ImageDownloader;
+		};
+		67978B91213063D700230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6AA3212DE83C00260244;
+			remoteInfo = URLAccess;
+		};
+		67978B93213063D700230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DBDA2130185700886DF3;
+			remoteInfo = Core;
+		};
+		67978B95213063D700230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DC1E21302DB500886DF3;
+			remoteInfo = DataStore;
+		};
 		67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
@@ -146,6 +200,7 @@
 				67AA6ABA212DE83C00260244 /* URLAccess.framework in Embed Frameworks */,
 				6774DBE32130185700886DF3 /* Core.framework in Embed Frameworks */,
 				6774DC3521302DB600886DF3 /* DataStore.framework in Embed Frameworks */,
+				67978B7B2130631C00230527 /* ImageDownloader.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +239,19 @@
 		6774DC4F213035C300886DF3 /* FileSystemDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemDataStore.swift; sourceTree = "<group>"; };
 		6774DC512130475800886DF3 /* DataStoreErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreErrors.swift; sourceTree = "<group>"; };
 		6774DC53213051C100886DF3 /* DataStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreFactory.swift; sourceTree = "<group>"; };
+		67978B652130631C00230527 /* ImageDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67978B6D2130631C00230527 /* ImageDownloaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageDownloaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67978B852130637600230527 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67978B872130637600230527 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		67978B8C2130638200230527 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67978B8E2130638200230527 /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
+		67978B972130642E00230527 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		67978B992130666400230527 /* ImageDownloaderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderFactory.swift; sourceTree = "<group>"; };
+		67978B9B213067EA00230527 /* ImageDownloaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderItem.swift; sourceTree = "<group>"; };
+		67978B9D21306E2100230527 /* ImageDownloadTaskSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadTaskSerializer.swift; sourceTree = "<group>"; };
+		67978B9F21306EA000230527 /* ImageDownloaderErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderErrors.swift; sourceTree = "<group>"; };
+		67978BA121306F4200230527 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
+		67978BA72130815300230527 /* testImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImage.jpeg; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -238,6 +306,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67978B612130631C00230527 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67978B6A2130631C00230527 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978B6E2130631C00230527 /* ImageDownloader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6A75212DE41400260244 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +328,7 @@
 				67AA6AB9212DE83C00260244 /* URLAccess.framework in Frameworks */,
 				6774DBE22130185700886DF3 /* Core.framework in Frameworks */,
 				6774DC3421302DB600886DF3 /* DataStore.framework in Frameworks */,
+				67978B7A2130631C00230527 /* ImageDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +524,80 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		67978B822130637600230527 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				67978B862130637600230527 /* Sources */,
+				67978B832130637600230527 /* Resources */,
+				67978B8A2130638200230527 /* Tests */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		67978B832130637600230527 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				67978BA32130813400230527 /* Data */,
+				67978B842130637600230527 /* Plists */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		67978B842130637600230527 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				67978B852130637600230527 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		67978B862130637600230527 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				67978B872130637600230527 /* ImageDownloader.h */,
+				67978B992130666400230527 /* ImageDownloaderFactory.swift */,
+				67978B972130642E00230527 /* ImageDownloader.swift */,
+				67978B9B213067EA00230527 /* ImageDownloaderItem.swift */,
+				67978B9D21306E2100230527 /* ImageDownloadTaskSerializer.swift */,
+				67978B9F21306EA000230527 /* ImageDownloaderErrors.swift */,
+				67978BA121306F4200230527 /* ImageExtensions.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		67978B8A2130638200230527 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				67978B8D2130638200230527 /* Sources */,
+				67978B8B2130638200230527 /* Resources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		67978B8B2130638200230527 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				67978BA72130815300230527 /* testImage.jpeg */,
+				67978B8C2130638200230527 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		67978B8D2130638200230527 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				67978B8E2130638200230527 /* ImageDownloaderTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		67978BA32130813400230527 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		67AA6A6F212DE41400260244 = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +618,8 @@
 				6774DC042130241F00886DF3 /* CoreTests.xctest */,
 				6774DC1F21302DB500886DF3 /* DataStore.framework */,
 				6774DC2721302DB500886DF3 /* DataStoreTests.xctest */,
+				67978B652130631C00230527 /* ImageDownloader.framework */,
+				67978B6D2130631C00230527 /* ImageDownloaderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -503,6 +663,7 @@
 		67AA6AC2212DE87600260244 /* Subprojects */ = {
 			isa = PBXGroup;
 			children = (
+				67978B822130637600230527 /* ImageDownloader */,
 				6774DBE72130187B00886DF3 /* Core */,
 				67AA6AC3212DE87600260244 /* URLAccess */,
 				6774DC3C21302DF500886DF3 /* DataStore */,
@@ -615,6 +776,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67978B622130631C00230527 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978B892130637600230527 /* ImageDownloader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6AA1212DE83C00260244 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,6 +870,46 @@
 			productReference = 6774DC2721302DB500886DF3 /* DataStoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		67978B642130631C00230527 /* ImageDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67978B802130631C00230527 /* Build configuration list for PBXNativeTarget "ImageDownloader" */;
+			buildPhases = (
+				67978B602130631C00230527 /* Sources */,
+				67978B612130631C00230527 /* Frameworks */,
+				67978B622130631C00230527 /* Headers */,
+				67978B632130631C00230527 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67978B92213063D700230527 /* PBXTargetDependency */,
+				67978B94213063D700230527 /* PBXTargetDependency */,
+				67978B96213063D700230527 /* PBXTargetDependency */,
+			);
+			name = ImageDownloader;
+			productName = ImageDownloader;
+			productReference = 67978B652130631C00230527 /* ImageDownloader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		67978B6C2130631C00230527 /* ImageDownloaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67978B812130631C00230527 /* Build configuration list for PBXNativeTarget "ImageDownloaderTests" */;
+			buildPhases = (
+				67978B692130631C00230527 /* Sources */,
+				67978B6A2130631C00230527 /* Frameworks */,
+				67978B6B2130631C00230527 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67978B702130631C00230527 /* PBXTargetDependency */,
+				67978B722130631C00230527 /* PBXTargetDependency */,
+			);
+			name = ImageDownloaderTests;
+			productName = ImageDownloaderTests;
+			productReference = 67978B6D2130631C00230527 /* ImageDownloaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		67AA6A77212DE41400260244 /* TopReddit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67AA6A8A212DE41600260244 /* Build configuration list for PBXNativeTarget "TopReddit" */;
@@ -716,6 +925,7 @@
 				67AA6AB8212DE83C00260244 /* PBXTargetDependency */,
 				6774DBE12130185700886DF3 /* PBXTargetDependency */,
 				6774DC3321302DB600886DF3 /* PBXTargetDependency */,
+				67978B792130631C00230527 /* PBXTargetDependency */,
 			);
 			name = TopReddit;
 			productName = TopReddit;
@@ -784,6 +994,13 @@
 					6774DC2621302DB500886DF3 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					67978B642130631C00230527 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					67978B6C2130631C00230527 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					67AA6A77212DE41400260244 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -816,6 +1033,8 @@
 				6774DC032130241F00886DF3 /* CoreTests */,
 				6774DC1E21302DB500886DF3 /* DataStore */,
 				6774DC2621302DB500886DF3 /* DataStoreTests */,
+				67978B642130631C00230527 /* ImageDownloader */,
+				67978B6C2130631C00230527 /* ImageDownloaderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -846,6 +1065,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67978B632130631C00230527 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67978B6B2130631C00230527 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978BA82130815300230527 /* testImage.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,6 +1148,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				6774DC4821302E7800886DF3 /* DataStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67978B602130631C00230527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978B9E21306E2100230527 /* ImageDownloadTaskSerializer.swift in Sources */,
+				67978B982130642E00230527 /* ImageDownloader.swift in Sources */,
+				67978B9C213067EA00230527 /* ImageDownloaderItem.swift in Sources */,
+				67978BA221306F4200230527 /* ImageExtensions.swift in Sources */,
+				67978B9A2130666400230527 /* ImageDownloaderFactory.swift in Sources */,
+				67978BA021306EA000230527 /* ImageDownloaderErrors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67978B692130631C00230527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978B902130638200230527 /* ImageDownloaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,6 +1254,36 @@
 			isa = PBXTargetDependency;
 			target = 67AA6A77212DE41400260244 /* TopReddit */;
 			targetProxy = 6774DC552130541100886DF3 /* PBXContainerItemProxy */;
+		};
+		67978B702130631C00230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67978B642130631C00230527 /* ImageDownloader */;
+			targetProxy = 67978B6F2130631C00230527 /* PBXContainerItemProxy */;
+		};
+		67978B722130631C00230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6A77212DE41400260244 /* TopReddit */;
+			targetProxy = 67978B712130631C00230527 /* PBXContainerItemProxy */;
+		};
+		67978B792130631C00230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67978B642130631C00230527 /* ImageDownloader */;
+			targetProxy = 67978B782130631C00230527 /* PBXContainerItemProxy */;
+		};
+		67978B92213063D700230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6AA3212DE83C00260244 /* URLAccess */;
+			targetProxy = 67978B91213063D700230527 /* PBXContainerItemProxy */;
+		};
+		67978B94213063D700230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DBDA2130185700886DF3 /* Core */;
+			targetProxy = 67978B93213063D700230527 /* PBXContainerItemProxy */;
+		};
+		67978B96213063D700230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DC1E21302DB500886DF3 /* DataStore */;
+			targetProxy = 67978B95213063D700230527 /* PBXContainerItemProxy */;
 		};
 		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1219,6 +1504,101 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.DataStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67978B7C2130631C00230527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/ImageDownloader/Resources/Plists/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.ImageDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		67978B7D2130631C00230527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/ImageDownloader/Resources/Plists/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.ImageDownloader;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		67978B7E2130631C00230527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				INFOPLIST_FILE = Subprojects/ImageDownloader/Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.ImageDownloaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67978B7F2130631C00230527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				INFOPLIST_FILE = Subprojects/ImageDownloader/Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.ImageDownloaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1511,6 +1891,24 @@
 			buildConfigurations = (
 				6774DC3A21302DB600886DF3 /* Debug */,
 				6774DC3B21302DB600886DF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67978B802130631C00230527 /* Build configuration list for PBXNativeTarget "ImageDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67978B7C2130631C00230527 /* Debug */,
+				67978B7D2130631C00230527 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67978B812130631C00230527 /* Build configuration list for PBXNativeTarget "ImageDownloaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67978B7E2130631C00230527 /* Debug */,
+				67978B7F2130631C00230527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

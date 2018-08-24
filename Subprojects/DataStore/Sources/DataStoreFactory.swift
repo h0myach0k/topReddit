@@ -24,6 +24,8 @@ public class DataStoreFactory
             FileManager.SearchPathDomainMask)
     }
     
+    public init() {}
+    
     /// Creates new data store with given parameters
     ///
     /// - Parameters:

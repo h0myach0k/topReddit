@@ -18,6 +18,12 @@ public struct StoreProperties
     /// Property containing time interval that allows stored object live in
     ///     data store
     var validTimeInterval: TimeInterval?
+    
+    /// Public initializer
+    public init(validTimeInterval: TimeInterval? = nil)
+    {
+        self.validTimeInterval = validTimeInterval
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
