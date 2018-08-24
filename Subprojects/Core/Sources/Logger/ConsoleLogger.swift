@@ -14,12 +14,8 @@ import Foundation
 ////////////////////////////////////////////////////////////////////////////////
 class ConsoleLogger : Logger
 {
-    var logLevel: LogLevel = .none
-    
     func log(_ level: LogLevel, _ text: @autoclosure () -> String)
-    {
-        guard logLevel.rawValue >= level.rawValue else { return }
-        
+    {        
         let string: String
         let prefix: String
         switch level

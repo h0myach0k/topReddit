@@ -17,10 +17,7 @@ public final class LoggerManager
     /// Returns shared instance
     public static let shared = LoggerManager.createSharedManager()
     /// Log level assotiated with registered loggers
-    public var logLevel: LogLevel = .none
-    {
-        didSet { logLevelDidChange() }
-    }
+    public var logLevel: LogLevel = .none    
     
     /// Contains list of registered loggers
     private var loggers: [Logger] = []
@@ -31,7 +28,6 @@ public final class LoggerManager
     {
         lock.lock()
         defer { lock.unlock() }
-        logger.logLevel = logLevel
         loggers.append(logger)
     }
     
@@ -55,13 +51,6 @@ public final class LoggerManager
         return loggers
     }
     
-    private func logLevelDidChange()
-    {
-        lock.lock()
-        defer { lock.unlock() }
-        loggers.forEach { $0.logLevel = logLevel }
-    }
-    
     static private func createSharedManager() -> LoggerManager
     {
         let result = LoggerManager()
@@ -76,6 +65,7 @@ extension LoggerManager : Logger
 {
     public func log(_ level: LogLevel, _ text: @autoclosure () -> String)
     {
+        guard logLevel.rawValue >= level.rawValue else { return }
         getLoggers().forEach
         { logger in
             logger.log(level, text)

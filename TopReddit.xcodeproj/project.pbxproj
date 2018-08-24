@@ -23,6 +23,10 @@
 		6774DBF2213019BC00886DF3 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF1213019BC00886DF3 /* ConsoleLogger.swift */; };
 		6774DBF421301A3500886DF3 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF321301A3500886DF3 /* LoggerManager.swift */; };
 		6774DBF621301C7700886DF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF521301C7700886DF3 /* Log.swift */; };
+		6774DC092130241F00886DF3 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DBDB2130185700886DF3 /* Core.framework */; };
+		6774DC152130244900886DF3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6774DC122130244900886DF3 /* Info.plist */; };
+		6774DC162130244900886DF3 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC142130244900886DF3 /* LoggerTests.swift */; };
+		6774DC19213024BE00886DF3 /* TestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC18213024BE00886DF3 /* TestLogger.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -52,6 +56,13 @@
 			remoteInfo = Core;
 		};
 		6774DBF721301D6800886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DBDA2130185700886DF3;
+			remoteInfo = Core;
+		};
+		6774DC0A2130241F00886DF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
 			proxyType = 1;
@@ -113,6 +124,10 @@
 		6774DBF1213019BC00886DF3 /* ConsoleLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLogger.swift; sourceTree = "<group>"; };
 		6774DBF321301A3500886DF3 /* LoggerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 		6774DBF521301C7700886DF3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		6774DC042130241F00886DF3 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6774DC122130244900886DF3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6774DC142130244900886DF3 /* LoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		6774DC18213024BE00886DF3 /* TestLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLogger.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -141,6 +156,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC012130241F00886DF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DC092130241F00886DF3 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +229,7 @@
 			children = (
 				6774DBEA2130187B00886DF3 /* Sources */,
 				6774DBE82130187B00886DF3 /* Resources */,
+				6774DC0F2130244900886DF3 /* Tests */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -238,6 +262,48 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		6774DC0F2130244900886DF3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC132130244900886DF3 /* Sources */,
+				6774DC102130244900886DF3 /* Resources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		6774DC102130244900886DF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC112130244900886DF3 /* Plists */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6774DC112130244900886DF3 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC122130244900886DF3 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		6774DC132130244900886DF3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC142130244900886DF3 /* LoggerTests.swift */,
+				6774DC17213024B700886DF3 /* Shared */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6774DC17213024B700886DF3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC18213024BE00886DF3 /* TestLogger.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		67AA6A6F212DE41400260244 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +321,7 @@
 				67AA6AA4212DE83C00260244 /* URLAccess.framework */,
 				67AA6AAC212DE83C00260244 /* URLAccessTests.xctest */,
 				6774DBDB2130185700886DF3 /* Core.framework */,
+				6774DC042130241F00886DF3 /* CoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,6 +497,24 @@
 			productReference = 6774DBDB2130185700886DF3 /* Core.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		6774DC032130241F00886DF3 /* CoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6774DC0C2130241F00886DF3 /* Build configuration list for PBXNativeTarget "CoreTests" */;
+			buildPhases = (
+				6774DC002130241F00886DF3 /* Sources */,
+				6774DC012130241F00886DF3 /* Frameworks */,
+				6774DC022130241F00886DF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6774DC0B2130241F00886DF3 /* PBXTargetDependency */,
+			);
+			name = CoreTests;
+			productName = CoreTests;
+			productReference = 6774DC042130241F00886DF3 /* CoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		67AA6A77212DE41400260244 /* TopReddit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67AA6A8A212DE41600260244 /* Build configuration list for PBXNativeTarget "TopReddit" */;
@@ -502,6 +587,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
 					};
+					6774DC032130241F00886DF3 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					67AA6A77212DE41400260244 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -532,6 +620,7 @@
 				67AA6AA3212DE83C00260244 /* URLAccess */,
 				67AA6AAB212DE83C00260244 /* URLAccessTests */,
 				6774DBDA2130185700886DF3 /* Core */,
+				6774DC032130241F00886DF3 /* CoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -541,6 +630,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC022130241F00886DF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DC152130244900886DF3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +677,15 @@
 				6774DBF2213019BC00886DF3 /* ConsoleLogger.swift in Sources */,
 				6774DBF621301C7700886DF3 /* Log.swift in Sources */,
 				6774DBF421301A3500886DF3 /* LoggerManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC002130241F00886DF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DC19213024BE00886DF3 /* TestLogger.swift in Sources */,
+				6774DC162130244900886DF3 /* LoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +741,11 @@
 			isa = PBXTargetDependency;
 			target = 6774DBDA2130185700886DF3 /* Core */;
 			targetProxy = 6774DBF721301D6800886DF3 /* PBXContainerItemProxy */;
+		};
+		6774DC0B2130241F00886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DBDA2130185700886DF3 /* Core */;
+			targetProxy = 6774DC0A2130241F00886DF3 /* PBXContainerItemProxy */;
 		};
 		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -727,6 +838,40 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6774DC0D2130241F00886DF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Subprojects/Core/Tests/Resources/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.CoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6774DC0E2130241F00886DF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Subprojects/Core/Tests/Resources/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.CoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -991,6 +1136,15 @@
 			buildConfigurations = (
 				6774DBE42130185700886DF3 /* Debug */,
 				6774DBE52130185700886DF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6774DC0C2130241F00886DF3 /* Build configuration list for PBXNativeTarget "CoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6774DC0D2130241F00886DF3 /* Debug */,
+				6774DC0E2130241F00886DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
