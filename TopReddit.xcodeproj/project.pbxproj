@@ -27,6 +27,13 @@
 		6774DC152130244900886DF3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6774DC122130244900886DF3 /* Info.plist */; };
 		6774DC162130244900886DF3 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC142130244900886DF3 /* LoggerTests.swift */; };
 		6774DC19213024BE00886DF3 /* TestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC18213024BE00886DF3 /* TestLogger.swift */; };
+		6774DC2821302DB600886DF3 /* DataStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DC1F21302DB500886DF3 /* DataStore.framework */; };
+		6774DC3421302DB600886DF3 /* DataStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DC1F21302DB500886DF3 /* DataStore.framework */; };
+		6774DC3521302DB600886DF3 /* DataStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DC1F21302DB500886DF3 /* DataStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6774DC4721302E0000886DF3 /* DataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6774DC4621302DF500886DF3 /* DataStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6774DC4821302E7800886DF3 /* DataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4421302DF500886DF3 /* DataStoreTests.swift */; };
+		6774DC4C21302EFB00886DF3 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4B21302EFB00886DF3 /* DataStore.swift */; };
+		6774DC4E21302F9D00886DF3 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC4D21302F9D00886DF3 /* Storable.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -69,6 +76,34 @@
 			remoteGlobalIDString = 6774DBDA2130185700886DF3;
 			remoteInfo = Core;
 		};
+		6774DC2921302DB600886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DC1E21302DB500886DF3;
+			remoteInfo = DataStore;
+		};
+		6774DC2B21302DB600886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6A77212DE41400260244;
+			remoteInfo = TopReddit;
+		};
+		6774DC3221302DB600886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DC1E21302DB500886DF3;
+			remoteInfo = DataStore;
+		};
+		6774DC4921302E9D00886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DBDA2130185700886DF3;
+			remoteInfo = Core;
+		};
 		67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
@@ -101,6 +136,7 @@
 			files = (
 				67AA6ABA212DE83C00260244 /* URLAccess.framework in Embed Frameworks */,
 				6774DBE32130185700886DF3 /* Core.framework in Embed Frameworks */,
+				6774DC3521302DB600886DF3 /* DataStore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +164,14 @@
 		6774DC122130244900886DF3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6774DC142130244900886DF3 /* LoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		6774DC18213024BE00886DF3 /* TestLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLogger.swift; sourceTree = "<group>"; };
+		6774DC1F21302DB500886DF3 /* DataStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6774DC2721302DB500886DF3 /* DataStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6774DC3F21302DF500886DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6774DC4221302DF500886DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6774DC4421302DF500886DF3 /* DataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreTests.swift; sourceTree = "<group>"; };
+		6774DC4621302DF500886DF3 /* DataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		6774DC4B21302EFB00886DF3 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		6774DC4D21302F9D00886DF3 /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -167,12 +211,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6774DC1B21302DB500886DF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC2421302DB500886DF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DC2821302DB600886DF3 /* DataStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6A75212DE41400260244 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				67AA6AB9212DE83C00260244 /* URLAccess.framework in Frameworks */,
 				6774DBE22130185700886DF3 /* Core.framework in Frameworks */,
+				6774DC3421302DB600886DF3 /* DataStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +364,67 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		6774DC3C21302DF500886DF3 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC4521302DF500886DF3 /* Sources */,
+				6774DC3D21302DF500886DF3 /* Resources */,
+				6774DC4021302DF500886DF3 /* Tests */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		6774DC3D21302DF500886DF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC3E21302DF500886DF3 /* Plists */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6774DC3E21302DF500886DF3 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC3F21302DF500886DF3 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		6774DC4021302DF500886DF3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC4321302DF500886DF3 /* Sources */,
+				6774DC4121302DF500886DF3 /* Resources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		6774DC4121302DF500886DF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC4221302DF500886DF3 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6774DC4321302DF500886DF3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC4421302DF500886DF3 /* DataStoreTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6774DC4521302DF500886DF3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DC4621302DF500886DF3 /* DataStore.h */,
+				6774DC4B21302EFB00886DF3 /* DataStore.swift */,
+				6774DC4D21302F9D00886DF3 /* Storable.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		67AA6A6F212DE41400260244 = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +443,8 @@
 				67AA6AAC212DE83C00260244 /* URLAccessTests.xctest */,
 				6774DBDB2130185700886DF3 /* Core.framework */,
 				6774DC042130241F00886DF3 /* CoreTests.xctest */,
+				6774DC1F21302DB500886DF3 /* DataStore.framework */,
+				6774DC2721302DB500886DF3 /* DataStoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,6 +490,7 @@
 			children = (
 				6774DBE72130187B00886DF3 /* Core */,
 				67AA6AC3212DE87600260244 /* URLAccess */,
+				6774DC3C21302DF500886DF3 /* DataStore */,
 			);
 			path = Subprojects;
 			sourceTree = "<group>";
@@ -468,6 +592,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6774DC1C21302DB500886DF3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DC4721302E0000886DF3 /* DataStore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6AA1212DE83C00260244 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,6 +647,44 @@
 			productReference = 6774DC042130241F00886DF3 /* CoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6774DC1E21302DB500886DF3 /* DataStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6774DC3621302DB600886DF3 /* Build configuration list for PBXNativeTarget "DataStore" */;
+			buildPhases = (
+				6774DC1A21302DB500886DF3 /* Sources */,
+				6774DC1B21302DB500886DF3 /* Frameworks */,
+				6774DC1C21302DB500886DF3 /* Headers */,
+				6774DC1D21302DB500886DF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6774DC4A21302E9D00886DF3 /* PBXTargetDependency */,
+			);
+			name = DataStore;
+			productName = DataStore;
+			productReference = 6774DC1F21302DB500886DF3 /* DataStore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6774DC2621302DB500886DF3 /* DataStoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6774DC3921302DB600886DF3 /* Build configuration list for PBXNativeTarget "DataStoreTests" */;
+			buildPhases = (
+				6774DC2321302DB500886DF3 /* Sources */,
+				6774DC2421302DB500886DF3 /* Frameworks */,
+				6774DC2521302DB500886DF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6774DC2A21302DB600886DF3 /* PBXTargetDependency */,
+				6774DC2C21302DB600886DF3 /* PBXTargetDependency */,
+			);
+			name = DataStoreTests;
+			productName = DataStoreTests;
+			productReference = 6774DC2721302DB500886DF3 /* DataStoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		67AA6A77212DE41400260244 /* TopReddit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67AA6A8A212DE41600260244 /* Build configuration list for PBXNativeTarget "TopReddit" */;
@@ -529,6 +699,7 @@
 			dependencies = (
 				67AA6AB8212DE83C00260244 /* PBXTargetDependency */,
 				6774DBE12130185700886DF3 /* PBXTargetDependency */,
+				6774DC3321302DB600886DF3 /* PBXTargetDependency */,
 			);
 			name = TopReddit;
 			productName = TopReddit;
@@ -590,6 +761,14 @@
 					6774DC032130241F00886DF3 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					6774DC1E21302DB500886DF3 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					6774DC2621302DB500886DF3 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 67AA6A77212DE41400260244;
+					};
 					67AA6A77212DE41400260244 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -621,6 +800,8 @@
 				67AA6AAB212DE83C00260244 /* URLAccessTests */,
 				6774DBDA2130185700886DF3 /* Core */,
 				6774DC032130241F00886DF3 /* CoreTests */,
+				6774DC1E21302DB500886DF3 /* DataStore */,
+				6774DC2621302DB500886DF3 /* DataStoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -638,6 +819,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6774DC152130244900886DF3 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC1D21302DB500886DF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC2521302DB500886DF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +881,23 @@
 			files = (
 				6774DC19213024BE00886DF3 /* TestLogger.swift in Sources */,
 				6774DC162130244900886DF3 /* LoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC1A21302DB500886DF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DC4C21302EFB00886DF3 /* DataStore.swift in Sources */,
+				6774DC4E21302F9D00886DF3 /* Storable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6774DC2321302DB500886DF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DC4821302E7800886DF3 /* DataStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +958,26 @@
 			isa = PBXTargetDependency;
 			target = 6774DBDA2130185700886DF3 /* Core */;
 			targetProxy = 6774DC0A2130241F00886DF3 /* PBXContainerItemProxy */;
+		};
+		6774DC2A21302DB600886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DC1E21302DB500886DF3 /* DataStore */;
+			targetProxy = 6774DC2921302DB600886DF3 /* PBXContainerItemProxy */;
+		};
+		6774DC2C21302DB600886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6A77212DE41400260244 /* TopReddit */;
+			targetProxy = 6774DC2B21302DB600886DF3 /* PBXContainerItemProxy */;
+		};
+		6774DC3321302DB600886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DC1E21302DB500886DF3 /* DataStore */;
+			targetProxy = 6774DC3221302DB600886DF3 /* PBXContainerItemProxy */;
+		};
+		6774DC4A21302E9D00886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DBDA2130185700886DF3 /* Core */;
+			targetProxy = 6774DC4921302E9D00886DF3 /* PBXContainerItemProxy */;
 		};
 		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -872,6 +1104,103 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6774DC3721302DB600886DF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/DataStore/Resources/Plists/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.DataStore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6774DC3821302DB600886DF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/DataStore/Resources/Plists/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.DataStore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6774DC3A21302DB600886DF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				INFOPLIST_FILE = Subprojects/DataStore/Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.DataStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
+			};
+			name = Debug;
+		};
+		6774DC3B21302DB600886DF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				INFOPLIST_FILE = Subprojects/DataStore/Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.DataStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopReddit.app/TopReddit";
 			};
 			name = Release;
 		};
@@ -1145,6 +1474,24 @@
 			buildConfigurations = (
 				6774DC0D2130241F00886DF3 /* Debug */,
 				6774DC0E2130241F00886DF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6774DC3621302DB600886DF3 /* Build configuration list for PBXNativeTarget "DataStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6774DC3721302DB600886DF3 /* Debug */,
+				6774DC3821302DB600886DF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6774DC3921302DB600886DF3 /* Build configuration list for PBXNativeTarget "DataStoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6774DC3A21302DB600886DF3 /* Debug */,
+				6774DC3B21302DB600886DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
