@@ -10,6 +10,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 import Foundation
+import Core
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Responsible for request creation and managing of its URLSession instance.
@@ -59,7 +60,7 @@ public final class URLAccess
     @discardableResult
     public func peform(request: URLRequest) -> DataTask
     {
-        print("Prepare to perform request \(request)")
+        LogInfo("Prepare to perform request \(request) in \(self)")
         
         //! Obtain data task
         let urlSessionDataTask = session.dataTask(with: request)
@@ -111,7 +112,7 @@ public final class URLAccess
     //! MARK: - Private
     private func registerTask(_ task: Task)
     {
-        print("Registers task \(task) in \(self)")
+        LogInfo("Registers task \(task) in \(self)")
         
         tasksLock.lock()
         defer { tasksLock.unlock() }
@@ -121,7 +122,7 @@ public final class URLAccess
     
     private func unregisterTask(_ task: Task)
     {
-        print("Unregisters task \(task) in \(self)")
+        LogInfo("Unregisters task \(task) in \(self)")
         
         tasksLock.lock()
         defer { tasksLock.unlock() }

@@ -10,6 +10,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 import Foundation
+import Core
 
 ////////////////////////////////////////////////////////////////////////////////
 /// URLAccess Session Delegate instance that adopts URLSessionDelegates, and
@@ -30,7 +31,7 @@ open class SessionDelegate : NSObject
     
     func register(task: Task)
     {
-        print("Registering task \(task) in \(self)")
+        LogInfo("Registering task \(task) in \(self)")
         
         lock.lock()
         defer { lock.unlock() }
@@ -39,7 +40,7 @@ open class SessionDelegate : NSObject
     
     func unregister(task: Task)
     {
-        print("Unregistering task \(task) in \(self)")
+        LogInfo("Unregistering task \(task) in \(self)")
         
         lock.lock()
         defer { lock.unlock() }
@@ -64,7 +65,8 @@ extension SessionDelegate : URLSessionDelegate
     {
         guard let accessTask = self.task(for: task) else
         {
-            print("Delegate received message from non registered task")
+            LogError("Delegate received message from non registered task " +
+                "(\(task) in \(self)")
             return
         }
         accessTask.sessionDelegate.urlSession(session, task: task,
@@ -82,7 +84,8 @@ extension SessionDelegate : URLSessionDataDelegate
     {
         guard let task = self.task(for: dataTask) else
         {
-            print("Delegate received message from non registered task")
+            LogError("Delegate received message from non registered task " +
+                "(\(dataTask) in \(self)")
             return
         }
         

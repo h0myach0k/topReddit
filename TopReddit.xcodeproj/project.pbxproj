@@ -16,6 +16,13 @@
 		6774DBBC212EA06400886DF3 /* DataTaskValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBBB212EA06400886DF3 /* DataTaskValidationExtension.swift */; };
 		6774DBBE212EA80B00886DF3 /* DataTaskValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBBD212EA80A00886DF3 /* DataTaskValidation.swift */; };
 		6774DBC0212EA9F300886DF3 /* StatusCodeValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBBF212EA9F300886DF3 /* StatusCodeValidation.swift */; };
+		6774DBE22130185700886DF3 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DBDB2130185700886DF3 /* Core.framework */; };
+		6774DBE32130185700886DF3 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6774DBDB2130185700886DF3 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6774DBED2130187B00886DF3 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 6774DBEB2130187B00886DF3 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6774DBF0213018FD00886DF3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBEF213018FD00886DF3 /* Logger.swift */; };
+		6774DBF2213019BC00886DF3 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF1213019BC00886DF3 /* ConsoleLogger.swift */; };
+		6774DBF421301A3500886DF3 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF321301A3500886DF3 /* LoggerManager.swift */; };
+		6774DBF621301C7700886DF3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBF521301C7700886DF3 /* Log.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -31,13 +38,26 @@
 		67AA6AD6212DF3B800260244 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6AD5212DF3B800260244 /* SessionDelegate.swift */; };
 		67AA6AD8212DFB2200260244 /* TaskSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6AD7212DFB2200260244 /* TaskSessionDelegate.swift */; };
 		67AA6ADA212DFEAA00260244 /* URLAccessErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6AD9212DFEAA00260244 /* URLAccessErrors.swift */; };
-		67AA6B0F212F51F100260244 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6B0C212F51F100260244 /* Info.plist */; };
 		67AA6B10212F51F100260244 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6B0D212F51F100260244 /* test.js */; };
 		67AA6B14212F522A00260244 /* URLAccessTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B12212F522A00260244 /* URLAccessTestModels.swift */; };
 		67AA6B15212F522A00260244 /* URLAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B13212F522A00260244 /* URLAccessTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6774DBE02130185700886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DBDA2130185700886DF3;
+			remoteInfo = Core;
+		};
+		6774DBF721301D6800886DF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6774DBDA2130185700886DF3;
+			remoteInfo = Core;
+		};
 		67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
@@ -69,6 +89,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				67AA6ABA212DE83C00260244 /* URLAccess.framework in Embed Frameworks */,
+				6774DBE32130185700886DF3 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +106,13 @@
 		6774DBBB212EA06400886DF3 /* DataTaskValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskValidationExtension.swift; sourceTree = "<group>"; };
 		6774DBBD212EA80A00886DF3 /* DataTaskValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskValidation.swift; sourceTree = "<group>"; };
 		6774DBBF212EA9F300886DF3 /* StatusCodeValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeValidation.swift; sourceTree = "<group>"; };
+		6774DBDB2130185700886DF3 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6774DBE92130187B00886DF3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6774DBEB2130187B00886DF3 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		6774DBEF213018FD00886DF3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		6774DBF1213019BC00886DF3 /* ConsoleLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleLogger.swift; sourceTree = "<group>"; };
+		6774DBF321301A3500886DF3 /* LoggerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
+		6774DBF521301C7700886DF3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,11 +137,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6774DBD72130185700886DF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6A75212DE41400260244 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				67AA6AB9212DE83C00260244 /* URLAccess.framework in Frameworks */,
+				6774DBE22130185700886DF3 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +201,43 @@
 			path = ResponseValidations;
 			sourceTree = "<group>";
 		};
+		6774DBE72130187B00886DF3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6774DBEA2130187B00886DF3 /* Sources */,
+				6774DBE82130187B00886DF3 /* Resources */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6774DBE82130187B00886DF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DBE92130187B00886DF3 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6774DBEA2130187B00886DF3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6774DBEB2130187B00886DF3 /* Core.h */,
+				6774DBEE213018C900886DF3 /* Logger */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6774DBEE213018C900886DF3 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				6774DBEF213018FD00886DF3 /* Logger.swift */,
+				6774DBF1213019BC00886DF3 /* ConsoleLogger.swift */,
+				6774DBF321301A3500886DF3 /* LoggerManager.swift */,
+				6774DBF521301C7700886DF3 /* Log.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		67AA6A6F212DE41400260244 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +254,7 @@
 				67AA6A78212DE41400260244 /* TopReddit.app */,
 				67AA6AA4212DE83C00260244 /* URLAccess.framework */,
 				67AA6AAC212DE83C00260244 /* URLAccessTests.xctest */,
+				6774DBDB2130185700886DF3 /* Core.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +298,7 @@
 		67AA6AC2212DE87600260244 /* Subprojects */ = {
 			isa = PBXGroup;
 			children = (
+				6774DBE72130187B00886DF3 /* Core */,
 				67AA6AC3212DE87600260244 /* URLAccess */,
 			);
 			path = Subprojects;
@@ -318,6 +393,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		6774DBD82130185700886DF3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DBED2130187B00886DF3 /* Core.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6AA1212DE83C00260244 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,6 +412,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6774DBDA2130185700886DF3 /* Core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6774DBE62130185700886DF3 /* Build configuration list for PBXNativeTarget "Core" */;
+			buildPhases = (
+				6774DBD62130185700886DF3 /* Sources */,
+				6774DBD72130185700886DF3 /* Frameworks */,
+				6774DBD82130185700886DF3 /* Headers */,
+				6774DBD92130185700886DF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Core;
+			productName = Core;
+			productReference = 6774DBDB2130185700886DF3 /* Core.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		67AA6A77212DE41400260244 /* TopReddit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67AA6A8A212DE41600260244 /* Build configuration list for PBXNativeTarget "TopReddit" */;
@@ -342,6 +443,7 @@
 			);
 			dependencies = (
 				67AA6AB8212DE83C00260244 /* PBXTargetDependency */,
+				6774DBE12130185700886DF3 /* PBXTargetDependency */,
 			);
 			name = TopReddit;
 			productName = TopReddit;
@@ -360,6 +462,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6774DBF821301D6800886DF3 /* PBXTargetDependency */,
 			);
 			name = URLAccess;
 			productName = URLAccess;
@@ -395,6 +498,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Iurii Khomiak";
 				TargetAttributes = {
+					6774DBDA2130185700886DF3 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
 					67AA6A77212DE41400260244 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -424,11 +531,19 @@
 				67AA6A77212DE41400260244 /* TopReddit */,
 				67AA6AA3212DE83C00260244 /* URLAccess */,
 				67AA6AAB212DE83C00260244 /* URLAccessTests */,
+				6774DBDA2130185700886DF3 /* Core */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6774DBD92130185700886DF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6A76212DE41400260244 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,13 +566,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				67AA6B10212F51F100260244 /* test.js in Resources */,
-				67AA6B0F212F51F100260244 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6774DBD62130185700886DF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6774DBF0213018FD00886DF3 /* Logger.swift in Sources */,
+				6774DBF2213019BC00886DF3 /* ConsoleLogger.swift in Sources */,
+				6774DBF621301C7700886DF3 /* Log.swift in Sources */,
+				6774DBF421301A3500886DF3 /* LoggerManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6A74212DE41400260244 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,6 +626,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6774DBE12130185700886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DBDA2130185700886DF3 /* Core */;
+			targetProxy = 6774DBE02130185700886DF3 /* PBXContainerItemProxy */;
+		};
+		6774DBF821301D6800886DF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6774DBDA2130185700886DF3 /* Core */;
+			targetProxy = 6774DBF721301D6800886DF3 /* PBXContainerItemProxy */;
+		};
 		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 67AA6AA3212DE83C00260244 /* URLAccess */;
@@ -538,6 +673,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6774DBE42130185700886DF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/Core/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.Core;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6774DBE52130185700886DF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/Core/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.Core;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		67AA6A88212DE41600260244 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -794,6 +986,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6774DBE62130185700886DF3 /* Build configuration list for PBXNativeTarget "Core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6774DBE42130185700886DF3 /* Debug */,
+				6774DBE52130185700886DF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		67AA6A73212DE41400260244 /* Build configuration list for PBXProject "TopReddit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

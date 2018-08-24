@@ -10,6 +10,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 import Foundation
+import Core
 
 ////////////////////////////////////////////////////////////////////////////////
 /// URLSessionDelegate(s) for one linked URLSessionTask.
@@ -48,7 +49,7 @@ class TaskSessionDelegate : NSObject
     
     deinit
     {
-        print("Task session delegate deinit")
+        LogInfo("Task session deinit \(self)")
     }
     
     //! MARK: - Validation

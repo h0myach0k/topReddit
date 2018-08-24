@@ -10,6 +10,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 import Foundation
+import Core
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Represents URLSessionTask wrapper, contains response serializers, and
@@ -48,7 +49,7 @@ public class Task
     
     deinit
     {
-        print("Task deinitialized")
+        LogInfo("Task deinit \(self)")
     }
     
     //! MARK: - Start/Stop
