@@ -33,9 +33,9 @@ class StubDataSource<Value> : DataSource<Value>
         switch simulatedResult
         {
             case .error(let error):
-                finish(with: error)
+                finish(error: error)
             case .value(let value):
-                finish(with: value, metadata: [])
+                finish(value: value, metadata: [])
         }
     }
 }

@@ -79,6 +79,52 @@ class DataSourceTests : XCTestCase
         waitForExpectations(timeout: 5, handler: nil)
     }
     
+    func testPagingDataSource()
+    {
+        let testData = ["Obj1", "Obj2", "Obj3"]
+        let testIndex = 1
+        let dataSource = StubPagingDataSource(simulatedResult: testData,
+            currentIndex: testIndex)
+        
+        var expectedData = [["Obj2"], ["Obj2", "Obj3"], ["Obj1", "Obj2", "Obj3"]]
+        
+        let step1Expectation = self.expectation(description: "Step1")
+        dataSource.loadData(options: .initialLoad)
+        { changeRequest, error in
+            let expectedResult = expectedData.removeFirst()
+            self.check(changeRequest: changeRequest, dataSource: dataSource,
+                expectedResult: expectedResult)
+            step1Expectation.fulfill()
+        }
+        wait(for: [step1Expectation], timeout: 1)
+        XCTAssertTrue(dataSource.metadata.contains(.hasNext))
+        XCTAssertTrue(dataSource.metadata.contains(.hasPrevious))
+        
+        let step2Expectation = self.expectation(description: "Step2")
+        dataSource.loadData(options: .loadNext)
+        { changeRequest, error in
+            let expectedResult = expectedData.removeFirst()
+            self.check(changeRequest: changeRequest, dataSource: dataSource,
+                expectedResult: expectedResult)
+            step2Expectation.fulfill()
+        }
+        wait(for: [step2Expectation], timeout: 1)
+        XCTAssertFalse(dataSource.metadata.contains(.hasNext))
+        XCTAssertTrue(dataSource.metadata.contains(.hasPrevious))
+        
+        let step3Expectation = self.expectation(description: "Step3")
+        dataSource.loadData(options: .loadPrevious)
+        { changeRequest, error in
+            let expectedResult = expectedData.removeFirst()
+            self.check(changeRequest: changeRequest, dataSource: dataSource,
+                expectedResult: expectedResult)
+            step3Expectation.fulfill()
+        }
+        wait(for: [step3Expectation], timeout: 1)
+        XCTAssertFalse(dataSource.metadata.contains(.hasNext))
+        XCTAssertFalse(dataSource.metadata.contains(.hasPrevious))
+    }
+    
     //! MARK: - Utilities
     private func check<T>(changeRequest: DataSourceChangeRequest<String>,
         dataSource: T) where T : DataSourceProtocol, T.Value == String
@@ -92,5 +138,27 @@ class DataSourceTests : XCTestCase
         XCTAssertNil(dataSource.lastError)
         XCTAssertNotNil(dataSource.lastUpdateDate)
         XCTAssertFalse(dataSource.isEmpty)
+    }
+    
+    private func check(changeRequest: DataSourceChangeRequest<[String]>?,
+        dataSource: StubPagingDataSource, expectedResult: [String])
+    {
+        guard let changeRequest = changeRequest else
+        {
+            XCTAssertFalse(true, "Change request is nil")
+            return
+        }
+        
+        let contentValue = changeRequest.value
+        let dataSourceValue = dataSource.value
+        XCTAssertNotNil(contentValue, "Content value is nil")
+        XCTAssertNotNil(dataSourceValue, "DataSource value is nil")
+        XCTAssertEqual(dataSourceValue, contentValue, "Different values")
+        
+        XCTAssertNil(dataSource.lastError)
+        XCTAssertNotNil(dataSource.lastUpdateDate)
+        XCTAssertFalse(dataSource.isEmpty)
+        
+        XCTAssertEqual(expectedResult, contentValue)
     }
 }

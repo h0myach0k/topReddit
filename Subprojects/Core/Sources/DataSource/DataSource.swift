@@ -93,18 +93,13 @@ open class DataSource<Value> : DataSourceProtocol
         fatalError("To be implemented by subclasses")
     }
     
-    public func finish(with error: Error)
-    {
-        finish(with: nil, error: error, metadata: [])
-    }
-    
-    public func finish(with value: Value, metadata: Metadata)
+    public func finish(value: Value, metadata: Metadata)
     {
         let changeRequest = self.changeRequest(toReplaceValue: value)
-        finish(with: changeRequest, error: nil, metadata: metadata)
+        finish(changeRequest: changeRequest, metadata: metadata)
     }
     
-    open func finish(with changeRequest: ChangeRequest?, error: Error?,
+    open func finish(changeRequest: ChangeRequest? = nil, error: Error? = nil,
         metadata: Metadata = [])
     {
         lastUpdateDate = Date()
@@ -151,5 +146,45 @@ open class DataSource<Value> : DataSourceProtocol
     private func didCancelCurrentLoad()
     {
         delegate?.dataSourceDidCancelPreviouslyRunningRequest(self)
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//! MARK:  Collection extensions
+public extension DataSource where Value : RangeReplaceableCollection,
+    Value.Index == Int, Value.Element : Equatable
+{
+    func finishLoadNext(items: Value, metadata: Metadata = [])
+    {
+        let changeRequest = self.changeRequestToAppend(items: items)
+        finish(changeRequest: changeRequest, metadata: metadata)
+    }
+    
+    func finishLoadPrevious(items: Value, metadata: Metadata = [])
+    {
+        let changeRequest = self.changeRequestToInsert(items: items, at: 0)
+        finish(changeRequest: changeRequest, metadata: metadata)
+    }
+    
+    func finishReload(items: Value, metadata: Metadata = [])
+    {
+        let changeRequest = self.changeRequest(toReplaceValue: items)
+        finish(changeRequest: changeRequest, metadata: metadata)
+    }
+    
+    func finish(loadOptions: LoadOption, items: Value, metadata: Metadata = [])
+    {
+        if loadOptions.contains(.loadNext)
+        {
+            finishLoadNext(items: items, metadata: metadata)
+        }
+        else if loadOptions.contains(.loadPrevious)
+        {
+            finishLoadPrevious(items: items, metadata: metadata)
+        }
+        else if loadOptions.contains(.initialLoad)
+        {
+            finishReload(items: items, metadata: metadata)
+        }
     }
 }
