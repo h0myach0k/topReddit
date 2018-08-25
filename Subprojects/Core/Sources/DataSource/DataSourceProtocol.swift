@@ -48,7 +48,7 @@ public protocol DataSourceProtocol: class
     ///       by data source
     ///   - completion: Completion handler containing change request on success
     ///       or error on failure
-    func loadData(options: DataSourceLoadOptions, completion:
+    func loadData(options: DataSourceLoadOption, completion:
         DataSourceLoadDataCompletion<Value>?)
     
     /// Cancels currently active load operation

@@ -12,52 +12,30 @@
 import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
-class StubDataSource<Value> : DataSourceProtocol
+class StubDataSource<Value> : DataSource<Value>
 {
-    enum SimulateResult<Value>
+    enum SimulatedResult<Value>
     {
         case value(Value)
         case error(Error)
     }
     
-    var delegate: DataSourceDelegate?    
-    let simulatedResult: SimulateResult<Value>
-    var lastUpdateDate: Date?
-    var lastError: Error?
-    var value: Value?
-    var isEmpty = false
-    var isLoading = false
-    var metadata: DataSourceMetadata = []
+    let simulatedResult: SimulatedResult<Value>
     
-    init(simulatedResult: SimulateResult<Value>)
+    init(simulatedResult: SimulatedResult<Value>)
     {
         self.simulatedResult = simulatedResult
+        super.init()
     }
     
-    func loadData(options: DataSourceLoadOptions, completion:
-        ((DataSourceChangeRequest<Value>?, Error?) -> Void)?) {
-    }
-    
-    func cancel()
+    override func main(options: LoadOption)
     {
-    }
-    
-    func clean()
-    {
-    }
-    
-    func changeRequestToCleanValue() -> DataSourceChangeRequest<Value>
-    {
-        fatalError("Not implemented")
-    }
-    
-    func changeRequest(toReplaceValue value: Value?) -> DataSourceChangeRequest<Value>
-    {
-        fatalError("Not implemented")
-    }
-    
-    func performChangeRequest(_ changeRequest: DataSourceChangeRequest<Value>)
-    {
-        
+        switch simulatedResult
+        {
+            case .error(let error):
+                finish(with: error)
+            case .value(let value):
+                finish(with: value, metadata: [])
+        }
     }
 }

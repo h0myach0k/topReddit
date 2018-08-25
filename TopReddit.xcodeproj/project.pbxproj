@@ -50,12 +50,14 @@
 		67978BA82130815300230527 /* testImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 67978BA72130815300230527 /* testImage.jpeg */; };
 		67978BAD2131574800230527 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BAC2131574800230527 /* DataSourceProtocol.swift */; };
 		67978BAF2131587700230527 /* DataSourceMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BAE2131587700230527 /* DataSourceMetadata.swift */; };
-		67978BB1213158D300230527 /* DataSourceLoadOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BB0213158D300230527 /* DataSourceLoadOptions.swift */; };
+		67978BB1213158D300230527 /* DataSourceLoadOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BB0213158D300230527 /* DataSourceLoadOption.swift */; };
 		67978BB32131592E00230527 /* DataSourceChangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BB22131592E00230527 /* DataSourceChangeRequest.swift */; };
 		67978BB721315FA800230527 /* StubDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BB621315FA800230527 /* StubDataSource.swift */; };
 		67978BB82131607D00230527 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BB421315F7600230527 /* DataSourceTests.swift */; };
 		67978BBA2131613E00230527 /* DataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BB92131613E00230527 /* DataSourceDelegate.swift */; };
 		67978BBC213161F300230527 /* StubDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BBB213161F300230527 /* StubDataSourceDelegate.swift */; };
+		67978BBE2131664800230527 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BBD2131664800230527 /* DataSource.swift */; };
+		67978BC021316BB600230527 /* DataSourceChangeRequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BBF21316BB600230527 /* DataSourceChangeRequestExtensions.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -262,12 +264,14 @@
 		67978BA72130815300230527 /* testImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImage.jpeg; sourceTree = "<group>"; };
 		67978BAC2131574800230527 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
 		67978BAE2131587700230527 /* DataSourceMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMetadata.swift; sourceTree = "<group>"; };
-		67978BB0213158D300230527 /* DataSourceLoadOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceLoadOptions.swift; sourceTree = "<group>"; };
+		67978BB0213158D300230527 /* DataSourceLoadOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceLoadOption.swift; sourceTree = "<group>"; };
 		67978BB22131592E00230527 /* DataSourceChangeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceChangeRequest.swift; sourceTree = "<group>"; };
 		67978BB421315F7600230527 /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
 		67978BB621315FA800230527 /* StubDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDataSource.swift; sourceTree = "<group>"; };
 		67978BB92131613E00230527 /* DataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceDelegate.swift; sourceTree = "<group>"; };
 		67978BBB213161F300230527 /* StubDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDataSourceDelegate.swift; sourceTree = "<group>"; };
+		67978BBD2131664800230527 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		67978BBF21316BB600230527 /* DataSourceChangeRequestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceChangeRequestExtensions.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -623,9 +627,11 @@
 			children = (
 				67978BAC2131574800230527 /* DataSourceProtocol.swift */,
 				67978BAE2131587700230527 /* DataSourceMetadata.swift */,
-				67978BB0213158D300230527 /* DataSourceLoadOptions.swift */,
+				67978BB0213158D300230527 /* DataSourceLoadOption.swift */,
 				67978BB22131592E00230527 /* DataSourceChangeRequest.swift */,
 				67978BB92131613E00230527 /* DataSourceDelegate.swift */,
+				67978BBD2131664800230527 /* DataSource.swift */,
+				67978BBF21316BB600230527 /* DataSourceChangeRequestExtensions.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -1151,8 +1157,10 @@
 				6774DBF0213018FD00886DF3 /* Logger.swift in Sources */,
 				6774DBF2213019BC00886DF3 /* ConsoleLogger.swift in Sources */,
 				6774DBF621301C7700886DF3 /* Log.swift in Sources */,
-				67978BB1213158D300230527 /* DataSourceLoadOptions.swift in Sources */,
+				67978BB1213158D300230527 /* DataSourceLoadOption.swift in Sources */,
 				67978BBC213161F300230527 /* StubDataSourceDelegate.swift in Sources */,
+				67978BBE2131664800230527 /* DataSource.swift in Sources */,
+				67978BC021316BB600230527 /* DataSourceChangeRequestExtensions.swift in Sources */,
 				67978BB721315FA800230527 /* StubDataSource.swift in Sources */,
 				6774DBF421301A3500886DF3 /* LoggerManager.swift in Sources */,
 				67978BB32131592E00230527 /* DataSourceChangeRequest.swift in Sources */,
