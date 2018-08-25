@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 import Foundation
 import URLAccess
+import Core
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Creates Reddit Access instances by given url access.
@@ -35,6 +36,13 @@ public class RedditAccessFactory
         RedditAccessParameters) -> RedditAccess
     {
         return RedditAccessImp(urlAccess: urlAccess, parameters: parameters)
+    }
+    
+    /// Creates data source for given query
+    public func createDataSource(for query: ListingQuery, in redditAccess:
+        RedditAccess) -> DataSource<[ListingItem]>
+    {
+        return ListingQueryDataSource(query: query, redditAccess: redditAccess)
     }
 }
 

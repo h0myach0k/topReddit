@@ -152,7 +152,7 @@ open class DataSource<Value> : DataSourceProtocol
 ////////////////////////////////////////////////////////////////////////////////
 //! MARK:  Collection extensions
 public extension DataSource where Value : RangeReplaceableCollection,
-    Value.Index == Int, Value.Element : Equatable
+    Value.Index == Int
 {
     func finishLoadNext(items: Value, metadata: Metadata = [])
     {

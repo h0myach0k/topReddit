@@ -49,7 +49,7 @@ class RedditAccessTests: XCTestCase
             query2 = value.query(for: .next)
             XCTAssertNotNil(query2)
         }
-        wait(for: [expectation1], timeout: 2)
+        wait(for: [expectation1], timeout: 5)
         
         guard nil != query2 else { return }
         let expectation2 = self.expectation(description: "Run Expectation 2")
@@ -63,7 +63,7 @@ class RedditAccessTests: XCTestCase
             XCTAssertEqual(value.items.map {$0.title}, expectedData2)
             XCTAssertNotNil(value.query(for: .next))
         }
-        wait(for: [expectation2], timeout: 2)
+        wait(for: [expectation2], timeout: 5)
     }
     
     //! MARK: - Private
