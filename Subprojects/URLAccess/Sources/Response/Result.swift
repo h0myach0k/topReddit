@@ -39,3 +39,18 @@ public extension Result
         return nil
     }
 }
+
+////////////////////////////////////////////////////////////////////////////////
+public extension Result
+{
+    func map<T>(_ transform: (Object) -> T) -> Result<T>
+    {
+        switch self
+        {
+            case .success(let object):
+                return .success(transform(object))
+            case .failure(let error):
+                return .failure(error)
+        }
+    }
+}
