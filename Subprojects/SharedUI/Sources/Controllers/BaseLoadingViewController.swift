@@ -48,6 +48,12 @@ open class BaseLoadingViewController : BaseStatesViewController
     }
     
     //! MARK: - UIViewController overrides
+    open override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setScreen(isEmpty && showsLoadingView ? .loading : .content)
+    }
+    
     open override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
