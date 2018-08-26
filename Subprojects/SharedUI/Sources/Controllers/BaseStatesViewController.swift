@@ -13,6 +13,7 @@ import Foundation
 import Core
 
 ////////////////////////////////////////////////////////////////////////////////
+/// View controller that defines posibility to switch states animated
 open class BaseStatesViewController : UIViewController, ErrorViewDelegate
 {
     //! MARK: - Forward Declarations
@@ -76,7 +77,7 @@ open class BaseStatesViewController : UIViewController, ErrorViewDelegate
     {
         super.init(coder: aDecoder)
     }
-        
+    
     //! MARK: - UIViewController overrides
     open override func viewDidLoad()
     {

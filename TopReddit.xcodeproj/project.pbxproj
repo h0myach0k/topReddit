@@ -116,6 +116,7 @@
 		67978C8E213293D800230527 /* BaseStatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C8D213293D800230527 /* BaseStatesViewController.swift */; };
 		67978C91213294DE00230527 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67978C90213294DE00230527 /* Localizable.strings */; };
 		67978C932132951600230527 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C922132951600230527 /* StringExtensions.swift */; };
+		67978C972132B45B00230527 /* BaseLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C962132B45B00230527 /* BaseLoadingViewController.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -426,6 +427,7 @@
 		67978C8D213293D800230527 /* BaseStatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStatesViewController.swift; sourceTree = "<group>"; };
 		67978C90213294DE00230527 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		67978C922132951600230527 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		67978C962132B45B00230527 /* BaseLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLoadingViewController.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1017,6 +1019,7 @@
 			isa = PBXGroup;
 			children = (
 				67978C8D213293D800230527 /* BaseStatesViewController.swift */,
+				67978C962132B45B00230527 /* BaseLoadingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1795,6 +1798,7 @@
 				67978C8321328C0600230527 /* DefaultErrorView.swift in Sources */,
 				67978C6C2132842300230527 /* DefaultLoadingView.swift in Sources */,
 				67978C712132873C00230527 /* BundleExtensions.swift in Sources */,
+				67978C972132B45B00230527 /* BaseLoadingViewController.swift in Sources */,
 				67978C8E213293D800230527 /* BaseStatesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
