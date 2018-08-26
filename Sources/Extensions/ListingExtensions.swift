@@ -1,27 +1,30 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  AppDelegate.swift
+//  ListingExtensions.swift
 //  TopReddit
 //
-//  Created by Iurii Khomiak on 8/22/18.
+//  Created by Iurii Khomiak on 8/26/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
-import UIKit
-import Core
+import Foundation
+import RedditAccess
 
 ////////////////////////////////////////////////////////////////////////////////
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate
+extension Listing
 {
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions
-    	launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    var title: String
     {
-        LoggerManager.shared.logLevel = .info        
-        return true
+        switch self
+        {
+            case .new:
+                return "New Stories".localized
+            case .top:
+                return "Top Stories".localized
+            case .random:
+                return "Random Stories".localized        
+        }
     }
 }

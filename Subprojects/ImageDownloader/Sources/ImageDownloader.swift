@@ -47,7 +47,7 @@ public class ImageDownloader
     }
     
     //! MARK: - Public actions
-    func loadImage(with url: URL, target: AnyObject? = nil,
+    public func loadImage(with url: URL, target: AnyObject? = nil,
         identifier: String? = nil, queue: DispatchQueue? = nil,
         handler: @escaping Completion)
     {
@@ -91,7 +91,7 @@ public class ImageDownloader
         }
     }
     
-    func cancelLoadingImages(for url: URL)
+    public func cancelLoadingImages(for url: URL)
     {
         lock.lock()
         let items = self.items.filter {$0.url == url}
@@ -99,7 +99,7 @@ public class ImageDownloader
         cancelLoading(items: items)
     }
     
-    func cancelLoadingImages(with identifier: String)
+    public func cancelLoadingImages(with identifier: String)
     {
         lock.lock()
         let items = self.items.filter {$0.identifier == identifier}
@@ -107,7 +107,7 @@ public class ImageDownloader
         cancelLoading(items: items)
     }
     
-    func cancelLoadingImages(with target: AnyObject)
+    public func cancelLoadingImages(with target: AnyObject)
     {
         lock.lock()
         let items = self.items.filter {$0.target === target}

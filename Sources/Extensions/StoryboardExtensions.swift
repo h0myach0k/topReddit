@@ -1,27 +1,27 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  AppDelegate.swift
+//  StoryboardExtensions.swift
 //  TopReddit
 //
-//  Created by Iurii Khomiak on 8/22/18.
+//  Created by h0myach0k on 8/26/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
 import UIKit
-import Core
 
 ////////////////////////////////////////////////////////////////////////////////
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate
+protocol MainStoryboard
 {
-    var window: UIWindow?
+    func instantiateListingViewController() -> ListingViewController
+}
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions
-    	launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+////////////////////////////////////////////////////////////////////////////////
+extension UIStoryboard
+{
+    static var main: MainStoryboard & UIStoryboard
     {
-        LoggerManager.shared.logLevel = .info        
-        return true
+        return MainStoryboardImp()
     }
 }

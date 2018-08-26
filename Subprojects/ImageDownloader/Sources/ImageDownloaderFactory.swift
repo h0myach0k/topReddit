@@ -21,7 +21,7 @@ fileprivate let defaultDataStoreIdentifier = "ImageDownloader"
 public class ImageDownloaderFactory
 {
     /// Returns shared image downloader
-    static let sharedDownloader: ImageDownloader = getSharedImageDownloader()
+    public static let sharedDownloader: ImageDownloader = getSharedImageDownloader()
     
     /// Initializes new image downloader instance
     ///
