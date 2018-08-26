@@ -68,11 +68,11 @@ fileprivate extension ListingQuery
         switch listing
         {
             case .top:
-                return "top.json"
+                return "/top.json"
             case .random:
-                return "random.json"
+                return "/random.json"
             case .new:
-                return "new.json"
+                return "/new.json"
         }
     }
     

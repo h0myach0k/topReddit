@@ -22,9 +22,9 @@ public class RedditAccessFactory
     /// Parameters to be used during shared instance creation.
     /// Parameters must be set before sharedRedditAccess method is called,
     /// otherwise no effect will be.
-    static var sharedRedditAccessParameters: RedditAccessParameters = .default    
+    static public var sharedRedditAccessParameters: RedditAccessParameters = .default    
     /// Returns shared reddit provider
-    static let sharedRedditAccess: RedditAccess = RedditAccessImp(
+    static public let sharedRedditAccess: RedditAccess = RedditAccessImp(
         urlAccess: .shared, parameters: sharedRedditAccessParameters)
     
     //! MARK: - Init & Deinit

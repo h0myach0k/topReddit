@@ -118,6 +118,11 @@
 		67978C932132951600230527 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C922132951600230527 /* StringExtensions.swift */; };
 		67978C972132B45B00230527 /* BaseLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C962132B45B00230527 /* BaseLoadingViewController.swift */; };
 		67978C992132BA2E00230527 /* DataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C982132BA2E00230527 /* DataSourceViewController.swift */; };
+		67978C9B2132BF3F00230527 /* LoadMoreFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C9A2132BF3F00230527 /* LoadMoreFooter.swift */; };
+		67978C9D2132C92100230527 /* ScrollDataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C9C2132C92100230527 /* ScrollDataSourceViewController.swift */; };
+		67978C9F2132CCBC00230527 /* CollectionDataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C9E2132CCBC00230527 /* CollectionDataSourceViewController.swift */; };
+		67978CA12132D59A00230527 /* DefaultLoadMoreFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978CA02132D59A00230527 /* DefaultLoadMoreFooter.swift */; };
+		67978CA52132E0B800230527 /* DefaultLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67978CA42132E0B800230527 /* DefaultLoadMoreFooter.xib */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -430,6 +435,11 @@
 		67978C922132951600230527 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		67978C962132B45B00230527 /* BaseLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLoadingViewController.swift; sourceTree = "<group>"; };
 		67978C982132BA2E00230527 /* DataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceViewController.swift; sourceTree = "<group>"; };
+		67978C9A2132BF3F00230527 /* LoadMoreFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreFooter.swift; sourceTree = "<group>"; };
+		67978C9C2132C92100230527 /* ScrollDataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDataSourceViewController.swift; sourceTree = "<group>"; };
+		67978C9E2132CCBC00230527 /* CollectionDataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataSourceViewController.swift; sourceTree = "<group>"; };
+		67978CA02132D59A00230527 /* DefaultLoadMoreFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadMoreFooter.swift; sourceTree = "<group>"; };
+		67978CA42132E0B800230527 /* DefaultLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultLoadMoreFooter.xib; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -968,6 +978,7 @@
 				67978C68213282CD00230527 /* LoadingView.swift */,
 				67978C72213287F900230527 /* NoDataView.swift */,
 				67978C8021328B4300230527 /* ErrorView.swift */,
+				67978C9A2132BF3F00230527 /* LoadMoreFooter.swift */,
 				67978C6F2132873200230527 /* Extensions */,
 				67978C6A2132841700230527 /* Implementations */,
 			);
@@ -980,6 +991,7 @@
 				67978C6B2132842300230527 /* DefaultLoadingView.swift */,
 				67978C742132887F00230527 /* DefaultNoDataView.swift */,
 				67978C8221328C0600230527 /* DefaultErrorView.swift */,
+				67978CA02132D59A00230527 /* DefaultLoadMoreFooter.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -1013,6 +1025,7 @@
 				67978C6D2132842E00230527 /* DefaultLoadingView.xib */,
 				67978C762132888600230527 /* DefaultNoDataView.xib */,
 				67978C8421328CA000230527 /* DefaultErrorView.xib */,
+				67978CA42132E0B800230527 /* DefaultLoadMoreFooter.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -1023,6 +1036,8 @@
 				67978C8D213293D800230527 /* BaseStatesViewController.swift */,
 				67978C962132B45B00230527 /* BaseLoadingViewController.swift */,
 				67978C982132BA2E00230527 /* DataSourceViewController.swift */,
+				67978C9C2132C92100230527 /* ScrollDataSourceViewController.swift */,
+				67978C9E2132CCBC00230527 /* CollectionDataSourceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1639,6 +1654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67978C6E2132842E00230527 /* DefaultLoadingView.xib in Resources */,
+				67978CA52132E0B800230527 /* DefaultLoadMoreFooter.xib in Resources */,
 				67978C8921328D5500230527 /* ico_cloud_off.png in Resources */,
 				67978C8B21328D5500230527 /* ico_cloud_off@3x.png in Resources */,
 				67978C8521328CA000230527 /* DefaultErrorView.xib in Resources */,
@@ -1794,8 +1810,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				67978C69213282CD00230527 /* LoadingView.swift in Sources */,
+				67978C9B2132BF3F00230527 /* LoadMoreFooter.swift in Sources */,
 				67978C8121328B4300230527 /* ErrorView.swift in Sources */,
+				67978C9D2132C92100230527 /* ScrollDataSourceViewController.swift in Sources */,
 				67978C752132887F00230527 /* DefaultNoDataView.swift in Sources */,
+				67978C9F2132CCBC00230527 /* CollectionDataSourceViewController.swift in Sources */,
+				67978CA12132D59A00230527 /* DefaultLoadMoreFooter.swift in Sources */,
 				67978C932132951600230527 /* StringExtensions.swift in Sources */,
 				67978C73213287F900230527 /* NoDataView.swift in Sources */,
 				67978C992132BA2E00230527 /* DataSourceViewController.swift in Sources */,

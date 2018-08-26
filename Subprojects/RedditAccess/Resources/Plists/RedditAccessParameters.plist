@@ -3,6 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>baseUrl</key>
-	<string>https://www.reddit.com</string>
+	<dict>
+		<key>relative</key>
+		<string>https://www.reddit.com</string>
+	</dict>
 </dict>
 </plist>

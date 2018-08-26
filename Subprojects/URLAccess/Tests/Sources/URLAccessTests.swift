@@ -13,6 +13,9 @@ import XCTest
 @testable import URLAccess
 
 ////////////////////////////////////////////////////////////////////////////////
+fileprivate let defaultTimeout: TimeInterval = 5
+
+////////////////////////////////////////////////////////////////////////////////
 class URLAccessTests: XCTestCase
 {
     func testURLAccessCreation()
@@ -35,7 +38,7 @@ class URLAccessTests: XCTestCase
             !URLAccess.shared.contains(task: task)
         }), evaluatedWith: task, handler: nil)
         
-        waitForExpectations(timeout: 1.0)
+        waitForExpectations(timeout: defaultTimeout)
     }
     
     func testPerformRequestAndValidation()
@@ -50,7 +53,7 @@ class URLAccessTests: XCTestCase
             !URLAccess.shared.contains(task: task)
         }), evaluatedWith: task, handler: nil)
         
-        waitForExpectations(timeout: 1.0)
+        waitForExpectations(timeout: defaultTimeout)
     }
     
     func testPerformRequestValidationResponse()
@@ -65,7 +68,7 @@ class URLAccessTests: XCTestCase
             }
         XCTAssertTrue(URLAccess.shared.contains(task: task),
             "URL Access doesnt register task")
-        waitForExpectations(timeout: 1.0)
+        waitForExpectations(timeout: defaultTimeout)
         XCTAssertFalse(URLAccess.shared.contains(task: task))
     }
     
@@ -85,7 +88,7 @@ class URLAccessTests: XCTestCase
             !URLAccess.shared.contains(task: task)
         }), evaluatedWith: task, handler: nil)
         
-        waitForExpectations(timeout: 1)
+        waitForExpectations(timeout: defaultTimeout)
     }
     
     func testJSON()
@@ -105,7 +108,7 @@ class URLAccessTests: XCTestCase
                 expectation.fulfill()
             }
         
-        waitForExpectations(timeout: 1)
+        waitForExpectations(timeout: defaultTimeout)
     }
     
     //! MARK: - Private
