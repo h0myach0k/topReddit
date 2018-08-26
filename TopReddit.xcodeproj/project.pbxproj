@@ -113,6 +113,9 @@
 		67978C8921328D5500230527 /* ico_cloud_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C8621328D5500230527 /* ico_cloud_off.png */; };
 		67978C8A21328D5500230527 /* ico_cloud_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C8721328D5500230527 /* ico_cloud_off@2x.png */; };
 		67978C8B21328D5500230527 /* ico_cloud_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C8821328D5500230527 /* ico_cloud_off@3x.png */; };
+		67978C8E213293D800230527 /* BaseStatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C8D213293D800230527 /* BaseStatesViewController.swift */; };
+		67978C91213294DE00230527 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67978C90213294DE00230527 /* Localizable.strings */; };
+		67978C932132951600230527 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C922132951600230527 /* StringExtensions.swift */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -259,6 +262,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 67978C522132821D00230527;
 			remoteInfo = SharedUI;
+		};
+		67978C9421329F2A00230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67AA6AA3212DE83C00260244;
+			remoteInfo = URLAccess;
 		};
 		67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -413,6 +423,9 @@
 		67978C8621328D5500230527 /* ico_cloud_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_cloud_off.png; sourceTree = "<group>"; };
 		67978C8721328D5500230527 /* ico_cloud_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_cloud_off@2x.png"; sourceTree = "<group>"; };
 		67978C8821328D5500230527 /* ico_cloud_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_cloud_off@3x.png"; sourceTree = "<group>"; };
+		67978C8D213293D800230527 /* BaseStatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStatesViewController.swift; sourceTree = "<group>"; };
+		67978C90213294DE00230527 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		67978C922132951600230527 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -919,6 +932,7 @@
 		67978C602132824100230527 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				67978C8F213294CA00230527 /* Strings */,
 				67978C782132896700230527 /* Icons */,
 				67978C792132896700230527 /* Xibs */,
 				67978C612132824100230527 /* Plists */,
@@ -938,6 +952,7 @@
 			isa = PBXGroup;
 			children = (
 				67978C642132824100230527 /* SharedUI.h */,
+				67978C8C2132938E00230527 /* Controllers */,
 				67978C67213282C500230527 /* Views */,
 			);
 			path = Sources;
@@ -969,6 +984,7 @@
 			isa = PBXGroup;
 			children = (
 				67978C702132873C00230527 /* BundleExtensions.swift */,
+				67978C922132951600230527 /* StringExtensions.swift */,
 			);
 			name = Extensions;
 			path = Subprojects/SharedUI/Sources/Extensions;
@@ -995,6 +1011,22 @@
 				67978C8421328CA000230527 /* DefaultErrorView.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		67978C8C2132938E00230527 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				67978C8D213293D800230527 /* BaseStatesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		67978C8F213294CA00230527 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				67978C90213294DE00230527 /* Localizable.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		67AA6A6F212DE41400260244 = {
@@ -1342,6 +1374,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				67978C9521329F2A00230527 /* PBXTargetDependency */,
 			);
 			name = RedditAccess;
 			productName = RedditAccess;
@@ -1604,6 +1637,7 @@
 				67978C8B21328D5500230527 /* ico_cloud_off@3x.png in Resources */,
 				67978C8521328CA000230527 /* DefaultErrorView.xib in Resources */,
 				67978C7F213289D100230527 /* ico_face_unhappy@3x.png in Resources */,
+				67978C91213294DE00230527 /* Localizable.strings in Resources */,
 				67978C8A21328D5500230527 /* ico_cloud_off@2x.png in Resources */,
 				67978C7E213289D100230527 /* ico_face_unhappy@2x.png in Resources */,
 				67978C772132888600230527 /* DefaultNoDataView.xib in Resources */,
@@ -1756,10 +1790,12 @@
 				67978C69213282CD00230527 /* LoadingView.swift in Sources */,
 				67978C8121328B4300230527 /* ErrorView.swift in Sources */,
 				67978C752132887F00230527 /* DefaultNoDataView.swift in Sources */,
+				67978C932132951600230527 /* StringExtensions.swift in Sources */,
 				67978C73213287F900230527 /* NoDataView.swift in Sources */,
 				67978C8321328C0600230527 /* DefaultErrorView.swift in Sources */,
 				67978C6C2132842300230527 /* DefaultLoadingView.swift in Sources */,
 				67978C712132873C00230527 /* BundleExtensions.swift in Sources */,
+				67978C8E213293D800230527 /* BaseStatesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1895,6 +1931,11 @@
 			isa = PBXTargetDependency;
 			target = 67978C522132821D00230527 /* SharedUI */;
 			targetProxy = 67978C582132821D00230527 /* PBXContainerItemProxy */;
+		};
+		67978C9521329F2A00230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67AA6AA3212DE83C00260244 /* URLAccess */;
+			targetProxy = 67978C9421329F2A00230527 /* PBXContainerItemProxy */;
 		};
 		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

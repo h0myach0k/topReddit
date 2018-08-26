@@ -36,6 +36,14 @@ class DefaultLoadingView : LoadingView
         }
     }
     
+    //! MARK: - NSObject overrides
+    public override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        titleLabel.text = title
+        messageLabel.text = message
+    }
+    
     //! MARK: Instantiate
     static func instantiate() -> DefaultLoadingView
     {

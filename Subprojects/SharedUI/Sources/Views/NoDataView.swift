@@ -20,6 +20,8 @@ public class NoDataView : UIView
     
     /// No data message
     public var message: String?
+    /// No data icon
+    public var icon: UIImage?
     
     /// MARK: - Init & Deinit
     public override init(frame: CGRect)

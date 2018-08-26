@@ -53,6 +53,16 @@ class DefaultErrorView : ErrorView
         }
     }
     
+    //! MARK: - NSObject overrides
+    public override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        titleLabel.text = title
+        messageLabel.text = message
+        actionButton.setTitle(action, for: .normal)
+        imageView.image = icon
+    }
+    
     //! MARK: Instantiate
     static func instantiate() -> DefaultErrorView
     {

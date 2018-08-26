@@ -26,6 +26,21 @@ class DefaultNoDataView : NoDataView
             messageLabel.text = message
         }
     }
+    override var icon: UIImage?
+    {
+        didSet
+        {
+            imageView.image = icon
+        }
+    }
+    
+    //! MARK: - NSObject overrides
+    public override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        messageLabel.text = message
+        imageView.image = icon
+    }
     
     //! MARK: Instantiate
     static func instantiate() -> DefaultNoDataView
