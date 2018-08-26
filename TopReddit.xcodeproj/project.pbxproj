@@ -94,6 +94,25 @@
 		67978C492131CE2100230527 /* top_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 67978C482131CE2000230527 /* top_3.json */; };
 		67978C4B2131CE3A00230527 /* top_3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67978C4A2131CE3900230527 /* top_3.plist */; };
 		67978C4D2131CE6700230527 /* RedditDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C4C2131CE6700230527 /* RedditDataSourceTests.swift */; };
+		67978C5A2132821D00230527 /* SharedUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67978C532132821D00230527 /* SharedUI.framework */; };
+		67978C5B2132821D00230527 /* SharedUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67978C532132821D00230527 /* SharedUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		67978C662132824100230527 /* SharedUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 67978C642132824100230527 /* SharedUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67978C69213282CD00230527 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C68213282CD00230527 /* LoadingView.swift */; };
+		67978C6C2132842300230527 /* DefaultLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C6B2132842300230527 /* DefaultLoadingView.swift */; };
+		67978C6E2132842E00230527 /* DefaultLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67978C6D2132842E00230527 /* DefaultLoadingView.xib */; };
+		67978C712132873C00230527 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C702132873C00230527 /* BundleExtensions.swift */; };
+		67978C73213287F900230527 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C72213287F900230527 /* NoDataView.swift */; };
+		67978C752132887F00230527 /* DefaultNoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C742132887F00230527 /* DefaultNoDataView.swift */; };
+		67978C772132888600230527 /* DefaultNoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67978C762132888600230527 /* DefaultNoDataView.xib */; };
+		67978C7D213289D100230527 /* ico_face_unhappy.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C7A213289D100230527 /* ico_face_unhappy.png */; };
+		67978C7E213289D100230527 /* ico_face_unhappy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C7B213289D100230527 /* ico_face_unhappy@2x.png */; };
+		67978C7F213289D100230527 /* ico_face_unhappy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C7C213289D100230527 /* ico_face_unhappy@3x.png */; };
+		67978C8121328B4300230527 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C8021328B4300230527 /* ErrorView.swift */; };
+		67978C8321328C0600230527 /* DefaultErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978C8221328C0600230527 /* DefaultErrorView.swift */; };
+		67978C8521328CA000230527 /* DefaultErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67978C8421328CA000230527 /* DefaultErrorView.xib */; };
+		67978C8921328D5500230527 /* ico_cloud_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C8621328D5500230527 /* ico_cloud_off.png */; };
+		67978C8A21328D5500230527 /* ico_cloud_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C8721328D5500230527 /* ico_cloud_off@2x.png */; };
+		67978C8B21328D5500230527 /* ico_cloud_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67978C8821328D5500230527 /* ico_cloud_off@3x.png */; };
 		67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A8E212DE45B00260244 /* Assets.xcassets */; };
 		67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */; };
 		67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6A92212DE45B00260244 /* Main.storyboard */; };
@@ -234,6 +253,13 @@
 			remoteGlobalIDString = 67978BC921317FBB00230527;
 			remoteInfo = RedditAccess;
 		};
+		67978C582132821D00230527 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67978C522132821D00230527;
+			remoteInfo = SharedUI;
+		};
 		67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
@@ -267,6 +293,7 @@
 				67AA6ABA212DE83C00260244 /* URLAccess.framework in Embed Frameworks */,
 				67978BE021317FBC00230527 /* RedditAccess.framework in Embed Frameworks */,
 				6774DBE32130185700886DF3 /* Core.framework in Embed Frameworks */,
+				67978C5B2132821D00230527 /* SharedUI.framework in Embed Frameworks */,
 				6774DC3521302DB600886DF3 /* DataStore.framework in Embed Frameworks */,
 				67978B7B2130631C00230527 /* ImageDownloader.framework in Embed Frameworks */,
 			);
@@ -367,6 +394,25 @@
 		67978C482131CE2000230527 /* top_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = top_3.json; sourceTree = "<group>"; };
 		67978C4A2131CE3900230527 /* top_3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = top_3.plist; sourceTree = "<group>"; };
 		67978C4C2131CE6700230527 /* RedditDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditDataSourceTests.swift; sourceTree = "<group>"; };
+		67978C532132821D00230527 /* SharedUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67978C622132824100230527 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67978C642132824100230527 /* SharedUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedUI.h; sourceTree = "<group>"; };
+		67978C68213282CD00230527 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		67978C6B2132842300230527 /* DefaultLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoadingView.swift; sourceTree = "<group>"; };
+		67978C6D2132842E00230527 /* DefaultLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultLoadingView.xib; sourceTree = "<group>"; };
+		67978C702132873C00230527 /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
+		67978C72213287F900230527 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		67978C742132887F00230527 /* DefaultNoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNoDataView.swift; sourceTree = "<group>"; };
+		67978C762132888600230527 /* DefaultNoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultNoDataView.xib; sourceTree = "<group>"; };
+		67978C7A213289D100230527 /* ico_face_unhappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_face_unhappy.png; sourceTree = "<group>"; };
+		67978C7B213289D100230527 /* ico_face_unhappy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_face_unhappy@2x.png"; sourceTree = "<group>"; };
+		67978C7C213289D100230527 /* ico_face_unhappy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_face_unhappy@3x.png"; sourceTree = "<group>"; };
+		67978C8021328B4300230527 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		67978C8221328C0600230527 /* DefaultErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultErrorView.swift; sourceTree = "<group>"; };
+		67978C8421328CA000230527 /* DefaultErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultErrorView.xib; sourceTree = "<group>"; };
+		67978C8621328D5500230527 /* ico_cloud_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_cloud_off.png; sourceTree = "<group>"; };
+		67978C8721328D5500230527 /* ico_cloud_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_cloud_off@2x.png"; sourceTree = "<group>"; };
+		67978C8821328D5500230527 /* ico_cloud_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_cloud_off@3x.png"; sourceTree = "<group>"; };
 		67AA6A78212DE41400260244 /* TopReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AA6A8E212DE45B00260244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67AA6A91212DE45B00260244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -451,6 +497,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67978C4F2132821D00230527 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6A75212DE41400260244 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,6 +511,7 @@
 				67AA6AB9212DE83C00260244 /* URLAccess.framework in Frameworks */,
 				67978BDF21317FBC00230527 /* RedditAccess.framework in Frameworks */,
 				6774DBE22130185700886DF3 /* Core.framework in Frameworks */,
+				67978C5A2132821D00230527 /* SharedUI.framework in Frameworks */,
 				6774DC3421302DB600886DF3 /* DataStore.framework in Frameworks */,
 				67978B7A2130631C00230527 /* ImageDownloader.framework in Frameworks */,
 			);
@@ -853,6 +907,96 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		67978C5F2132824100230527 /* SharedUI */ = {
+			isa = PBXGroup;
+			children = (
+				67978C632132824100230527 /* Sources */,
+				67978C602132824100230527 /* Resources */,
+			);
+			path = SharedUI;
+			sourceTree = "<group>";
+		};
+		67978C602132824100230527 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				67978C782132896700230527 /* Icons */,
+				67978C792132896700230527 /* Xibs */,
+				67978C612132824100230527 /* Plists */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		67978C612132824100230527 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				67978C622132824100230527 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		67978C632132824100230527 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				67978C642132824100230527 /* SharedUI.h */,
+				67978C67213282C500230527 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		67978C67213282C500230527 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				67978C68213282CD00230527 /* LoadingView.swift */,
+				67978C72213287F900230527 /* NoDataView.swift */,
+				67978C8021328B4300230527 /* ErrorView.swift */,
+				67978C6F2132873200230527 /* Extensions */,
+				67978C6A2132841700230527 /* Implementations */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		67978C6A2132841700230527 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				67978C6B2132842300230527 /* DefaultLoadingView.swift */,
+				67978C742132887F00230527 /* DefaultNoDataView.swift */,
+				67978C8221328C0600230527 /* DefaultErrorView.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		67978C6F2132873200230527 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				67978C702132873C00230527 /* BundleExtensions.swift */,
+			);
+			name = Extensions;
+			path = Subprojects/SharedUI/Sources/Extensions;
+			sourceTree = SOURCE_ROOT;
+		};
+		67978C782132896700230527 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				67978C7A213289D100230527 /* ico_face_unhappy.png */,
+				67978C7B213289D100230527 /* ico_face_unhappy@2x.png */,
+				67978C7C213289D100230527 /* ico_face_unhappy@3x.png */,
+				67978C8621328D5500230527 /* ico_cloud_off.png */,
+				67978C8721328D5500230527 /* ico_cloud_off@2x.png */,
+				67978C8821328D5500230527 /* ico_cloud_off@3x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		67978C792132896700230527 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				67978C6D2132842E00230527 /* DefaultLoadingView.xib */,
+				67978C762132888600230527 /* DefaultNoDataView.xib */,
+				67978C8421328CA000230527 /* DefaultErrorView.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		67AA6A6F212DE41400260244 = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +1021,7 @@
 				67978B6D2130631C00230527 /* ImageDownloaderTests.xctest */,
 				67978BCA21317FBB00230527 /* RedditAccess.framework */,
 				67978BD221317FBC00230527 /* RedditAccessTests.xctest */,
+				67978C532132821D00230527 /* SharedUI.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -920,11 +1065,12 @@
 		67AA6AC2212DE87600260244 /* Subprojects */ = {
 			isa = PBXGroup;
 			children = (
-				67978BE72131804E00230527 /* RedditAccess */,
-				67978B822130637600230527 /* ImageDownloader */,
 				6774DBE72130187B00886DF3 /* Core */,
 				67AA6AC3212DE87600260244 /* URLAccess */,
 				6774DC3C21302DF500886DF3 /* DataStore */,
+				67978B822130637600230527 /* ImageDownloader */,
+				67978BE72131804E00230527 /* RedditAccess */,
+				67978C5F2132824100230527 /* SharedUI */,
 			);
 			path = Subprojects;
 			sourceTree = "<group>";
@@ -1047,6 +1193,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				67978BF22131806600230527 /* RedditAccess.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67978C502132821D00230527 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978C662132824100230527 /* SharedUI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1213,6 +1367,24 @@
 			productReference = 67978BD221317FBC00230527 /* RedditAccessTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		67978C522132821D00230527 /* SharedUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67978C5C2132821D00230527 /* Build configuration list for PBXNativeTarget "SharedUI" */;
+			buildPhases = (
+				67978C4E2132821D00230527 /* Sources */,
+				67978C4F2132821D00230527 /* Frameworks */,
+				67978C502132821D00230527 /* Headers */,
+				67978C512132821D00230527 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharedUI;
+			productName = SharedUI;
+			productReference = 67978C532132821D00230527 /* SharedUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		67AA6A77212DE41400260244 /* TopReddit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67AA6A8A212DE41600260244 /* Build configuration list for PBXNativeTarget "TopReddit" */;
@@ -1230,6 +1402,7 @@
 				6774DC3321302DB600886DF3 /* PBXTargetDependency */,
 				67978B792130631C00230527 /* PBXTargetDependency */,
 				67978BDE21317FBC00230527 /* PBXTargetDependency */,
+				67978C592132821D00230527 /* PBXTargetDependency */,
 			);
 			name = TopReddit;
 			productName = TopReddit;
@@ -1312,6 +1485,10 @@
 					67978BD121317FBC00230527 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					67978C522132821D00230527 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
 					67AA6A77212DE41400260244 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -1348,6 +1525,7 @@
 				67978B6C2130631C00230527 /* ImageDownloaderTests */,
 				67978BC921317FBB00230527 /* RedditAccess */,
 				67978BD121317FBC00230527 /* RedditAccessTests */,
+				67978C522132821D00230527 /* SharedUI */,
 			);
 		};
 /* End PBXProject section */
@@ -1414,6 +1592,22 @@
 				67978C492131CE2100230527 /* top_3.json in Resources */,
 				67978C4B2131CE3A00230527 /* top_3.plist in Resources */,
 				67978C3F2131C2CF00230527 /* top_2.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67978C512132821D00230527 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978C6E2132842E00230527 /* DefaultLoadingView.xib in Resources */,
+				67978C8921328D5500230527 /* ico_cloud_off.png in Resources */,
+				67978C8B21328D5500230527 /* ico_cloud_off@3x.png in Resources */,
+				67978C8521328CA000230527 /* DefaultErrorView.xib in Resources */,
+				67978C7F213289D100230527 /* ico_face_unhappy@3x.png in Resources */,
+				67978C8A21328D5500230527 /* ico_cloud_off@2x.png in Resources */,
+				67978C7E213289D100230527 /* ico_face_unhappy@2x.png in Resources */,
+				67978C772132888600230527 /* DefaultNoDataView.xib in Resources */,
+				67978C7D213289D100230527 /* ico_face_unhappy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1555,6 +1749,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67978C4E2132821D00230527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67978C69213282CD00230527 /* LoadingView.swift in Sources */,
+				67978C8121328B4300230527 /* ErrorView.swift in Sources */,
+				67978C752132887F00230527 /* DefaultNoDataView.swift in Sources */,
+				67978C73213287F900230527 /* NoDataView.swift in Sources */,
+				67978C8321328C0600230527 /* DefaultErrorView.swift in Sources */,
+				67978C6C2132842300230527 /* DefaultLoadingView.swift in Sources */,
+				67978C712132873C00230527 /* BundleExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67AA6A74212DE41400260244 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1682,6 +1890,11 @@
 			isa = PBXTargetDependency;
 			target = 67978BC921317FBB00230527 /* RedditAccess */;
 			targetProxy = 67978BDD21317FBC00230527 /* PBXContainerItemProxy */;
+		};
+		67978C592132821D00230527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67978C522132821D00230527 /* SharedUI */;
+			targetProxy = 67978C582132821D00230527 /* PBXContainerItemProxy */;
 		};
 		67AA6AAF212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2098,6 +2311,63 @@
 			};
 			name = Release;
 		};
+		67978C5D2132821D00230527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/SharedUI/Resources/Plists/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.SharedUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		67978C5E2132821D00230527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8YQ3XD8FZV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Subprojects/SharedUI/Resources/Plists/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.h0myach0k.topReddit.SharedUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		67AA6A88212DE41600260244 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2420,6 +2690,15 @@
 			buildConfigurations = (
 				67978BE521317FBC00230527 /* Debug */,
 				67978BE621317FBC00230527 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67978C5C2132821D00230527 /* Build configuration list for PBXNativeTarget "SharedUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67978C5D2132821D00230527 /* Debug */,
+				67978C5E2132821D00230527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

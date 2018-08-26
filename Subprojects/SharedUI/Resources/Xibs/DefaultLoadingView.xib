@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="7eZ-bb-SV9" customClass="DefaultLoadingView" customModule="SharedUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="481"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmX-Uk-rnR">
+                    <rect key="frame" x="88.5" y="221.5" width="198" height="58"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UxB-P4-LjB">
+                            <rect key="frame" x="0.0" y="0.0" width="198" height="58"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="Loading data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUH-oF-IkO">
+                                    <rect key="frame" x="0.0" y="0.0" width="198" height="20.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="Please wait, your data is being loaded" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQN-mE-qOa">
+                                    <rect key="frame" x="0.0" y="22.5" width="198" height="13.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IT6-Bf-Bdf">
+                                    <rect key="frame" x="0.0" y="38" width="198" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="UxB-P4-LjB" secondAttribute="bottom" id="1jK-gj-yR6"/>
+                        <constraint firstAttribute="trailing" secondItem="UxB-P4-LjB" secondAttribute="trailing" id="GiX-CU-1eC"/>
+                        <constraint firstItem="UxB-P4-LjB" firstAttribute="top" secondItem="tmX-Uk-rnR" secondAttribute="top" id="WFF-IX-nGX"/>
+                        <constraint firstItem="UxB-P4-LjB" firstAttribute="leading" secondItem="tmX-Uk-rnR" secondAttribute="leading" id="w4t-Od-qP7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tmX-Uk-rnR" firstAttribute="centerX" secondItem="kAn-NE-PPs" secondAttribute="centerX" id="Hqp-cZ-fmn"/>
+                <constraint firstItem="tmX-Uk-rnR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kAn-NE-PPs" secondAttribute="leading" constant="20" id="tdy-PF-VFc"/>
+                <constraint firstItem="tmX-Uk-rnR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kAn-NE-PPs" secondAttribute="top" constant="20" id="uuy-jk-LGg"/>
+                <constraint firstItem="tmX-Uk-rnR" firstAttribute="centerY" secondItem="kAn-NE-PPs" secondAttribute="centerY" id="xVP-uT-0hc"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="kAn-NE-PPs"/>
+            <connections>
+                <outlet property="activityIndicatorView" destination="IT6-Bf-Bdf" id="M13-uo-kDx"/>
+                <outlet property="messageLabel" destination="cQN-mE-qOa" id="TZc-Ob-h7L"/>
+                <outlet property="titleLabel" destination="HUH-oF-IkO" id="VNa-uj-OQa"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="-163"/>
+        </view>
+    </objects>
+</document>
