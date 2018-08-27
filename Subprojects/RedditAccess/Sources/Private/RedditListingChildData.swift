@@ -14,6 +14,7 @@ import Foundation
 ////////////////////////////////////////////////////////////////////////////////
 struct RedditListingChildData : Codable
 {
+    var id: String
     var title: String
     var author: String
     var created: Date
@@ -23,4 +24,5 @@ struct RedditListingChildData : Codable
     var thumbnail_height: CGFloat?
     
     var num_comments: Int
+    var preview: RedditListingChildPreview?
 }

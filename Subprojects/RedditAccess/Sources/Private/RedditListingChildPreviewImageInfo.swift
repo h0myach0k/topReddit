@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  RedditImageInfo.swift
-//  RedditAccess
+//  RedditListingChildPreviewImageInfo.swift
+//  TopReddit
 //
-//  Created by Iurii Khomiak on 8/25/18.
+//  Created by h0myach0k on 8/27/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -12,8 +12,9 @@
 import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
-struct ImageInfoImp : ImageInfo
+struct RedditListingChildPreviewImageInfo : Codable
 {
-    let url: URL
-    let size: CGSize
+    var url: URL
+    var width: CGFloat
+    var height: CGFloat
 }

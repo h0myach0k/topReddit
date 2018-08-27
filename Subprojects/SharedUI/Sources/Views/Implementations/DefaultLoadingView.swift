@@ -25,6 +25,7 @@ class DefaultLoadingView : LoadingView
         didSet
         {
             messageLabel.text = message
+            messageLabel.isHidden = nil == message
         }
     }
     
@@ -33,6 +34,17 @@ class DefaultLoadingView : LoadingView
         didSet
         {
             titleLabel.text = title
+            titleLabel.isHidden = nil == title
+        }
+    }
+    
+    override var color: UIColor?
+    {
+        didSet
+        {
+            titleLabel.textColor = color
+            messageLabel.textColor = color
+            activityIndicatorView.color = color
         }
     }
     

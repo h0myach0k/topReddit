@@ -22,6 +22,8 @@ public class LoadingView : UIView
     public var title: String?
     /// Loading message
     public var message: String?
+    /// Preferred elements color
+    public var color: UIColor?
     
     /// MARK: - Init & Deinit
     public override init(frame: CGRect)

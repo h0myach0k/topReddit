@@ -33,6 +33,13 @@ class DefaultNoDataView : NoDataView
             imageView.image = icon
         }
     }
+    override var color: UIColor?
+    {
+        didSet
+        {
+            messageLabel.textColor = color
+        }
+    }
     
     //! MARK: - NSObject overrides
     public override func awakeFromNib()

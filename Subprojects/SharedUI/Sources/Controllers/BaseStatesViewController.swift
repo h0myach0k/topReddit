@@ -28,10 +28,12 @@ open class BaseStatesViewController : UIViewController, ErrorViewDelegate
     
     //! MARK: - Loading View properties
     /// Title that will be displayed in loading view
-    open var loadingTitle: String { return "Loading".localized }
+    open var loadingTitle: String? { return "Loading".localized }
     /// Message that will be displayed in loading view
     open var loadingMessage: String? { return "Please wait, data is being loaded…"
         .localized }
+    /// Prefered loading view text color
+    open var loadingViewTextColor: UIColor { return view.tintColor }
     /// The loading view style
     open var loadingViewStyle: LoadingView.Style { return .default }
     
@@ -45,12 +47,16 @@ open class BaseStatesViewController : UIViewController, ErrorViewDelegate
         .sharedUI, compatibleWith: nil) }
     /// Action to be displayed on error view
     open var errorAction: String? { return "Retry…".localized }
+    /// Prefered error view text color
+    open var errorViewTextColor: UIColor { return view.tintColor }
     /// The error view style
     open var errorViewStyle: ErrorView.Style { return .default }
     
     //! MARK: - No Data View properties
     /// Title to be displayed on error view
     open var noDataMessage: String { return "No data to show".localized }
+    /// Prefered no data view text color
+    open var noDataViewTextColor: UIColor { return view.tintColor }
     /// Icon to be displayed on error view
     open var noDataIcon: UIImage? { return UIImage(named: "ico_face_unhappy", in:
         .sharedUI, compatibleWith: nil) }
@@ -106,6 +112,7 @@ open class BaseStatesViewController : UIViewController, ErrorViewDelegate
         let result = LoadingView.instantiate(style: loadingViewStyle)
         result.title = loadingTitle
         result.message = loadingMessage
+        result.color = loadingViewTextColor
         return result
     }
     
@@ -127,6 +134,7 @@ open class BaseStatesViewController : UIViewController, ErrorViewDelegate
         let result = NoDataView.instantiate(style: noDataViewStyle)
         result.icon = noDataIcon
         result.message = noDataMessage
+        result.color = noDataViewTextColor
         return result
     }
     
@@ -150,6 +158,7 @@ open class BaseStatesViewController : UIViewController, ErrorViewDelegate
         result.message = errorMessage
         result.icon = errorIcon
         result.action = errorAction
+        result.color = errorViewTextColor
         result.delegate = self
         return result
     }
@@ -173,7 +182,7 @@ open class BaseStatesViewController : UIViewController, ErrorViewDelegate
     
     private func addStateView(_ view: UIView)
     {
-        self.view.addSubview(view)
+        self.view.insertSubview(view, aboveSubview: contentView)
         view.translatesAutoresizingMaskIntoConstraints = false
         self.view.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo:
             view.leadingAnchor).isActive = true

@@ -29,6 +29,7 @@ public class ErrorView : UIView
     public var message: String?
     public var action: String?
     public var icon: UIImage?
+    public var color: UIColor?
     public weak var delegate: ErrorViewDelegate?
     
     /// MARK: - Init & Deinit

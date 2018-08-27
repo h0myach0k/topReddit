@@ -22,6 +22,8 @@ public class NoDataView : UIView
     public var message: String?
     /// No data icon
     public var icon: UIImage?
+    /// Color
+    public var color: UIColor?
     
     /// MARK: - Init & Deinit
     public override init(frame: CGRect)

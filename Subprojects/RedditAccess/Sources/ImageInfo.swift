@@ -12,9 +12,9 @@
 import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
-/// Interface describing image information
-public protocol ImageInfo
+/// Describing image information
+public struct ImageInfo
 {
-    var url: URL {get}
-    var size: CGSize {get}
+    public let url: URL
+    public let size: CGSize
 }

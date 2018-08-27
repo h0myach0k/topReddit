@@ -15,37 +15,50 @@ import Foundation
 struct ListingResultImp
 {
     let query: ListingQuery
-    let response: RedditListingResponse
+    let items: [ListingItem]
+    let nextQuery: ListingQuery?
+    let previousQuery: ListingQuery?
     
     init(query: ListingQuery, response: RedditListingResponse)
     {
         self.query = query
-        self.response = response
+        items = response.data.children.map(ListingItem.init)
+        
+        if let token = response.data.after
+        {
+            var query = self.query
+            query.offset = (.next, token)
+            nextQuery = query
+        }
+        else
+        {
+            nextQuery = nil
+        }
+        
+        if let token = response.data.before
+        {
+            var query = self.query
+            query.offset = (.previous, token)
+            previousQuery = query
+        }
+        else
+        {
+            previousQuery = nil
+        }        
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 extension ListingResultImp : ListingResult
 {
-    var items: [ListingItem]
-    {
-        return response.data.children
-    }
-    
     func query(for order: ListingQuery.Order) -> ListingQuery?
     {
-        let token: String?
         switch order
         {
             case .next:
-                token = response.data.after
+                return nextQuery
             case .previous:
-                token = response.data.before
+                return previousQuery
         }
-        
-        guard let unwrappedToken = token else { return nil }
-        var result = query
-        result.offset = (order, unwrappedToken)
-        return result
     }
 }

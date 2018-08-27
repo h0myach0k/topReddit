@@ -1,16 +1,18 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  Localizable.strings
+//  RedditListingChildPreviewImage.swift
 //  TopReddit
 //
-//  Created by Iurii Khomiak on 8/26/18.
+//  Created by h0myach0k on 8/27/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
-"New Stories" = "New Stories";
-"Top Stories" = "Top Stories";
-"Random Stories" = "Random Stories";
+import Foundation
 
-"Failed to share" = "Failed to share";
+////////////////////////////////////////////////////////////////////////////////
+struct RedditListingChildPreviewImage : Codable
+{
+    var source: RedditListingChildPreviewImageInfo
+}

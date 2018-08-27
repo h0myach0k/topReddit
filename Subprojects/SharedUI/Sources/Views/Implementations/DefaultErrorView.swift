@@ -53,6 +53,16 @@ class DefaultErrorView : ErrorView
         }
     }
     
+    override var color: UIColor?
+    {
+        didSet
+        {
+            titleLabel.textColor = color
+            messageLabel.textColor = color
+            actionButton.setTitleColor(color, for: .normal)
+        }
+    }
+    
     //! MARK: - NSObject overrides
     public override func awakeFromNib()
     {

@@ -13,10 +13,19 @@ import UIKit
 import RedditAccess
 
 ////////////////////////////////////////////////////////////////////////////////
+protocol ListingItemCellDelegate: class
+{
+    func listingItemCellRequestToShowImage(_ sender: ListingItemCell)
+}
+
+////////////////////////////////////////////////////////////////////////////////
 class ListingItemCell : UITableViewCell
 {
     //! MARK: - Properties
     static var reuseIdentifier = "ListingItemCell"
+    
+    /// Delegate
+    weak var delegate: ListingItemCellDelegate?
     
     //! MARK: - UI Connections
     @IBOutlet private var stackViewTopConstraint: NSLayoutConstraint!
@@ -24,14 +33,8 @@ class ListingItemCell : UITableViewCell
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var authorNameLabel: UILabel!
     @IBOutlet private var thumbnailContainerView: UIView!
-    @IBOutlet private var thumbnailImageView: ImageView!
+    @IBOutlet private var thumbnailImageView: UIImageView!
     @IBOutlet private var commentsLabel: UILabel!
-    
-    //! MARK: - Init & Deinit
-    deinit
-    {
-        thumbnailImageView.cancel()
-    }
     
     //! MARK: - NSObject overrides
     override func awakeFromNib()
@@ -50,24 +53,39 @@ class ListingItemCell : UITableViewCell
         thumbnailImageView.layer.cornerRadius = thumbnailImageView.frame.width / 2
     }
     
-    //! MARK: - UITableViewCell overrides
-    override func prepareForReuse()
+    override func traitCollectionDidChange(_ previousTraitCollection:
+        UITraitCollection?)
     {
-        super.prepareForReuse()
-        thumbnailImageView.cancel()
+        super.traitCollectionDidChange(previousTraitCollection)
+        layoutIfNeeded()
     }
     
     //! MARK: - Update methods
-    func update(listingItem: ListingItem)
+    func update(listingItem: ListingItem, thumbnail: UIImage?)
     {
         titleLabel.text = listingItem.title
         authorNameLabel.text = listingItem.author
         
         let imageInfo = listingItem.thumbnailInfo
-        thumbnailImageView.setImage(withUrl: imageInfo?.url, placeholder: #imageLiteral(resourceName: "ico_placeholder"))
+        thumbnailImageView.image = thumbnail ?? #imageLiteral(resourceName: "ico_placeholder")
         thumbnailContainerView.isHidden = nil == imageInfo?.url
-        
         commentsLabel.text = listingItem.numberOfComments.abbreviated
+    }
+    
+    func update(thumbnail: UIImage)
+    {
+        UIView.transition(with: self,
+            duration: 0.3, options: .transitionCrossDissolve,
+            animations:
+            {
+                self.thumbnailImageView.image = thumbnail
+            }, completion: nil)
+    }
+    
+    //! MARK: - Actions
+    @IBAction private func showImage(_ sender: Any)
+    {
+        delegate?.listingItemCellRequestToShowImage(self)
     }
     
     //! MARK: - Private
