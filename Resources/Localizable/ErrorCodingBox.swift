@@ -12,6 +12,7 @@
 import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
+/// Codable wrapper around Error
 public class ErrorCodingBox : Codable
 {
     public let error: Error

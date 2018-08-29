@@ -19,10 +19,12 @@ protocol ListingItemCellDelegate: class
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+/// Cell for displaying ListingItem instances in collection view
 class ListingItemCell : UICollectionViewCell
 {
-    //! MARK: - Properties
+    //! MARK: - Properties & Constanst
     static var reuseIdentifier = "ListingItemCell"
+    private let thumbnailBorderColor: UIColor = .lightGray
     fileprivate static var sizingParameters: SizingParameters!
     
     /// Delegate
@@ -38,44 +40,49 @@ class ListingItemCell : UICollectionViewCell
     @IBOutlet private var infoContainerStackView: UIStackView!
     @IBOutlet private var contentStackView: UIStackView!
     
+    //! MARK: - Nib
+    static func nib() -> UINib
+    {
+        return UINib(nibName: reuseIdentifier, bundle: nil)
+    }
+    
     //! MARK: - NSObject overrides
     override func awakeFromNib()
     {
         super.awakeFromNib()
         backgroundView = createBackgroundView()
-        thumbnailImageView.layer.borderColor = UIColor.lightGray.cgColor
-        thumbnailImageView.layer.borderWidth = 0.5
-        thumbnailImageView.layer.cornerRadius = 3
+        thumbnailImageView.layer.borderColor = thumbnailBorderColor.cgColor
     }
     
     //! MARK: - Update methods
+    /// Updates cell with required listing item
+    ///
+    /// - Parameters:
+    ///   - listingItem: Listing Item instance
+    ///   - thumbnail: Image instance if available
     func update(listingItem: ListingItem, thumbnail: UIImage?)
     {
-        titleLabel.text = listingItem.title
-        authorNameLabel.text = listingItem.author
-        
-        let imageInfo = listingItem.thumbnailInfo
-        thumbnailImageView.image = thumbnail ?? #imageLiteral(resourceName: "ico_placeholder")
-        thumbnailContainerView.isHidden = nil == imageInfo?.url
-        let suffix = String.localizedStringWithFormat(
-            "ListingCellCommentSuffix".localized,
-            listingItem.numberOfComments)
-        commentsLabel.text = listingItem.numberOfComments.abbreviated + " " +
-            suffix
-        
-        let formatter = RelativeTimeFormatter()
-        formatter.beforeSuffix = "ago".localized
-        relativeDateLabel.text = formatter.string(from: listingItem.createdDate)
+        updateTitle(listingItem: listingItem)
+        updateAuthor(listingItem: listingItem)
+        updateThumbnail(listingItem: listingItem)
+        update(thumbnail: thumbnail ?? #imageLiteral(resourceName: "ico_placeholder"), animated: false)
+        updateNumberOfComments(listingItem: listingItem)
+        updateRelativeDate(listingItem: listingItem)
     }
     
-    func update(thumbnail: UIImage)
+    func update(thumbnail: UIImage, animated: Bool)
     {
-        UIView.transition(with: self,
-            duration: 0.3, options: .transitionCrossDissolve,
-            animations:
-            {
-                self.thumbnailImageView.image = thumbnail
-            }, completion: nil)
+        let animations = { self.thumbnailImageView.image = thumbnail }
+        if animated
+        {
+            UIView.transition(with: self,
+                duration: 0.3, options: .transitionCrossDissolve,
+                animations: animations, completion: nil)
+        }
+        else
+        {
+            animations()
+        }
     }
     
     //! MARK: - Actions
@@ -85,16 +92,43 @@ class ListingItemCell : UICollectionViewCell
     }
     
     //! MARK: - Private
+    private func updateTitle(listingItem: ListingItem)
+    {
+        titleLabel.text = listingItem.title
+    }
+    
+    private func updateAuthor(listingItem: ListingItem)
+    {
+        authorNameLabel.text = listingItem.author
+    }
+    
+    private func updateThumbnail(listingItem: ListingItem)
+    {
+        let imageInfo = listingItem.imageInfos.first
+        thumbnailContainerView.isHidden = nil == imageInfo?.url
+    }
+    
+    private func updateNumberOfComments(listingItem: ListingItem)
+    {
+        let suffix = String.localizedStringWithFormat(
+            "ListingCellCommentSuffix".localized,
+            listingItem.numberOfComments)
+        commentsLabel.text = listingItem.numberOfComments.abbreviated + " " +
+            suffix
+    }
+    
+    private func updateRelativeDate(listingItem: ListingItem)
+    {
+        let formatter = RelativeTimeFormatter()
+        formatter.beforeSuffix = "ago".localized
+        relativeDateLabel.text = formatter.string(from: listingItem.createdDate)
+    }
+    
     private func createBackgroundView() -> UIView
     {
         let result = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         result.backgroundColor = .white
         return result
-    }
-    
-    static func nib() -> UINib
-    {
-        return UINib(nibName: reuseIdentifier, bundle: nil)
     }
 }
 
@@ -102,6 +136,18 @@ class ListingItemCell : UICollectionViewCell
 //! MARK: - Height Calculation
 extension ListingItemCell
 {
+    fileprivate struct SizingParameters
+    {
+        let authorLabelFont: UIFont
+        let titleFont: UIFont
+        let commentsFont: UIFont
+        let relativeDateFont: UIFont
+        let titleToInfoContainerSpacing: CGFloat
+        let infoContainerSpacing: CGFloat
+        let topSpacing: CGFloat
+        let bottomSpacing: CGFloat
+    }
+    
     static func height(with listingItem: ListingItem, width: CGFloat,
         layoutMargins: UIEdgeInsets) -> CGFloat
     {
@@ -132,18 +178,6 @@ extension ListingItemCell
         let boundingRect = attributedString.boundingRect(with: boundingSize,
             options: .usesLineFragmentOrigin, context: nil)
         return ceil(boundingRect.height)
-    }
-    
-    fileprivate struct SizingParameters
-    {
-        let authorLabelFont: UIFont
-        let titleFont: UIFont
-        let commentsFont: UIFont
-        let relativeDateFont: UIFont
-        let titleToInfoContainerSpacing: CGFloat
-        let infoContainerSpacing: CGFloat
-        let topSpacing: CGFloat
-        let bottomSpacing: CGFloat
     }
     
     private static func configureSizingParametersIfNeeded()

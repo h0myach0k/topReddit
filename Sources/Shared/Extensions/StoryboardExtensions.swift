@@ -14,7 +14,10 @@ import UIKit
 ////////////////////////////////////////////////////////////////////////////////
 protocol MainStoryboard
 {
-    func instantiateListingViewController() -> ListingViewController
+    func instantiateTopListingViewController() -> ListingViewController
+    func instantiateMainViewController() -> UINavigationController
+    func instantiateImageNavigationController() -> UINavigationController
+    func instantiateImageViewController() -> ImageViewController
 }
 
 ////////////////////////////////////////////////////////////////////////////////

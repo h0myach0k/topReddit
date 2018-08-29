@@ -19,7 +19,10 @@ class MainStoryboardImp : UIStoryboard, MainStoryboard
     
     enum Identifier : String
     {
-        case listing
+        case rootNavigation
+        case topListing
+        case imageNavigation
+        case image
     }
     
     override public init()
@@ -39,9 +42,31 @@ class MainStoryboardImp : UIStoryboard, MainStoryboard
         return storyboard.instantiateViewController(withIdentifier: identifier)
     }
     
-    func instantiateListingViewController() -> ListingViewController
+    func instantiateTopListingViewController() -> ListingViewController
     {
-        return self.instantiateViewController(withIdentifier: Identifier
-            .listing.rawValue) as! ListingViewController
+        return instantiateViewController(withIdentifier: .topListing)
+    }
+    
+    func instantiateMainViewController() -> UINavigationController
+    {
+        return instantiateViewController(withIdentifier: .rootNavigation)
+    }
+    
+    func instantiateImageNavigationController() -> UINavigationController
+    {
+        return instantiateViewController(withIdentifier: .imageNavigation)
+    }
+    
+    func instantiateImageViewController() -> ImageViewController
+    {
+        return instantiateViewController(withIdentifier: .image)
+    }
+    
+    //! MARK: - Private
+    private func instantiateViewController<T>(withIdentifier identifier:
+        Identifier) -> T
+    {
+        return self.instantiateViewController(withIdentifier: identifier
+            .rawValue) as! T
     }
 }

@@ -29,8 +29,6 @@ class StubRedditResponseManager
         {
             case .top:
                 filename = "top.json"
-            case .random:
-                filename = "random.json"
             case .new:
                 filename = "new.json"
         }

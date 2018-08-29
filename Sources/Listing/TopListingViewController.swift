@@ -17,6 +17,7 @@ import Core
 private let queryCount = 20
 
 ////////////////////////////////////////////////////////////////////////////////
+/// View controller extending ListingViewController with concrete query
 class TopListingViewController : ListingViewController
 {
     private static let query: ListingQuery = ListingQuery(listing: .top(.all),

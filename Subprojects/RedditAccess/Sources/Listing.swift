@@ -27,10 +27,10 @@ public enum TopDuration : String, Codable
 /// Defines listing type
 ///
 /// - top: Top reddits listing
+/// - top: New reddits listing
 public enum Listing
 {
     case top(TopDuration)
-    case random
     case new
 }
 
@@ -41,7 +41,6 @@ extension Listing : Codable
     private enum CodingKeys : CodingKey
     {
         case top
-        case random
         case new
     }
     
@@ -51,10 +50,6 @@ extension Listing : Codable
         if let _ = try container.decodeIfPresent(Bool.self, forKey: .new)
         {
             self = .new
-        }
-        else if let _ = try container.decodeIfPresent(Bool.self, forKey: .random)
-        {
-            self = .random
         }
         else
         {
@@ -69,8 +64,6 @@ extension Listing : Codable
         {
             case .new:
                 try container.encode(true, forKey: .new)
-            case .random:
-                try container.encode(true, forKey: .random)
             case .top(let duration):
                 try container.encode(duration, forKey: .top)
         }

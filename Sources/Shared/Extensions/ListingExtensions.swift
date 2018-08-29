@@ -23,8 +23,6 @@ extension Listing
                 return "New Stories".localized
             case .top:
                 return "Top Stories".localized
-            case .random:
-                return "Random Stories".localized        
         }
     }
 }

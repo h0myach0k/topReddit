@@ -1296,9 +1296,9 @@
 			children = (
 				67AA6A90212DE45B00260244 /* LaunchScreen.storyboard */,
 				67AA6A92212DE45B00260244 /* Main.storyboard */,
+				67C5E3F021370C00004F608A /* ListingItemCell.xib */,
 				67AA6B2C2135FBC800260244 /* Localizable.stringsdict */,
 				67AA6B222133472000260244 /* Localizable.strings */,
-				67C5E3F021370C00004F608A /* ListingItemCell.xib */,
 			);
 			path = Localizable;
 			sourceTree = "<group>";

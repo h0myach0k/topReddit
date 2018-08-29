@@ -257,7 +257,7 @@ class ListingViewController: CollectionDataSourceViewController<ListingDataSourc
         guard visibleIndexPaths.contains(indexPath) else { return }
         guard let cell = collectionView.cellForItem(at: IndexPath(item: index,
             section: 0)) as? ListingItemCell else { return }
-        cell.update(thumbnail: image)
+        cell.update(thumbnail: image, animated: true)
     }
 }
 

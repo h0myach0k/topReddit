@@ -16,6 +16,7 @@ import ImageDownloader
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Data source implementation for image view controller.
+/// Responsible for resolving ImageInfo instance
 class ImageDataSource : DataSource<ResolvedImageInfo>
 {
     //! MARK: - Forward Declarations

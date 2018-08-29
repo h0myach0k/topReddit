@@ -16,7 +16,7 @@ import RedditAccess
 import protocol RedditAccess.Task
 
 ////////////////////////////////////////////////////////////////////////////////
-///  Data Source class responsible for loading data for given query.
+///  Data Source class responsible for loading data for given query
 class ListingDataSource : DataSource<[ListingItem]>
 {
     //! MARK: - Forward Declarations

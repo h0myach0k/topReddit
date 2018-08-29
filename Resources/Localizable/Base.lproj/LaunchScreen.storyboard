@@ -31,10 +31,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="top" secondItem="6sr-Ii-dCt" secondAttribute="top" id="7XD-b2-drQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sgb-hN-cn2" secondAttribute="trailing" id="PHB-yX-GAC"/>
-                            <constraint firstItem="6sr-Ii-dCt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wnd-kT-MP3"/>
-                            <constraint firstItem="Sgb-hN-cn2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WqX-tS-IPj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6sr-Ii-dCt" secondAttribute="trailing" id="fhc-Az-PCT"/>
+                            <constraint firstAttribute="trailing" secondItem="Sgb-hN-cn2" secondAttribute="trailing" id="PHB-yX-GAC"/>
+                            <constraint firstItem="6sr-Ii-dCt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Wnd-kT-MP3"/>
+                            <constraint firstItem="Sgb-hN-cn2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="WqX-tS-IPj"/>
+                            <constraint firstAttribute="trailing" secondItem="6sr-Ii-dCt" secondAttribute="trailing" id="fhc-Az-PCT"/>
                             <constraint firstItem="Sgb-hN-cn2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pR1-Bg-tpS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

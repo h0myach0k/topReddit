@@ -69,8 +69,6 @@ fileprivate extension ListingQuery
         {
             case .top:
                 return "/top.json"
-            case .random:
-                return "/random.json"
             case .new:
                 return "/new.json"
         }

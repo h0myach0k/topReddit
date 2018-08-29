@@ -3,7 +3,7 @@
 //  DependencyContainer.swift
 //  Core
 //
-//  Created by h0myach0k on 8/28/18.
+//  Created by Iurii Khomiak on 8/28/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -23,7 +23,19 @@ fileprivate let resolveQueueName = "com.h0myach0k.core.dependencyContainer.queue
 ////////////////////////////////////////////////////////////////////////////////
 public protocol DependencyResolver
 {
+    /// Resolves previously registered service
+    ///
+    /// - Parameters:
+    ///   - serviceType: Service type
+    ///   - name: Service name if was set during registration
+    /// - Returns: Service based on registration settings
     func resolve<Service>(_ serviceType: Service.Type, name: String?) throws -> Service
+    
+    /// Resolves previously registered service by service type
+    ///
+    /// - Parameters:
+    ///   - serviceType: Service type
+    /// - Returns: Service based on registration settings
     func resolve<Service>(_ serviceType: Service.Type) throws -> Service
 }
 
