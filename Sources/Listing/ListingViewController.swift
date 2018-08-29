@@ -18,12 +18,11 @@ import ImageDownloader
 ////////////////////////////////////////////////////////////////////////////////
 /// View Controller responsible for loading/displaying listing items from
 /// given query.
-class ListingViewController: TableDataSourceViewController<ListingDataSource>,
-    UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching,
-    ListingItemCellDelegate, UIDataSourceModelAssociation
+class ListingViewController: CollectionDataSourceViewController<ListingDataSource>,
+    UICollectionViewDelegate, UICollectionViewDataSource,
+    UICollectionViewDataSourcePrefetching, ListingItemCellDelegate,
+    UIDataSourceModelAssociation, UICollectionViewDelegateFlowLayout
 {
-    /// Listing query assotiated with the controller
-    private var query: ListingQuery!
     /// Image downloader
     private var imageDownloader: ImageDownloader!
     /// Container
@@ -31,7 +30,11 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
     
     /// Loaded listing items
     var listingItems: [ListingItem] { return value ?? [] }
+    /// Map for loaded images
     private var thumbnails: [ListingItem : UIImage] = [:]
+    /// Returns collection view layout
+    private var layout: UICollectionViewFlowLayout { return collectionView
+        .collectionViewLayout as! UICollectionViewFlowLayout }
     
     //! MARK: Configure from storyboard
     /// Configures view controller with essential data after load from storyboard
@@ -42,13 +45,20 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
     func configureFromStoryboard(query: ListingQuery, container:
         DependencyContainer)
     {
-        self.query = query
         self.container = container
         self.imageDownloader = try! container.resolve(ImageDownloader.self)
-        commonInit()
+        dataSource = ListingDataSource(query: query, container: container)
+        navigationItem.title = query.listing.title
     }
         
     //! MARK: - UIViewController overrides
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        collectionView.register(ListingItemCell.nib(),
+            forCellWithReuseIdentifier: ListingItemCell.reuseIdentifier)
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -70,13 +80,9 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
                 {
                     fatalError("Segue sender is expected to be ImageInfo")
                 }
-                guard let controller = segue.destination as? ImageViewController
-                    else
-                {
-                    fatalError("Segue destination controller is expected to be ImageViewController")
-                }
+                let controller: ImageViewController = segue.destination()
                 controller.configureFromStoryboard(imageInfo: sender,
-                    container: container)
+                    container: container)                
         }
     }
     
@@ -85,10 +91,9 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
     {
         super.willTransition(to: newCollection, with: coordinator)
         guard isViewLoaded else { return }
-        coordinator.animate(alongsideTransition:
-        { (context) in
-            self.tableView.beginUpdates()
-            self.tableView.endUpdates()
+        collectionView.collectionViewLayout.invalidateLayout()
+        coordinator.animate(alongsideTransition: { (context) in
+            self.collectionView.layoutIfNeeded()
         }, completion: nil)
     }
     
@@ -102,17 +107,45 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
         return result
     }
     
-    //! MARK: - UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section:
-        Int) -> Int
+    override func reloadData(changeRequest: DataSourceChangeRequest<
+        [ListingItem]>, completion: @escaping () -> Void)
+    {
+        let map = {(index: Int) -> IndexPath in return IndexPath(item: index,
+            section: 0)}
+        let insertedIndexPaths = changeRequest.insertedIndexes.map(map)
+        let deletedIndexPaths = changeRequest.deletedIndexes.map(map)
+        let updatedIndexPaths = changeRequest.updatedIndexes.map(map)
+
+        guard !insertedIndexPaths.isEmpty || !deletedIndexPaths.isEmpty ||
+            updatedIndexPaths.isEmpty else
+        {
+            super.reloadData(changeRequest: changeRequest, completion: completion)
+            return
+        }
+
+        collectionView.performBatchUpdates(
+        {
+            collectionView.insertItems(at: insertedIndexPaths)
+            collectionView.deleteItems(at: deletedIndexPaths)
+            collectionView.reloadItems(at: updatedIndexPaths)
+        },
+        completion:
+        { _ in
+            completion()
+        })
+    }
+    
+    //! MARK: - UICollectionViewDataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection
+        section: Int) -> Int
     {
         return listingItems.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath:
-        IndexPath) -> UITableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt
+        indexPath: IndexPath) -> UICollectionViewCell
     {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:
             ListingItemCell.reuseIdentifier, for: indexPath)
             as? ListingItemCell else
         {
@@ -125,16 +158,29 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
         
         return cell
     }
-        
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath:
+        IndexPath) -> CGSize
+    {
+        let listingItem = listingItems[indexPath.row]
+        let width = collectionView.frame.width - layout.sectionInset.left -
+            layout.sectionInset.right
+
+        let height = ListingItemCell.height(with: listingItem, width: width,
+            layoutMargins: collectionView.layoutMargins)
+        return CGSize(width: width, height: height)
+    }
+    
     //! MARK: - UITableViewDataSourcePrefetching
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths:
-        [IndexPath])
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt
+        indexPaths: [IndexPath])
     {
         loadThumbnails(for: indexPaths)
     }
-    
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt
-        indexPaths: [IndexPath])
+
+    func collectionView(_ collectionView: UICollectionView,
+        cancelPrefetchingForItemsAt indexPaths: [IndexPath])
     {
         cancelLoadThumbnails(for: indexPaths)
     }
@@ -142,7 +188,7 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
     //! MARK: - ListingItemCellDelegate
     func listingItemCellRequestToShowImage(_ sender: ListingItemCell)
     {
-        guard let indexPath = tableView.indexPath(for: sender) else { return }
+        guard let indexPath = collectionView.indexPath(for: sender) else { return }
         let listingItem = listingItems[indexPath.row]
         guard let imageInfo = listingItem.imageInfos.first else
         {
@@ -168,13 +214,6 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
     //! MARK: - Actions
     @IBAction func unwindBack(_ segue: UIStoryboardSegue)
     {     
-    }
-    
-    //! MARK: - Private
-    private func commonInit()
-    {
-        dataSource = ListingDataSource(query: query, container: container)
-        navigationItem.title = query.listing.title
     }
     
     //! MARK: - Image Downloading
@@ -212,12 +251,11 @@ class ListingViewController: TableDataSourceViewController<ListingDataSource>,
     
     private func didLoadImage(_ image: UIImage, for item: ListingItem)
     {
-        guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else
-            { return }
+        let visibleIndexPaths = collectionView.indexPathsForVisibleItems
         guard let index = listingItems.index(of: item) else { return }
         let indexPath = IndexPath(item: index, section: 0)
         guard visibleIndexPaths.contains(indexPath) else { return }
-        guard let cell = tableView.cellForRow(at: IndexPath(item: index,
+        guard let cell = collectionView.cellForItem(at: IndexPath(item: index,
             section: 0)) as? ListingItemCell else { return }
         cell.update(thumbnail: image)
     }

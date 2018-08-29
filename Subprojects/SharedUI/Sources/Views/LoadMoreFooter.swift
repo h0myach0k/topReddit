@@ -34,7 +34,11 @@ public class LoadMoreFooter : UIView
     {
         didSet { delegateDidChangeState() }
     }
+    private let animationDuration: TimeInterval = 0.3
     private var cachedPoint: CGPoint = .zero
+    private var scrollView: UIScrollView!
+    private var footerInsets: CGFloat = 0
+    private var isTransitioning = false
     
     //! MARK: Overrides
     override public  func didMoveToSuperview()
@@ -47,7 +51,8 @@ public class LoadMoreFooter : UIView
     }
     
     //! MARK: - Public
-    static public func instantiate(style: Style) -> LoadMoreFooter
+    static public func instantiate(style: Style, scrollView: UIScrollView) ->
+        LoadMoreFooter
     {
         let result: LoadMoreFooter
         switch style
@@ -55,6 +60,7 @@ public class LoadMoreFooter : UIView
             case .default:
                 result = DefaultLoadMoreFooter.instantiate()
         }
+        result.scrollView = scrollView
         return result
     }
     
@@ -77,9 +83,9 @@ public class LoadMoreFooter : UIView
         
         guard isScrollingDown, currentOffset > trigger, contentOffset.y > 0,
             delegateShouldChangeState(.opened) else { return }
+        guard !isTransitioning else { return }
         
-        state = .opened
-        scrollView.contentInset.bottom = bounds.height
+        transition(to: .opened, completion: {_ in})
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate
@@ -98,14 +104,16 @@ public class LoadMoreFooter : UIView
     {
         updateFrame(in: scrollView)
         guard state == .opened else { return }
-        
-        let contentOffset = scrollView.contentOffset
-        scrollView.contentInset.bottom = 0
-        scrollView.setContentOffset(contentOffset, animated: false)
-        state = .hidden
-        completion?(true)
+        guard !isTransitioning else { return }
+        transition(to: .hidden, completion: completion ?? { _ in })
     }
     
+    public func prepereToHide()
+    {
+        guard state == .opened else { return }
+        self.alpha = 0
+    }
+
     //! MARK: - Delegate
     private func delegateDidChangeState()
     {
@@ -115,6 +123,91 @@ public class LoadMoreFooter : UIView
     private func delegateShouldChangeState(_ state: State) -> Bool
     {
         return delegate?.loadMoreFooterView(self, shouldChange: state) ?? true
+    }
+    
+    //! MARK: - Transitions
+    private func transition(to state: State, completion: @escaping
+        (_ finished: Bool) -> Void)
+    {
+        guard self.state != state else { return }
+        isTransitioning = true
+        switch state
+        {
+            case .opened:
+                transitionToOpenedState(completion: completion)
+            case .hidden:
+                transitionToHiddenState(completion: completion)
+        }
+    }
+    
+    private func transitionToOpenedState(completion: @escaping
+        (_ finished: Bool) -> Void)
+    {
+        //! Configure new insets
+        var contentInsets = scrollView.contentInset
+        let footerHeight = bounds.height
+        contentInsets.bottom += footerHeight
+        
+        //! Store additional scroll view insets
+        self.footerInsets = footerHeight
+        
+        //! Restore alpha
+        self.alpha = 1
+        
+        //! Perform animation
+        setScrollViewInsets(contentInsets, animated: true)
+        { [weak self] finished in
+            guard let `self` = self else { return }
+            self.isTransitioning = false
+            self.state = .opened
+            completion(finished)
+        }
+    }
+    
+    private func transitionToHiddenState(completion: @escaping
+        (_ finished: Bool) -> Void)
+    {
+        //! Configure new insets
+        var contentInsets = scrollView.contentInset
+        contentInsets.bottom -= footerInsets
+        
+        //! Reset insets
+        self.footerInsets = 0
+        
+        setScrollViewInsets(contentInsets, animated: true)
+        { [weak self] finished in
+            guard let `self` = self else { return }
+            self.isTransitioning = false
+            self.state = .hidden
+            completion(finished)
+        }
+    }
+    
+    private func setScrollViewInsets(_ insets: UIEdgeInsets, animated: Bool,
+        completion: @escaping (_ finished: Bool) -> Void)
+    {
+        let animations = { self.scrollView.contentInset = insets }
+        if animated
+        {
+            UIView.animate(withDuration: animationDuration, delay: 0,
+                options: [.allowUserInteraction, .beginFromCurrentState],
+                animations: animations, completion: completion)
+        }
+        else
+        {
+            animations()
+            completion(true)
+        }
+    }
+    
+    private func scrollToLoadMoreFooterIfNeeded()
+    {
+        guard !scrollView.isDragging else { return }
+        let contentSize = scrollView.contentSize
+        let y = contentSize.height - scrollView.bounds.height + bounds.height
+        var contentOffset = scrollView.contentOffset
+        contentOffset.y = y
+        scrollView.setContentOffset(contentOffset, animated: true)
     }
     
     //! MARK: - Private

@@ -52,6 +52,7 @@
 		6774DC54213051C100886DF3 /* DataStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DC53213051C100886DF3 /* DataStoreFactory.swift */; };
 		6777C4D12136653700B24E03 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777C4CF2136653600B24E03 /* DependencyContainer.swift */; };
 		6777C4D22136653700B24E03 /* DependencyContainerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777C4D02136653600B24E03 /* DependencyContainerError.swift */; };
+		6777C4D42136820E00B24E03 /* StoryboardSegueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777C4D32136820E00B24E03 /* StoryboardSegueExtensions.swift */; };
 		6791821D21342AEA00102DDA /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6791821C21342AEA00102DDA /* ImageViewController.swift */; };
 		6791821F21342B2C00102DDA /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6791821E21342B2C00102DDA /* ImageDataSource.swift */; };
 		6791822221342D8900102DDA /* StoryboardSegueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6791822121342D8900102DDA /* StoryboardSegueType.swift */; };
@@ -173,6 +174,7 @@
 		67AA6B2921349D5B00260244 /* ResolvedImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B2821349D5B00260244 /* ResolvedImageInfo.swift */; };
 		67AA6B2B2135FB9C00260244 /* RelativeTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B2A2135FB9C00260244 /* RelativeTimeFormatter.swift */; };
 		67AA6B2D2135FBC800260244 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6B2C2135FBC800260244 /* Localizable.stringsdict */; };
+		67C5E3F121370C00004F608A /* ListingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C5E3F021370C00004F608A /* ListingItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -406,6 +408,7 @@
 		6774DC53213051C100886DF3 /* DataStoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreFactory.swift; sourceTree = "<group>"; };
 		6777C4CF2136653600B24E03 /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		6777C4D02136653600B24E03 /* DependencyContainerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainerError.swift; sourceTree = "<group>"; };
+		6777C4D32136820E00B24E03 /* StoryboardSegueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSegueExtensions.swift; sourceTree = "<group>"; };
 		6791821C21342AEA00102DDA /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		6791821E21342B2C00102DDA /* ImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
 		6791822121342D8900102DDA /* StoryboardSegueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSegueType.swift; sourceTree = "<group>"; };
@@ -534,6 +537,7 @@
 		67AA6B2821349D5B00260244 /* ResolvedImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolvedImageInfo.swift; sourceTree = "<group>"; };
 		67AA6B2A2135FB9C00260244 /* RelativeTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeTimeFormatter.swift; sourceTree = "<group>"; };
 		67AA6B2C2135FBC800260244 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		67C5E3F021370C00004F608A /* ListingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1140,9 +1144,9 @@
 				67978C72213287F900230527 /* NoDataView.swift */,
 				67978C8021328B4300230527 /* ErrorView.swift */,
 				67978C9A2132BF3F00230527 /* LoadMoreFooter.swift */,
+				67978CB12132EDF200230527 /* ImageView.swift */,
 				67978C6F2132873200230527 /* Extensions */,
 				67978C6A2132841700230527 /* Implementations */,
-				67978CB12132EDF200230527 /* ImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1232,6 +1236,7 @@
 				67AA6B1E213346C700260244 /* ListingExtensions.swift */,
 				67AA6B20213346F500260244 /* StringExtensions.swift */,
 				672073C021353E4D003B8FBF /* CoderExtensions.swift */,
+				6777C4D32136820E00B24E03 /* StoryboardSegueExtensions.swift */,
 				67978CAE2132ED0900230527 /* Private */,
 			);
 			path = Extensions;
@@ -1293,6 +1298,7 @@
 				67AA6A92212DE45B00260244 /* Main.storyboard */,
 				67AA6B2C2135FBC800260244 /* Localizable.stringsdict */,
 				67AA6B222133472000260244 /* Localizable.strings */,
+				67C5E3F021370C00004F608A /* ListingItemCell.xib */,
 			);
 			path = Localizable;
 			sourceTree = "<group>";
@@ -1912,6 +1918,7 @@
 				67AA6A9B212DE45B00260244 /* Main.storyboard in Resources */,
 				67AA6B232133472000260244 /* Localizable.strings in Resources */,
 				67AA6A99212DE45B00260244 /* Assets.xcassets in Resources */,
+				67C5E3F121370C00004F608A /* ListingItemCell.xib in Resources */,
 				67AA6B2D2135FBC800260244 /* Localizable.stringsdict in Resources */,
 				67AA6A9A212DE45B00260244 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -2089,6 +2096,7 @@
 				67AA6B2B2135FB9C00260244 /* RelativeTimeFormatter.swift in Sources */,
 				672073C3213544FA003B8FBF /* SharedErrors.swift in Sources */,
 				67978CB22132EDF200230527 /* ImageView.swift in Sources */,
+				6777C4D42136820E00B24E03 /* StoryboardSegueExtensions.swift in Sources */,
 				67AA6B21213346F500260244 /* StringExtensions.swift in Sources */,
 				67978CB02132ED1A00230527 /* MainStoryboardImp.swift in Sources */,
 				67978CAA2132E92900230527 /* ListingItemCell.swift in Sources */,

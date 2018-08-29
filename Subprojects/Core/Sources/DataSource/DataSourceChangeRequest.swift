@@ -40,7 +40,7 @@ public struct DataSourceChangeRequest<Value>
 public extension DataSourceChangeRequest where Value : Collection
 {
     /// Contains indexes that were inserted
-    var insetedIndexes: IndexSet { return indexes?.inserted ?? .init()}
+    var insertedIndexes: IndexSet { return indexes?.inserted ?? .init()}
     /// Contains indexes that were deleted
     var deletedIndexes: IndexSet { return indexes?.deleted ?? .init()}
     /// Contains indexes that were updated

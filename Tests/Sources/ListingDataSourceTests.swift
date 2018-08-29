@@ -64,7 +64,7 @@ class ListingDataSourceTests: XCTestCase
             guard let changeRequest = changeRequest else { return }
             XCTAssertEqual(changeRequest.deletedIndexes.count, 0)
             XCTAssertEqual(changeRequest.updatedIndexes.count, 0)
-            XCTAssertEqual(changeRequest.insetedIndexes.count, 2)
+            XCTAssertEqual(changeRequest.insertedIndexes.count, 2)
             
             let titles = changeRequest.value?.map {$0.title} ?? []
             XCTAssertEqual(expectedTitles, titles)
@@ -88,7 +88,7 @@ class ListingDataSourceTests: XCTestCase
             guard let changeRequest = changeRequest else { return }
             XCTAssertEqual(changeRequest.deletedIndexes.count, 0)
             XCTAssertEqual(changeRequest.updatedIndexes.count, 0)
-            XCTAssertEqual(changeRequest.insetedIndexes.count, 2)
+            XCTAssertEqual(changeRequest.insertedIndexes.count, 2)
             
             let titles = changeRequest.value?.map {$0.title} ?? []
             XCTAssertEqual(expectedTitles, titles)
@@ -112,7 +112,7 @@ class ListingDataSourceTests: XCTestCase
             guard let changeRequest = changeRequest else { return }
             XCTAssertEqual(changeRequest.deletedIndexes.count, 0)
             XCTAssertEqual(changeRequest.updatedIndexes.count, 0)
-            XCTAssertEqual(changeRequest.insetedIndexes.count, 2)
+            XCTAssertEqual(changeRequest.insertedIndexes.count, 2)
             
             let titles = changeRequest.value?.map {$0.title} ?? []
             XCTAssertEqual(expectedTitles, titles)

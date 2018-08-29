@@ -215,6 +215,16 @@ open class DataSourceViewController<DataSourceType> : BaseLoadingViewController
     {
     }
     
+    open func didReloadData()
+    {
+        
+    }
+    
+    open func willReloadData()
+    {
+    
+    }
+    
     //! MARK: BaseLoadingViewController overrides
     open override func cancel()
     {
@@ -262,7 +272,9 @@ open class DataSourceViewController<DataSourceType> : BaseLoadingViewController
             {
                 let changeRequest = dataSource.changeRequest(toReplaceValue:
                     value)
-                reloadData(changeRequest: changeRequest, completion: {})
+                willReloadData()
+                reloadData(changeRequest: changeRequest, completion:
+                    didReloadData)
             }
             didFinishLoadData()
         }
@@ -291,7 +303,8 @@ extension DataSourceViewController : DataSourceDelegate
         dataSourceContentDidChange()
         let changeRequest = changeRequest as! DataSourceChangeRequest<
             DataSourceType.Value>
-        reloadData(changeRequest: changeRequest, completion: {})
+        willReloadData()
+        reloadData(changeRequest: changeRequest, completion: didReloadData)
     }
     
     public func dataSourceDidCancelPreviouslyRunningRequest<T>(_ sender: T)

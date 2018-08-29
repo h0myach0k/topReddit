@@ -33,7 +33,7 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
     /// Value indicating if load more footer should be shown
     open var hasLoadMoreFooter: Bool
     {
-        return dataSource.metadata.contains(.hasNext) && !isLoading
+        return dataSource.metadata.contains(.hasNext)
     }
     /// Load more footer instance
     public private(set) var loadMoreFooter: LoadMoreFooter?
@@ -78,7 +78,6 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
     {
         super.didFinishLoadData()
         hideRefreshControlIfNeeded()
-        hideAndUpdateLoadMoreFooterAvailability()
     }
         
     //! MARK: - BaseStatesViewController overrides
@@ -90,6 +89,19 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
     open override func addErrorView(_ view: UIView)
     {
         addStateViewToScrollView(view)
+    }
+    
+    //! MARK: - DataSourceViewController overrides
+    open override func willReloadData()
+    {
+        super.willReloadData()
+        loadMoreFooter?.prepereToHide()
+    }
+    
+    open override func didReloadData()
+    {
+        super.didReloadData()
+        hideAndUpdateLoadMoreFooterAvailability()
     }
     
     //! MARK: - Public
@@ -105,7 +117,8 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
     
     open func createLoadMoreFooter() -> LoadMoreFooter
     {
-        return LoadMoreFooter.instantiate(style: loadMoreFooterStyle)
+        return LoadMoreFooter.instantiate(style: loadMoreFooterStyle,
+            scrollView: scrollView)
     }
     
     //! MARK: - Actions
@@ -142,8 +155,13 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
     public func loadMoreFooterView(_ sender: LoadMoreFooter, didChange state:
         LoadMoreFooter.State)
     {
-        guard state == .opened else { return }
-        performLoadPage()
+        switch state
+        {
+            case .opened:
+                performLoadPage()
+            case .hidden:
+                updateLoadMoreFooterAvailability()
+        }
     }
     
     //! MARK: - Private
@@ -180,6 +198,7 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
             loadMoreFooter.delegate = self
             self.loadMoreFooter = loadMoreFooter
             loadMoreFooter.frame.size.width = scrollView.bounds.width
+            loadMoreFooter.autoresizingMask = .flexibleWidth
             scrollView.addSubview(loadMoreFooter)
         }
         else if !hasLoadMoreFooter, nil != loadMoreFooter
@@ -187,6 +206,11 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
             loadMoreFooter?.removeFromSuperview()
             loadMoreFooter = nil
         }
+    }
+    
+    private func hideLoadMoreFooterIfNeeded()
+    {
+        loadMoreFooter?.hide(in: scrollView, animated: true, completion: nil)
     }
     
     private func hideAndUpdateLoadMoreFooterAvailability()
@@ -203,11 +227,7 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
             updateLoadMoreFooterAvailability()
         }
     }
-    
-    private func hideLoadMoreFooterIfNeeded()
-    {
-        loadMoreFooter?.hide(in: scrollView, animated: true, completion: nil)
-    }
+
     
     private func addStateViewToScrollView(_ view: UIView)
     {

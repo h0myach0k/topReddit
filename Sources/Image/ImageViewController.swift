@@ -12,7 +12,6 @@
 import Foundation
 import RedditAccess
 import SharedUI
-import ImageDownloader
 import Core
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -21,23 +20,21 @@ class ImageViewController : DataSourceViewController<ImageDataSource>
 {
     //! MARK: - Properties
     /// Image info assotiated with the controller
-    private var imageInfo: ImageInfo!
-    /// Image downloader instance responsible for image loading
-    private var imageDownloader: ImageDownloader!
-    /// Image downloader instance responsible for image loading
+    private var imageInfo: ImageInfo? { return dataSource?.imageInfo }
+    /// Dependency container
     private var container: DependencyContainer!
     /// Image loaded by controller
     var image: UIImage? { return value?.image }
     
     //! MARK: - IBOutlet connections
     @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var closeButton: UIButton!
-    @IBOutlet private var shareButton: UIButton!
+    @IBOutlet private var shareBarButtonItem: UIBarButtonItem!
     
     //! MARK: - Overriden properties
-    override var preferredStatusBarStyle: UIStatusBarStyle
+    override var prefersStatusBarHidden: Bool { return true }
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation
     {
-        return .lightContent
+        return .slide
     }
     override var loadingTitle: String? { return nil }
     override var loadingMessage: String? { return nil }
@@ -52,18 +49,24 @@ class ImageViewController : DataSourceViewController<ImageDataSource>
     func configureFromStoryboard(imageInfo: ImageInfo, container:
         DependencyContainer)
     {
-        self.imageDownloader = try! container.resolve(ImageDownloader.self)
-        self.imageInfo = imageInfo
         self.container = container
-        commonInit()
+        self.dataSource = ImageDataSource(imageInfo: imageInfo, container:
+            container)
     }
     
-    //! MARK: - Override Codable Methods
+    //! MARK: - UIViewController overrides
     override func viewDidLoad()
     {
         super.viewDidLoad()
         updateShareButtonAvailability()
         imageView.image = image
+    }
+    
+    //! MARK: - Override Codable Methods
+    override func decodeRestorableState(with coder: NSCoder)
+    {
+        super.decodeRestorableState(with: coder)
+        container = AppDependencies.shared.container
     }
     
     //! MARK: - DataSourceViewController overrides
@@ -89,14 +92,9 @@ class ImageViewController : DataSourceViewController<ImageDataSource>
     }
     
     //! MARK: - Actions
-    @IBAction private func swipeAction(_ sender: UISwipeGestureRecognizer)
-    {
-        performSegue(with: .dismissSegue, sender: nil)
-    }
-    
     @IBAction func share(_ sender: Any)
     {
-        guard let image = value else { return }
+        guard let image = image else { return }
         let shareComposer = UIActivityViewController(activityItems: [image],
             applicationActivities: nil)
         shareComposer.completionWithItemsHandler =
@@ -107,12 +105,6 @@ class ImageViewController : DataSourceViewController<ImageDataSource>
     }
     
     //! MARK: - Private
-    private func commonInit()
-    {
-        self.dataSource = ImageDataSource(imageInfo: imageInfo,
-            container: container)
-    }
-    
     private func didCompletedShare(with error: Error?)
     {
         guard let error = error else { return }
@@ -123,16 +115,7 @@ class ImageViewController : DataSourceViewController<ImageDataSource>
     
     private func updateShareButtonAvailability()
     {
-        shareButton.isHidden = nil == value
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////
-//! MARK: - As StoryboardSegueType
-extension ImageViewController : StoryboardSegueType
-{
-    enum SegueType : String
-    {
-        case dismissSegue
+        let items: [UIBarButtonItem] = nil == image ? [] : [shareBarButtonItem]
+        setToolbarItems(items, animated: true)
     }
 }
