@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  RedditDataSourceTests.swift
-//  RedditAccessTests
+//  ListingDataSourceTests.swift
+//  TopRedditTests
 //
 //  Created by Iurii Khomiak on 8/25/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
@@ -10,30 +10,35 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 import XCTest
-@testable import RedditAccess
+@testable import TopReddit
+import RedditAccess
 import URLAccess
 import Core
 
 ////////////////////////////////////////////////////////////////////////////////
-class RedditDataSourceTests: XCTestCase
+class ListingDataSourceTests: XCTestCase
 {
-    var redditAccess: RedditAccess!
+    var container: DependencyContainer!
     let responseManager = StubRedditResponseManager(baseUrl: URL(
         fileURLWithPath: NSTemporaryDirectory()))
     
     override func setUp()
     {
         super.setUp()
-        redditAccess = RedditAccessFactory().createRedditAccess(urlAccess:
-            .shared, parameters: RedditAccessParameters(baseUrl:
-            responseManager.baseUrl))
+        container = DependencyContainer()
+        container.register(RedditAccess.self, in: .singleton)
+        { [unowned self] _ in
+            RedditAccessFactory().createRedditAccess(urlAccess:
+                .shared, parameters: RedditAccessParameters(baseUrl:
+                self.responseManager.baseUrl))
+        }
     }
     
     func testDataSource()
     {
         let query = ListingQuery(listing: .top(.all), count: 2)
-        let dataSource = RedditAccessFactory().createDataSource(for: query,
-            in: redditAccess)
+        let dataSource = ListingDataSource.init(query: query, container:
+            container)
         
         let testData1 = data(testFileName: "top_1")
         let expectedData1 = titles(testFileName: "top_1")

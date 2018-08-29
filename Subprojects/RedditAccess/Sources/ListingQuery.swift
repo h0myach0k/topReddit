@@ -16,10 +16,10 @@ fileprivate let defaultCount = 50
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Data structure for listing query
-public struct ListingQuery
+public struct ListingQuery : Codable
 {
     /// Defines requested listing order
-    public enum Order
+    public enum Order : String, Codable
     {
         case next
         case previous
@@ -31,7 +31,24 @@ public struct ListingQuery
     public var count: Int = defaultCount
     
     /// Offset information
+    private var order: Order?
+    private var token: ListingToken?
     var offset: (order: Order, token: ListingToken)?
+    {
+        get
+        {
+            if let order = order, let token = token
+            {
+                return (order, token)
+            }
+            return nil
+        }
+        set
+        {
+            order = newValue?.order
+            token = newValue?.token
+        }
+    }
     
     /// Initializes new query
     public init(listing: Listing = .top(.all), count: Int)

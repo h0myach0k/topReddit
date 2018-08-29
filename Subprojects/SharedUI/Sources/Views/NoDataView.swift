@@ -25,7 +25,7 @@ public class NoDataView : UIView
     /// Color
     public var color: UIColor?
     
-    /// MARK: - Init & Deinit
+    //! MARK: - Init & Deinit
     public override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -36,7 +36,7 @@ public class NoDataView : UIView
         super.init(coder: aDecoder)
     }
     
-    /// MARK: - Factory method
+    //! MARK: - Factory method
     static public func instantiate(style: Style) -> NoDataView
     {
         switch style

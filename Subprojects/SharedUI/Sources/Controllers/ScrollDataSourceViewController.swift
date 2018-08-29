@@ -67,7 +67,6 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
     }
     
     //! MARK: - UIViewController overrides
-    
     open override func viewDidDisappear(_ animated: Bool)
     {
         super.viewDidDisappear(animated)
@@ -81,7 +80,7 @@ open class ScrollDataSourceViewController<DataSource> : DataSourceViewController
         hideRefreshControlIfNeeded()
         hideAndUpdateLoadMoreFooterAvailability()
     }
-    
+        
     //! MARK: - BaseStatesViewController overrides
     open override func addNoDataView(_ view: UIView)
     {

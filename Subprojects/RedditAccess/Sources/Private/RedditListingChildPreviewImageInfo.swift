@@ -3,7 +3,7 @@
 //  RedditListingChildPreviewImageInfo.swift
 //  TopReddit
 //
-//  Created by h0myach0k on 8/27/18.
+//  Created by Iurii Khomiak on 8/27/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////

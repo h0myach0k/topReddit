@@ -13,7 +13,8 @@ import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Provides base class for DataSourceProtocol
-open class DataSource<Value> : DataSourceProtocol
+open class DataSource<Value> : Codable, DataSourceProtocol
+    where Value : Codable
 {
     //! MARK: - Forward Declarations
     public typealias LoadOption = DataSourceLoadOption
@@ -42,7 +43,9 @@ open class DataSource<Value> : DataSourceProtocol
     private var isCancelled = false
     
     //! MARK: - Init & Deinit
-    public init() {}
+    public init()
+    {
+    }
     
     deinit
     {
@@ -125,6 +128,36 @@ open class DataSource<Value> : DataSourceProtocol
         lastUpdateDate = Date()
         didChangeContent(with: changeRequest)
         didFinishLoadData()
+    }
+    
+    //! MARK: - As NSCoding
+    private enum CodingKeys : CodingKey
+    {
+        case lastUpdateDate
+        case lastError
+        case metadata
+        case value
+    }
+    
+    public required init(from decoder: Decoder) throws
+    {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        lastUpdateDate = try container.decodeIfPresent(Date.self, forKey:
+            .lastUpdateDate)
+        lastError = try container.decodeIfPresent(ErrorCodingBox.self, forKey:
+            .lastError)?.error
+        metadata = try container.decode(Metadata.self, forKey: .metadata)
+        value = try container.decodeIfPresent(Value.self, forKey: .value)
+    }
+    
+    open func encode(to encoder: Encoder) throws
+    {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(lastUpdateDate, forKey: .lastUpdateDate)
+        try container.encodeIfPresent(lastError.map(ErrorCodingBox.init),
+            forKey: .lastError)
+        try container.encode(metadata, forKey: .metadata)
+        try container.encodeIfPresent(value, forKey: .value)
     }
     
     //! MARK: - Delegate communication

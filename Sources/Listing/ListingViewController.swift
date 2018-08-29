@@ -3,7 +3,7 @@
 //  ListingViewController.swift
 //  TopReddit
 //
-//  Created by h0myach0k on 8/26/18.
+//  Created by Iurii Khomiak on 8/26/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -18,52 +18,36 @@ import ImageDownloader
 ////////////////////////////////////////////////////////////////////////////////
 /// View Controller responsible for loading/displaying listing items from
 /// given query.
-class ListingViewController: TableDataSourceViewController<DataSource<[ListingItem]>>,
+class ListingViewController: TableDataSourceViewController<ListingDataSource>,
     UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching,
-    ListingItemCellDelegate
+    ListingItemCellDelegate, UIDataSourceModelAssociation
 {
     /// Listing query assotiated with the controller
-    private var query: ListingQuery! { didSet { queryDidChange() } }
-    /// Reddit access provider
-    private var redditAccess = RedditAccessFactory.sharedRedditAccess
+    private var query: ListingQuery!
     /// Image downloader
-    private var imageDownloader = ImageDownloaderFactory.sharedDownloader
+    private var imageDownloader: ImageDownloader!
+    /// Container
+    private var container: DependencyContainer!
     
     /// Loaded listing items
     var listingItems: [ListingItem] { return value ?? [] }
     private var thumbnails: [ListingItem : UIImage] = [:]
     
-    //! MARK: - Init & Deinit
-    /// Initializes new controller with query and access provider
-    ///
-    /// - Parameters:
-    ///   - query: Listing query assotiated with the controller
-    ///   - redditAccess: Reddit access provider
-    init(query: ListingQuery, redditAccess: RedditAccess)
-    {
-        self.query = query
-        self.redditAccess = redditAccess
-        super.init(dataSource: type(of: self).dataSource(from: query,
-            redditAccess: redditAccess))
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-    }
-    
+    //! MARK: Configure from storyboard
     /// Configures view controller with essential data after load from storyboard
     ///
     /// - Parameters:
     ///   - query: Listing query assotiated with the controller
-    ///   - redditAccess: Reddit access provider. Defaults to shared
-    func configureFromStoryboard(query: ListingQuery, redditAccess:
-        RedditAccess = RedditAccessFactory.sharedRedditAccess)
+    ///   - container: Dependency container
+    func configureFromStoryboard(query: ListingQuery, container:
+        DependencyContainer)
     {
-        self.redditAccess = redditAccess
         self.query = query
+        self.container = container
+        self.imageDownloader = try! container.resolve(ImageDownloader.self)
+        commonInit()
     }
-    
+        
     //! MARK: - UIViewController overrides
     override func didReceiveMemoryWarning()
     {
@@ -91,7 +75,8 @@ class ListingViewController: TableDataSourceViewController<DataSource<[ListingIt
                 {
                     fatalError("Segue destination controller is expected to be ImageViewController")
                 }
-                controller.configureFromStoryboard(imageInfo: sender)
+                controller.configureFromStoryboard(imageInfo: sender,
+                    container: container)
         }
     }
     
@@ -99,11 +84,22 @@ class ListingViewController: TableDataSourceViewController<DataSource<[ListingIt
         coordinator: UIViewControllerTransitionCoordinator)
     {
         super.willTransition(to: newCollection, with: coordinator)
+        guard isViewLoaded else { return }
         coordinator.animate(alongsideTransition:
         { (context) in
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
         }, completion: nil)
+    }
+    
+    //! MARK: DataSourceViewController overrides
+    override func dataSourceDecoder() -> Decoder
+    {
+        //! Since our data source intializes with dependency container,
+        //! default decoder is overriden with injection of dependency container
+        let result = super.dataSourceDecoder()
+        result.dependencyContainer = AppDependencies.shared.container
+        return result
     }
     
     //! MARK: - UITableViewDataSource
@@ -129,7 +125,7 @@ class ListingViewController: TableDataSourceViewController<DataSource<[ListingIt
         
         return cell
     }
-    
+        
     //! MARK: - UITableViewDataSourcePrefetching
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths:
         [IndexPath])
@@ -155,34 +151,41 @@ class ListingViewController: TableDataSourceViewController<DataSource<[ListingIt
         performSegue(with: .showImage, sender: imageInfo)
     }
     
+    //! MARK: - UIDataSourceModelAssotiation
+    func modelIdentifierForElement(at idx: IndexPath, in view: UIView) -> String?
+    {
+        return listingItems[idx.row].id
+    }
+    
+    func indexPathForElement(withModelIdentifier identifier: String, in
+        view: UIView) -> IndexPath?
+    {
+        guard let (index, _) = listingItems.enumerated()
+            .filter({$0.element.id == identifier}).first else { return nil }
+        return IndexPath(row: index, section: 0)
+    }
+    
     //! MARK: - Actions
     @IBAction func unwindBack(_ segue: UIStoryboardSegue)
     {     
     }
     
     //! MARK: - Private
-    private static func dataSource(from query: ListingQuery, redditAccess:
-        RedditAccess) -> DataSource<[ListingItem]>
+    private func commonInit()
     {
-        return RedditAccessFactory().createDataSource(for: query,
-            in: redditAccess)
-    }
-    
-    private func queryDidChange()
-    {
-        dataSource = type(of: self).dataSource(from: query, redditAccess:
-            redditAccess)
+        dataSource = ListingDataSource(query: query, container: container)
         navigationItem.title = query.listing.title
     }
     
     //! MARK: - Image Downloading
     private func loadThumbnails(for indexPaths: [IndexPath])
     {
+        LogInfo("Requested to preloading items for indexPaths \(indexPaths)")
         let items = indexPaths.map {listingItems[$0.row]}
             .filter {nil == thumbnails[$0] } //! We do not have image already
         for item in items where nil != item.thumbnailInfo
         {
-            LogInfo("Start preloading item \(item.id)")
+            LogInfo("Start preloading item \(item.id) indexPath \(indexPaths)")
             let url = item.thumbnailInfo!.url
             imageDownloader.loadImage(with: url, identifier: item.id)
             { [weak self] result in
@@ -211,8 +214,9 @@ class ListingViewController: TableDataSourceViewController<DataSource<[ListingIt
     {
         guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else
             { return }
-        let visibleItems = visibleIndexPaths.map {listingItems[$0.row]}
-        guard let index = visibleItems.index(of: item) else { return }
+        guard let index = listingItems.index(of: item) else { return }
+        let indexPath = IndexPath(item: index, section: 0)
+        guard visibleIndexPaths.contains(indexPath) else { return }
         guard let cell = tableView.cellForRow(at: IndexPath(item: index,
             section: 0)) as? ListingItemCell else { return }
         cell.update(thumbnail: image)
@@ -220,6 +224,7 @@ class ListingViewController: TableDataSourceViewController<DataSource<[ListingIt
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+//! MARK: - As StoryboardSegueType
 extension ListingViewController : StoryboardSegueType
 {
     enum SegueType : String

@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 import Foundation
 import RedditAccess
+import Core
 
 ////////////////////////////////////////////////////////////////////////////////
 private let queryCount = 20
@@ -21,14 +22,11 @@ class TopListingViewController : ListingViewController
     private static let query: ListingQuery = ListingQuery(listing: .top(.all),
         count: queryCount)
     
-    init(redditAccess: RedditAccess = RedditAccessFactory.sharedRedditAccess)
-    {
-        super.init(query: type(of: self).query, redditAccess: redditAccess)
-    }
-    
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-        configureFromStoryboard(query: type(of: self).query)
+        configureFromStoryboard(
+            query: type(of: self).query,
+            container: AppDependencies.shared.container)
     }
 }

@@ -15,7 +15,7 @@ import Foundation
 /// Describes extensible struct for data source load option
 public struct DataSourceLoadOption : OptionSet
 {
-    /// MARK: - As OptionsSet
+    //! MARK: - As OptionsSet
     public let rawValue: Int
     public init(rawValue: Int)
     {

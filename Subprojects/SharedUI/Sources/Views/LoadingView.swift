@@ -25,7 +25,7 @@ public class LoadingView : UIView
     /// Preferred elements color
     public var color: UIColor?
     
-    /// MARK: - Init & Deinit
+    //! MARK: - Init & Deinit
     public override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -36,7 +36,7 @@ public class LoadingView : UIView
         super.init(coder: aDecoder)
     }
     
-    /// MARK: - Factory method
+    //! MARK: - Factory method
     static public func instantiate(style: Style) -> LoadingView
     {
         switch style

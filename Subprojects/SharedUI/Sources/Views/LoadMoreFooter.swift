@@ -61,6 +61,8 @@ public class LoadMoreFooter : UIView
     public func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
         updateFrame(in: scrollView)
+        guard scrollView.isDragging || scrollView.isDecelerating else { return }
+        
         defer { cachedPoint = scrollView.contentOffset }
         guard state == .hidden, cachedPoint != .zero else
         {

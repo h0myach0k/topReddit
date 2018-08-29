@@ -15,7 +15,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BQd-3J-vD5">
             <objects>
-                <navigationController id="bug-yS-AUb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bug-yS-AUb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7H7-RC-7er">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -31,7 +31,7 @@
         <!--Top Listing View Controller-->
         <scene sceneID="ugv-dk-Lqj">
             <objects>
-                <viewController storyboardIdentifier="topListing" id="gCM-zf-Dlk" customClass="TopListingViewController" customModule="TopReddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="topListing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gCM-zf-Dlk" customClass="TopListingViewController" customModule="TopReddit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quP-IN-x45">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +167,7 @@
                                                 <connections>
                                                     <outlet property="authorNameLabel" destination="Jbb-Xz-oiO" id="Xr8-Q1-Zx8"/>
                                                     <outlet property="commentsLabel" destination="Tkm-Bn-Pta" id="rx0-f5-0EU"/>
+                                                    <outlet property="relativeDateLabel" destination="YJ7-QO-t1M" id="zWC-wd-m1P"/>
                                                     <outlet property="stackViewBottomConstraint" destination="XcT-Ud-gmH" id="ciM-V9-pyz"/>
                                                     <outlet property="stackViewTopConstraint" destination="P2P-xn-qnL" id="Mag-7E-hl8"/>
                                                     <outlet property="thumbnailContainerView" destination="wwa-k5-jqa" id="arl-aY-7t1"/>
@@ -215,7 +216,7 @@
         <!--Image View Controller-->
         <scene sceneID="bbQ-PA-vzz">
             <objects>
-                <viewController storyboardIdentifier="image" id="Tbg-eL-2io" customClass="ImageViewController" customModule="TopReddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="image" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tbg-eL-2io" customClass="ImageViewController" customModule="TopReddit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5zo-Eh-P7k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

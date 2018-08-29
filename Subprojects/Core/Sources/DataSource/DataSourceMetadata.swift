@@ -13,9 +13,9 @@ import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Describes extensible struct for data source metadata options
-public struct DataSourceMetadata : OptionSet
+public struct DataSourceMetadata : OptionSet, Codable
 {
-    /// MARK: - As OptionsSet
+    //! MARK: - As OptionsSet
     public let rawValue: Int
     public init(rawValue: Int)
     {

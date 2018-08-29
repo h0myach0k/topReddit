@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>RelativeTimeFormatter.second</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@seconds@ %@</string>
+		<key>seconds</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>zero seconds</string>
+			<key>one</key>
+			<string>one second</string>
+			<key>two</key>
+			<string>two seconds</string>
+			<key>few</key>
+			<string>few seconds</string>
+			<key>other</key>
+			<string>%u seconds</string>
+		</dict>
+	</dict>
+	<key>RelativeTimeFormatter.minute</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@minutes@ %@</string>
+		<key>minutes</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>zero minutes</string>
+			<key>one</key>
+			<string>one minute</string>
+			<key>two</key>
+			<string>two minutes</string>
+			<key>few</key>
+			<string>few minutes</string>
+			<key>other</key>
+			<string>%u minutes</string>
+		</dict>
+	</dict>
+	<key>RelativeTimeFormatter.hour</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@hours@ %@</string>
+		<key>hours</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>zero hours</string>
+			<key>one</key>
+			<string>one hour</string>
+			<key>two</key>
+			<string>two hours</string>
+			<key>few</key>
+			<string>few hours</string>
+			<key>other</key>
+			<string>%u hours</string>
+		</dict>
+	</dict>
+	<key>RelativeTimeFormatter.day</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@days@ %@</string>
+		<key>days</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>zero days</string>
+			<key>one</key>
+			<string>one day</string>
+			<key>two</key>
+			<string>two days</string>
+			<key>few</key>
+			<string>few days</string>
+			<key>other</key>
+			<string>%u days</string>
+		</dict>
+	</dict>
+	<key>RelativeTimeFormatter.weekOfMonth</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@weeks@ %@</string>
+		<key>weeks</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>zero weeks</string>
+			<key>one</key>
+			<string>one week</string>
+			<key>two</key>
+			<string>two weeks</string>
+			<key>few</key>
+			<string>few weeks</string>
+			<key>other</key>
+			<string>%u weeks</string>
+		</dict>
+	</dict>
+	<key>RelativeTimeFormatter.month</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@months@ %@</string>
+		<key>months</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>zero minutes</string>
+			<key>one</key>
+			<string>one minute</string>
+			<key>two</key>
+			<string>two minutes</string>
+			<key>few</key>
+			<string>few minutes</string>
+			<key>other</key>
+			<string>%u minutes</string>
+		</dict>
+	</dict>
+	<key>RelativeTimeFormatter.year</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@years@ %@</string>
+		<key>years</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>zero years</string>
+			<key>one</key>
+			<string>one year</string>
+			<key>two</key>
+			<string>two years</string>
+			<key>few</key>
+			<string>few years</string>
+			<key>many</key>
+			<string>many years</string>
+			<key>other</key>
+			<string>%d years</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -17,11 +17,11 @@ public typealias DataSourceLoadDataCompletion<Value> = (_ changeRequest:
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Interface that describes data source properties and methods
-public protocol DataSourceProtocol: class
+public protocol DataSourceProtocol: class, Codable
 {
     //! MARK: - Forward Declarations
     /// Assotiated type
-    associatedtype Value
+    associatedtype Value : Codable
     
     //! MARK: - Properties
     /// Data source delegate object

@@ -13,7 +13,7 @@ import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Describing image information
-public struct ImageInfo
+public struct ImageInfo : Codable
 {
     public let url: URL
     public let size: CGSize

@@ -37,12 +37,5 @@ public class RedditAccessFactory
     {
         return RedditAccessImp(urlAccess: urlAccess, parameters: parameters)
     }
-    
-    /// Creates data source for given query
-    public func createDataSource(for query: ListingQuery, in redditAccess:
-        RedditAccess) -> DataSource<[ListingItem]>
-    {
-        return ListingQueryDataSource(query: query, redditAccess: redditAccess)
-    }
 }
 

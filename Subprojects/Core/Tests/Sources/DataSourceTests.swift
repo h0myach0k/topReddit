@@ -33,6 +33,33 @@ class DataSourceTests : XCTestCase
         XCTAssertTrue(dataSource.isEmpty, "Data source is not empty")
     }
     
+    func testCodingDecoding()
+    {
+        let loadExpectation = self.expectation(description: "DidFinishLoad")
+        let dataSource = StubDataSource(simulatedResult: .value("Test"))
+        dataSource.loadData(options: .initialLoad)
+        { _, _ in
+            loadExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        do
+        {
+            let data = try encoder.encode(dataSource)
+            XCTAssertFalse(data.isEmpty)
+            let copiedDataSource = try decoder.decode(StubDataSource<String>.self,
+                from: data)
+            XCTAssertEqual(copiedDataSource.value, "Test")
+            XCTAssertNotNil(copiedDataSource.lastUpdateDate)
+        }
+        catch
+        {
+            XCTAssert(false, "\(error)")
+        }
+    }
+    
     func testSuccessInitialLoad()
     {
         let didFinishExpectation = self.expectation(description: "DidFinishLoad")

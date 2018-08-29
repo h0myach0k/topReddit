@@ -13,7 +13,7 @@ import Foundation
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Describes listing item
-public struct ListingItem
+public struct ListingItem : Codable
 {
     public let id: String
     public let title: String

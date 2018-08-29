@@ -3,7 +3,7 @@
 //  ListingItemCell.swift
 //  TopReddit
 //
-//  Created by h0myach0k on 8/26/18.
+//  Created by Iurii Khomiak on 8/26/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -35,6 +35,7 @@ class ListingItemCell : UITableViewCell
     @IBOutlet private var thumbnailContainerView: UIView!
     @IBOutlet private var thumbnailImageView: UIImageView!
     @IBOutlet private var commentsLabel: UILabel!
+    @IBOutlet private var relativeDateLabel: UILabel!
     
     //! MARK: - NSObject overrides
     override func awakeFromNib()
@@ -70,6 +71,10 @@ class ListingItemCell : UITableViewCell
         thumbnailImageView.image = thumbnail ?? #imageLiteral(resourceName: "ico_placeholder")
         thumbnailContainerView.isHidden = nil == imageInfo?.url
         commentsLabel.text = listingItem.numberOfComments.abbreviated
+        
+        let formatter = RelativeTimeFormatter()
+        formatter.beforeSuffix = "ago".localized
+        relativeDateLabel.text = formatter.string(from: listingItem.createdDate)
     }
     
     func update(thumbnail: UIImage)

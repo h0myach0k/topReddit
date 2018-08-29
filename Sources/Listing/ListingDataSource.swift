@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//  ListingQueryDataSource.swift
-//  RedditAccess
+//  ListingDataSource.swift
+//  TopReddit
 //
 //  Created by Iurii Khomiak on 8/25/18.
 //  Copyright © 2018 Iurii Khomiak. All rights reserved.
@@ -12,10 +12,27 @@
 import Foundation
 import Core
 import URLAccess
+import RedditAccess
+import protocol RedditAccess.Task
 
 ////////////////////////////////////////////////////////////////////////////////
-class ListingQueryDataSource : DataSource<[ListingItem]>
+///  Data Source class responsible for loading data for given query.
+class ListingDataSource : DataSource<[ListingItem]>
 {
+    //! MARK: - Forward Declarations
+    enum Error : Swift.Error
+    {
+        case unsupportedOperation
+    }
+    
+    private enum CodingKeys : CodingKey
+    {
+        case query
+        case nextQuery
+        case previousQuery
+    }
+    
+    //! MARK: - Properties
     let query: ListingQuery
     let redditAccess: RedditAccess
     
@@ -23,18 +40,47 @@ class ListingQueryDataSource : DataSource<[ListingItem]>
     private var previousQuery: ListingQuery?
     private var activeTask: Task?
     
-    init(query: ListingQuery, redditAccess: RedditAccess)
+    //! MARK: - Init & Deinit
+    /// Initializes data source with starting query and dependency container
+    init(query: ListingQuery, container: DependencyContainer)
     {
         self.query = query
-        self.redditAccess = redditAccess
+        self.redditAccess = try! container.resolve(RedditAccess.self)
         super.init()
     }
     
+    //! MARK: - As Codable
+    required init(from decoder: Decoder) throws
+    {
+        guard let dependencyContainer = decoder.dependencyContainer else
+            { throw DecodingError.noDependencyContainer }
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        query = try container.decode(ListingQuery.self, forKey: .query)
+        nextQuery = try container.decodeIfPresent(ListingQuery.self, forKey:
+            .nextQuery)
+        previousQuery = try container.decodeIfPresent(ListingQuery.self, forKey:
+            .previousQuery)        
+        redditAccess = try dependencyContainer.resolve(RedditAccess.self)
+        
+        try super.init(from: decoder)
+    }
+    
+    override func encode(to encoder: Encoder) throws
+    {
+        try super.encode(to: encoder)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(query, forKey: .query)
+        try container.encodeIfPresent(nextQuery, forKey: .nextQuery)
+        try container.encodeIfPresent(previousQuery, forKey: .previousQuery)
+    }
+    
+    //! MARK: - Overriden methods
     override func main(options: LoadOption)
     {
         guard let query = self.query(for: options) else
         {
-            finish(error: RedditError.unsupportedOperation)
+            finish(error: Error.unsupportedOperation)
             return
         }
         

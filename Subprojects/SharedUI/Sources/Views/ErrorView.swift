@@ -32,7 +32,7 @@ public class ErrorView : UIView
     public var color: UIColor?
     public weak var delegate: ErrorViewDelegate?
     
-    /// MARK: - Init & Deinit
+    //! MARK: - Init & Deinit
     public override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -43,7 +43,7 @@ public class ErrorView : UIView
         super.init(coder: aDecoder)
     }
     
-    /// MARK: - Factory method
+    //! MARK: - Factory method
     static public func instantiate(style: Style) -> ErrorView
     {
         switch style
