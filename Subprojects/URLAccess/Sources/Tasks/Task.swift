@@ -87,8 +87,9 @@ public class Task
     //! MARK: - SessionDelegate callbacks
     private func sessionDelegateDidCompleteTask()
     {
-        print("Session delegate \(sessionDelegate) did complete task")
+        LogInfo("Session delegate \(sessionDelegate) did complete task")
         operationQueue.isSuspended = false
+        LogInfo("Operation queue \(operationQueue) is resumed")
     }
     
     //! MARK: - Private

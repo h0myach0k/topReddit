@@ -21,6 +21,8 @@
 		672073E82135675F003B8FBF /* top_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 672073E22135675F003B8FBF /* top_1.plist */; };
 		672073E92135675F003B8FBF /* top_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 672073E32135675F003B8FBF /* top_2.json */; };
 		672073EA2135675F003B8FBF /* top_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 672073E42135675F003B8FBF /* top_2.plist */; };
+		6756F5E12137EE6200854E00 /* ErrorCodingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6756F5E02137EE6200854E00 /* ErrorCodingBox.swift */; };
+		6756F5EC2137F2C700854E00 /* URLAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67AA6AA4212DE83C00260244 /* URLAccess.framework */; };
 		6774DBA9212E868000886DF3 /* DefaultDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBA7212E85C600886DF3 /* DefaultDataResponse.swift */; };
 		6774DBAC212E88D800886DF3 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBAB212E88D800886DF3 /* DataResponse.swift */; };
 		6774DBAE212E8A9500886DF3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6774DBAD212E8A9500886DF3 /* Result.swift */; };
@@ -170,7 +172,6 @@
 		67AA6B232133472000260244 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6B222133472000260244 /* Localizable.strings */; };
 		67AA6B24213489FB00260244 /* StubDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BB621315FA800230527 /* StubDataSource.swift */; };
 		67AA6B2521348A0300260244 /* StubPagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67978BC1213171F600230527 /* StubPagingDataSource.swift */; };
-		67AA6B272134946500260244 /* ErrorCodingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B262134946500260244 /* ErrorCodingBox.swift */; };
 		67AA6B2921349D5B00260244 /* ResolvedImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B2821349D5B00260244 /* ResolvedImageInfo.swift */; };
 		67AA6B2B2135FB9C00260244 /* RelativeTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA6B2A2135FB9C00260244 /* RelativeTimeFormatter.swift */; };
 		67AA6B2D2135FBC800260244 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 67AA6B2C2135FBC800260244 /* Localizable.stringsdict */; };
@@ -213,13 +214,6 @@
 			remoteGlobalIDString = 6774DC1E21302DB500886DF3;
 			remoteInfo = DataStore;
 		};
-		6774DC2B21302DB600886DF3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 67AA6A77212DE41400260244;
-			remoteInfo = TopReddit;
-		};
 		6774DC3221302DB600886DF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
@@ -240,13 +234,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 67978B642130631C00230527;
 			remoteInfo = ImageDownloader;
-		};
-		67978B712130631C00230527 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 67AA6A77212DE41400260244;
-			remoteInfo = TopReddit;
 		};
 		67978B782130631C00230527 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -283,13 +270,6 @@
 			remoteGlobalIDString = 67978BC921317FBB00230527;
 			remoteInfo = RedditAccess;
 		};
-		67978BD621317FBC00230527 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 67AA6A77212DE41400260244;
-			remoteInfo = TopReddit;
-		};
 		67978BDD21317FBC00230527 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
@@ -317,13 +297,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 67AA6AA3212DE83C00260244;
 			remoteInfo = URLAccess;
-		};
-		67AA6AB0212DE83C00260244 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 67AA6A70212DE41400260244 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 67AA6A77212DE41400260244;
-			remoteInfo = TopReddit;
 		};
 		67AA6AB7212DE83C00260244 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -375,6 +348,7 @@
 		672073E22135675F003B8FBF /* top_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = top_1.plist; sourceTree = "<group>"; };
 		672073E32135675F003B8FBF /* top_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = top_2.json; sourceTree = "<group>"; };
 		672073E42135675F003B8FBF /* top_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = top_2.plist; sourceTree = "<group>"; };
+		6756F5E02137EE6200854E00 /* ErrorCodingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCodingBox.swift; sourceTree = "<group>"; };
 		6774DBA7212E85C600886DF3 /* DefaultDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataResponse.swift; sourceTree = "<group>"; };
 		6774DBAB212E88D800886DF3 /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		6774DBAD212E8A9500886DF3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -533,7 +507,6 @@
 		67AA6B1E213346C700260244 /* ListingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingExtensions.swift; sourceTree = "<group>"; };
 		67AA6B20213346F500260244 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		67AA6B222133472000260244 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		67AA6B262134946500260244 /* ErrorCodingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ErrorCodingBox.swift; path = Resources/Localizable/ErrorCodingBox.swift; sourceTree = SOURCE_ROOT; };
 		67AA6B2821349D5B00260244 /* ResolvedImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolvedImageInfo.swift; sourceTree = "<group>"; };
 		67AA6B2A2135FB9C00260244 /* RelativeTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeTimeFormatter.swift; sourceTree = "<group>"; };
 		67AA6B2C2135FBC800260244 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
@@ -604,6 +577,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6756F5EC2137F2C700854E00 /* URLAccess.framework in Frameworks */,
 				67978BD321317FBC00230527 /* RedditAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +669,21 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		6756F5DF2137EE6200854E00 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6756F5E02137EE6200854E00 /* ErrorCodingBox.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6756F5E62137F05100854E00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6774DBAA212E88AA00886DF3 /* Response */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,9 +737,9 @@
 			children = (
 				6774DBEB2130187B00886DF3 /* Core.h */,
 				672073B4213510D5003B8FBF /* DependencyContainer */,
-				6791822D2134583400102DDA /* Coding */,
 				67978BA9213156FB00230527 /* DataSource */,
 				6774DBEE213018C900886DF3 /* Logger */,
+				6756F5DF2137EE6200854E00 /* Shared */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -899,14 +888,6 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		6791822D2134583400102DDA /* Coding */ = {
-			isa = PBXGroup;
-			children = (
-				67AA6B262134946500260244 /* ErrorCodingBox.swift */,
-			);
-			path = Coding;
-			sourceTree = "<group>";
-		};
 		67978B822130637600230527 /* ImageDownloader */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,7 +901,6 @@
 		67978B832130637600230527 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				67978BA32130813400230527 /* Data */,
 				67978B842130637600230527 /* Plists */,
 			);
 			path = Resources;
@@ -972,13 +952,6 @@
 				67978B8E2130638200230527 /* ImageDownloaderTests.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		67978BA32130813400230527 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		67978BA9213156FB00230527 /* DataSource */ = {
@@ -1258,6 +1231,7 @@
 				672073D421356693003B8FBF /* Tests */,
 				67AA6AC2212DE87600260244 /* Subprojects */,
 				67AA6A79212DE41400260244 /* Products */,
+				6756F5E62137F05100854E00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1561,7 +1535,6 @@
 			);
 			dependencies = (
 				6774DC2A21302DB600886DF3 /* PBXTargetDependency */,
-				6774DC2C21302DB600886DF3 /* PBXTargetDependency */,
 			);
 			name = DataStoreTests;
 			productName = DataStoreTests;
@@ -1601,7 +1574,6 @@
 			);
 			dependencies = (
 				67978B702130631C00230527 /* PBXTargetDependency */,
-				67978B722130631C00230527 /* PBXTargetDependency */,
 			);
 			name = ImageDownloaderTests;
 			productName = ImageDownloaderTests;
@@ -1639,7 +1611,6 @@
 			);
 			dependencies = (
 				67978BD521317FBC00230527 /* PBXTargetDependency */,
-				67978BD721317FBC00230527 /* PBXTargetDependency */,
 			);
 			name = RedditAccessTests;
 			productName = RedditAccessTests;
@@ -1720,7 +1691,6 @@
 			);
 			dependencies = (
 				67AA6AAF212DE83C00260244 /* PBXTargetDependency */,
-				67AA6AB1212DE83C00260244 /* PBXTargetDependency */,
 			);
 			name = URLAccessTests;
 			productName = URLAccessTests;
@@ -1958,9 +1928,9 @@
 				67978BAD2131574800230527 /* DataSourceProtocol.swift in Sources */,
 				6774DBF0213018FD00886DF3 /* Logger.swift in Sources */,
 				6774DBF2213019BC00886DF3 /* ConsoleLogger.swift in Sources */,
-				67AA6B272134946500260244 /* ErrorCodingBox.swift in Sources */,
 				6774DBF621301C7700886DF3 /* Log.swift in Sources */,
 				6777C4D22136653700B24E03 /* DependencyContainerError.swift in Sources */,
+				6756F5E12137EE6200854E00 /* ErrorCodingBox.swift in Sources */,
 				6777C4D12136653700B24E03 /* DependencyContainer.swift in Sources */,
 				67978BB1213158D300230527 /* DataSourceLoadOption.swift in Sources */,
 				67978BBC213161F300230527 /* StubDataSourceDelegate.swift in Sources */,
@@ -2174,11 +2144,6 @@
 			target = 6774DC1E21302DB500886DF3 /* DataStore */;
 			targetProxy = 6774DC2921302DB600886DF3 /* PBXContainerItemProxy */;
 		};
-		6774DC2C21302DB600886DF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 67AA6A77212DE41400260244 /* TopReddit */;
-			targetProxy = 6774DC2B21302DB600886DF3 /* PBXContainerItemProxy */;
-		};
 		6774DC3321302DB600886DF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6774DC1E21302DB500886DF3 /* DataStore */;
@@ -2193,11 +2158,6 @@
 			isa = PBXTargetDependency;
 			target = 67978B642130631C00230527 /* ImageDownloader */;
 			targetProxy = 67978B6F2130631C00230527 /* PBXContainerItemProxy */;
-		};
-		67978B722130631C00230527 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 67AA6A77212DE41400260244 /* TopReddit */;
-			targetProxy = 67978B712130631C00230527 /* PBXContainerItemProxy */;
 		};
 		67978B792130631C00230527 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2224,11 +2184,6 @@
 			target = 67978BC921317FBB00230527 /* RedditAccess */;
 			targetProxy = 67978BD421317FBC00230527 /* PBXContainerItemProxy */;
 		};
-		67978BD721317FBC00230527 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 67AA6A77212DE41400260244 /* TopReddit */;
-			targetProxy = 67978BD621317FBC00230527 /* PBXContainerItemProxy */;
-		};
 		67978BDE21317FBC00230527 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 67978BC921317FBB00230527 /* RedditAccess */;
@@ -2248,11 +2203,6 @@
 			isa = PBXTargetDependency;
 			target = 67AA6AA3212DE83C00260244 /* URLAccess */;
 			targetProxy = 67AA6AAE212DE83C00260244 /* PBXContainerItemProxy */;
-		};
-		67AA6AB1212DE83C00260244 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 67AA6A77212DE41400260244 /* TopReddit */;
-			targetProxy = 67AA6AB0212DE83C00260244 /* PBXContainerItemProxy */;
 		};
 		67AA6AB8212DE83C00260244 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

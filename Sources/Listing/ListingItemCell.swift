@@ -104,7 +104,7 @@ class ListingItemCell : UICollectionViewCell
     
     private func updateThumbnail(listingItem: ListingItem)
     {
-        let imageInfo = listingItem.imageInfos.first
+        let imageInfo = listingItem.thumbnailInfo
         thumbnailContainerView.isHidden = nil == imageInfo?.url
     }
     

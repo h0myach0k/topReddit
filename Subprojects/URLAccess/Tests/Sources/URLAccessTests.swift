@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 import XCTest
 @testable import URLAccess
+import Core
 
 ////////////////////////////////////////////////////////////////////////////////
 fileprivate let defaultTimeout: TimeInterval = 5
@@ -18,6 +19,12 @@ fileprivate let defaultTimeout: TimeInterval = 5
 ////////////////////////////////////////////////////////////////////////////////
 class URLAccessTests: XCTestCase
 {
+    override func setUp()
+    {
+        super.setUp()
+        LoggerManager.shared.logLevel = .info
+    }
+    
     func testURLAccessCreation()
     {
         let sharedURLAccess = URLAccess.shared
@@ -108,7 +115,7 @@ class URLAccessTests: XCTestCase
                 expectation.fulfill()
             }
         
-        waitForExpectations(timeout: defaultTimeout)
+        wait(for: [expectation], timeout: defaultTimeout)
     }
     
     //! MARK: - Private
